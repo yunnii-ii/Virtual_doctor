@@ -1,0 +1,2388 @@
+[
+  {
+    "name": "Paracetamol",
+    "description": "Paracetamol (acetaminophen) is a pain reliever and a fever reducer.",
+    "uses": [
+      "Relief of mild to moderate pain (headache, muscle ache, toothache).",
+      "Reduction of fever."
+    ],
+    "dosage": "500mg to 1000mg every 4 to 6 hours as needed. Do not exceed 4000mg in 24 hours.",
+    "side_effects": [
+      "Nausea",
+      "Stomach pain",
+      "Loss of appetite",
+      "Allergic reactions (rare)"
+    ],
+    "precautions": "Avoid alcohol while taking this medication. Consult a doctor if you have liver disease."
+  },
+  {
+    "name": "Amoxicillin",
+    "description": "Amoxicillin is a penicillin antibiotic that fights bacteria.",
+    "uses": [
+      "Treatment of bacterial infections (ear infections, pneumonia, skin infections).",
+      "Used in combination with other medications to treat stomach ulcers caused by H. pylori."
+    ],
+    "dosage": "As prescribed by a doctor, usually 250mg to 500mg every 8 hours.",
+    "side_effects": [
+      "Nausea",
+      "Vomiting",
+      "Diarrhea",
+      "Rash",
+      "Yeast infection"
+    ],
+    "precautions": "Complete the full course of antibiotics even if you feel better. Do not use if allergic to penicillin."
+  },
+  {
+    "name": "Ibuprofen",
+    "description": "Ibuprofen is a nonsteroidal anti-inflammatory drug (NSAID).",
+    "uses": [
+      "Reducing fever and treating pain or inflammation caused by many conditions such as headache, toothache, back pain, arthritis, or minor injury."
+    ],
+    "dosage": "200mg to 400mg every 4 to 6 hours. Do not exceed 1200mg in 24 hours unless directed by a doctor.",
+    "side_effects": [
+      "Upset stomach",
+      "Mild heartburn",
+      "Nausea",
+      "Vomiting",
+      "Bloating",
+      "Gas",
+      "Diarrhea",
+      "Constipation"
+    ],
+    "precautions": "Take with food or milk to reduce stomach upset. Consult a doctor if you have heart or kidney problems."
+  },
+  {
+    "name": "Cetirizine",
+    "description": "Cetirizine is an antihistamine that reduces the natural chemical histamine in the body.",
+    "uses": [
+      "Treating cold or allergy symptoms such as sneezing, itching, watery eyes, or runny nose."
+    ],
+    "dosage": "5mg to 10mg once daily.",
+    "side_effects": [
+      "Drowsiness",
+      "Dry mouth",
+      "Fatigue",
+      "Dizziness"
+    ],
+    "precautions": "May cause drowsiness; avoid driving or operating machinery until you know how it affects you."
+  },
+  {
+    "name": "Metformin",
+    "description": "Metformin is an oral diabetes medicine that helps control blood sugar levels.",
+    "uses": [
+      "Used together with diet and exercise to improve blood sugar control in adults with type 2 diabetes mellitus."
+    ],
+    "dosage": "As prescribed by a doctor, usually taken with meals.",
+    "side_effects": [
+      "Nausea",
+      "Vomiting",
+      "Stomach upset",
+      "Diarrhea",
+      "Metallic taste in the mouth"
+    ],
+    "precautions": "Monitor blood sugar levels regularly. Consult a doctor if you have kidney disease."
+  },
+  {
+    "name": "Omeprazole",
+    "description": "Omeprazole decreases the amount of acid produced in the stomach.",
+    "uses": [
+      "Treatment of gastroesophageal reflux disease (GERD).",
+      "Healing of erosive esophagitis.",
+      "Treatment of stomach ulcers."
+    ],
+    "dosage": "20mg to 40mg once daily before a meal.",
+    "side_effects": [
+      "Headache",
+      "Abdominal pain",
+      "Nausea",
+      "Diarrhea",
+      "Vomiting",
+      "Gas"
+    ],
+    "precautions": "Long-term use may increase the risk of bone fractures. Consult a doctor if symptoms persist."
+  },
+  {
+    "name": "Azithromycin",
+    "description": "Azithromycin is an antibiotic that fights bacteria.",
+    "uses": [
+      "Treatment of many different types of infections caused by bacteria, such as respiratory infections, skin infections, ear infections, and sexually transmitted diseases."
+    ],
+    "dosage": "500mg once daily for 3 days, or as directed by a doctor.",
+    "side_effects": [
+      "Diarrhea",
+      "Nausea",
+      "Abdominal pain",
+      "Vomiting",
+      "Dizziness"
+    ],
+    "precautions": "Avoid taking antacids that contain aluminum or magnesium within 2 hours of taking azithromycin."
+  },
+  {
+    "name": "Atorvastatin",
+    "description": "Atorvastatin is used to lower cholesterol and triglycerides in the blood.",
+    "uses": [
+      "Lowering the risk of stroke, heart attack, and other heart complications in people with type 2 diabetes, coronary heart disease, or other risk factors."
+    ],
+    "dosage": "10mg to 80mg once daily.",
+    "side_effects": [
+      "Muscle pain",
+      "Joint pain",
+      "Diarrhea",
+      "Nausea",
+      "Stomach upset"
+    ],
+    "precautions": "Avoid grapefruit juice. Consult a doctor if you have liver disease or experience unexplained muscle weakness."
+  },
+  {
+    "name": "Amlodipine",
+    "description": "Amlodipine is a calcium channel blocker that dilates blood vessels and improves blood flow.",
+    "uses": [
+      "Treatment of high blood pressure (hypertension).",
+      "Treatment of chest pain (angina)."
+    ],
+    "dosage": "5mg to 10mg once daily.",
+    "side_effects": [
+      "Swelling of legs or ankles",
+      "Dizziness",
+      "Palpitations",
+      "Flushing"
+    ],
+    "precautions": "Avoid alcohol. Consult a doctor if you experience severe dizziness or fainting."
+  },
+  {
+    "name": "Salbutamol (Ventolin)",
+    "description": "Salbutamol is a bronchodilator that relaxes muscles in the airways and increases air flow to the lungs.",
+    "uses": [
+      "Treatment or prevention of bronchospasm in people with reversible obstructive airway disease.",
+      "Prevention of exercise-induced bronchospasm."
+    ],
+    "dosage": "1 to 2 puffs every 4 to 6 hours as needed.",
+    "side_effects": [
+      "Tremor",
+      "Nervousness",
+      "Headache",
+      "Tachycardia"
+    ],
+    "precautions": "Seek medical help if your usual dose does not provide relief."
+  },
+  {
+    "name": "Ciprofloxacin",
+    "description": "Ciprofloxacin is a fluoroquinolone antibiotic used to treat a variety of bacterial infections.",
+    "uses": [
+      "Urinary tract infections",
+      "Respiratory tract infections",
+      "Skin infections",
+      "Bone and joint infections"
+    ],
+    "dosage": "250mg to 750mg every 12 hours.",
+    "side_effects": [
+      "Nausea",
+      "Diarrhea",
+      "Dizziness",
+      "Lightheadedness",
+      "Tendon rupture (rare)"
+    ],
+    "precautions": "Drink plenty of fluids. Avoid excessive sunlight or UV lamps."
+  },
+  {
+    "name": "Losartan",
+    "description": "Losartan is an angiotensin II receptor blocker (ARB) used to treat high blood pressure.",
+    "uses": [
+      "Hypertension",
+      "Reducing risk of stroke in patients with hypertension and left ventricular hypertrophy"
+    ],
+    "dosage": "25mg to 100mg once daily.",
+    "side_effects": [
+      "Dizziness",
+      "Stuffy nose",
+      "Back pain",
+      "Leg pain"
+    ],
+    "precautions": "Do not use during pregnancy. Monitor kidney function regularly."
+  },
+  {
+    "name": "Dexamethasone",
+    "description": "Dexamethasone is a corticosteroid used to treat conditions such as arthritis, blood/hormone disorders, and allergic reactions.",
+    "uses": [
+      "Severe allergic reactions",
+      "Arthritis",
+      "Asthma",
+      "Certain cancers"
+    ],
+    "dosage": "As prescribed by a doctor (dosage varies widely).",
+    "side_effects": [
+      "Increased appetite",
+      "Irritability",
+      "Difficulty sleeping",
+      "Weight gain"
+    ],
+    "precautions": "May mask signs of infection. Do not stop suddenly if used long-term."
+  },
+  {
+    "name": "Furosemide (Lasix)",
+    "description": "Furosemide is a loop diuretic (water pill) used to treat fluid retention (edema) in people with congestive heart failure, liver disease, or kidney disorder.",
+    "uses": [
+      "Edema",
+      "Hypertension"
+    ],
+    "dosage": "20mg to 80mg per day.",
+    "side_effects": [
+      "Frequent urination",
+      "Dizziness",
+      "Headache",
+      "Muscle cramps"
+    ],
+    "precautions": "May cause potassium loss; may require potassium supplements."
+  },
+  {
+    "name": "Prednisolone",
+    "description": "Prednisolone is a steroid that prevents the release of substances in the body that cause inflammation.",
+    "uses": [
+      "Allergic disorders",
+      "Skin conditions",
+      "Ulcerative colitis",
+      "Arthritis",
+      "Lupus",
+      "Psoriasis",
+      "Breathing disorders"
+    ],
+    "dosage": "5mg to 60mg per day depending on condition.",
+    "side_effects": [
+      "Nausea",
+      "Heartburn",
+      "Headache",
+      "Dizziness",
+      "Menstrual period changes",
+      "Trouble sleeping"
+    ],
+    "precautions": "Avoid people who are sick or have infections. Long-term use can lead to bone loss."
+  },
+  {
+    "name": "Clopidogrel (Plavix)",
+    "description": "Clopidogrel is an antiplatelet medication that prevents blood clots.",
+    "uses": [
+      "Prevention of heart attack and stroke in people with heart disease",
+      "Recent stroke",
+      "Peripheral vascular disease"
+    ],
+    "dosage": "75mg once daily.",
+    "side_effects": [
+      "Bleeding more easily",
+      "Bruising",
+      "Stomach pain",
+      "Diarrhea"
+    ],
+    "precautions": "Inform your doctor or dentist before any surgery."
+  },
+  {
+    "name": "Gliclazide",
+    "description": "Gliclazide is an oral hypoglycemic (anti-diabetic drug) used for the treatment of type 2 diabetes.",
+    "uses": [
+      "Control of blood sugar in type 2 diabetes"
+    ],
+    "dosage": "30mg to 120mg once daily with breakfast.",
+    "side_effects": [
+      "Low blood sugar (hypoglycemia)",
+      "Nausea",
+      "Indigestion",
+      "Constipation"
+    ],
+    "precautions": "Always carry a source of sugar in case of hypoglycemia."
+  },
+  {
+    "name": "Ranitidine",
+    "description": "Ranitidine is an H2 blocker that reduces the amount of acid your stomach produces.",
+    "uses": [
+      "Heartburn",
+      "Acid reflux",
+      "Stomach ulcers"
+    ],
+    "dosage": "150mg twice daily or 300mg once at bedtime.",
+    "side_effects": [
+      "Headache",
+      "Constipation",
+      "Diarrhea",
+      "Nausea"
+    ],
+    "precautions": "Consult a doctor if symptoms persist."
+  },
+  {
+    "name": "Pantoprazole",
+    "description": "Pantoprazole is a proton pump inhibitor that decreases the amount of acid produced in the stomach.",
+    "uses": [
+      "Gastroesophageal reflux disease (GERD)",
+      "Zollinger-Ellison syndrome"
+    ],
+    "dosage": "20mg to 40mg once daily.",
+    "side_effects": [
+      "Headache",
+      "Diarrhea",
+      "Stomach pain",
+      "Gas",
+      "Dizziness"
+    ],
+    "precautions": "Best taken 30-60 minutes before breakfast."
+  },
+  {
+    "name": "Multivitamins",
+    "description": "Multivitamins are used to provide vitamins that are not taken in through the diet.",
+    "uses": [
+      "Vitamin deficiencies caused by illness, pregnancy, poor nutrition, digestive disorders, and many other conditions"
+    ],
+    "dosage": "One tablet daily.",
+    "side_effects": [
+      "Stomach upset",
+      "Headache",
+      "Unusual or unpleasant taste in your mouth"
+    ],
+    "precautions": "Do not exceed the recommended dose."
+  },
+  {
+    "name": "Decolgen",
+    "description": "Decolgen is a combined medication for the relief of cold and flu symptoms.",
+    "uses": [
+      "Relief of symptoms associated with common cold, flu, and allergic rhinitis.",
+      "Relief of headache, fever, nasal congestion, and sneezing."
+    ],
+    "dosage": "Adults: 1 tablet every 6 to 8 hours, or as prescribed by a doctor.",
+    "side_effects": [
+      "Drowsiness",
+      "Dry mouth",
+      "Dizziness",
+      "Blurred vision"
+    ],
+    "precautions": "May cause drowsiness; avoid driving or operating machinery. Avoid alcohol."
+  },
+  {
+    "name": "Biogesic",
+    "description": "Biogesic is a popular brand of Paracetamol for pain and fever relief.",
+    "uses": [
+      "Relief of mild to moderate aches and pains such as headache, toothache, and muscular aches.",
+      "Reduction of fever."
+    ],
+    "dosage": "Adults: 1 to 2 tablets every 4 to 6 hours, not to exceed 8 tablets in 24 hours.",
+    "side_effects": [
+      "Nausea",
+      "Stomach upset",
+      "Allergic reactions (rare)"
+    ],
+    "precautions": "Consult a doctor if you have liver or kidney problems. Do not take with other Paracetamol-containing products."
+  },
+  {
+    "name": "Panadol",
+    "description": "Panadol is a widely used brand of Paracetamol for pain relief.",
+    "uses": [
+      "Effective relief of headache, muscle pain, period pain, toothache, and sore throat.",
+      "Reduction of fever."
+    ],
+    "dosage": "Adults: 1 to 2 tablets every 4 to 6 hours as needed.",
+    "side_effects": [
+      "Nausea",
+      "Allergic skin rash (rare)"
+    ],
+    "precautions": "Do not take with other medicines containing paracetamol. Consult a doctor if symptoms persist."
+  },
+  {
+    "name": "Oral Rehydration Salts (ORS)",
+    "description": "ORS is a mixture of electrolytes and sugar used to prevent or treat dehydration.",
+    "uses": [
+      "Prevention and treatment of dehydration caused by diarrhea, vomiting, or excessive sweating."
+    ],
+    "dosage": "Dissolve one sachet in 250ml or 1 liter of clean water (as specified on the packet) and drink as needed.",
+    "side_effects": [
+      "Nausea",
+      "Vomiting (if taken too quickly)"
+    ],
+    "precautions": "Use clean, boiled water to dissolve the salts. Discard unused solution after 24 hours."
+  },
+  {
+    "name": "Domperidone (Motilium)",
+    "description": "Domperidone is an anti-sickness medicine used to treat nausea and vomiting.",
+    "uses": [
+      "Relief of nausea and vomiting.",
+      "Relief of stomach discomfort, bloating, and belching."
+    ],
+    "dosage": "Adults: 10mg up to 3 times a day, usually before meals.",
+    "side_effects": [
+      "Dry mouth",
+      "Drowsiness",
+      "Headache"
+    ],
+    "precautions": "Not recommended for people with heart conditions. Consult a doctor before use."
+  },
+  {
+    "name": "Loperamide (Imodium)",
+    "description": "Loperamide is used to treat sudden diarrhea.",
+    "uses": [
+      "Symptomatic relief of acute diarrhea.",
+      "Management of chronic diarrhea in inflammatory bowel disease."
+    ],
+    "dosage": "Initial dose 4mg, followed by 2mg after each loose stool, not to exceed 16mg in 24 hours.",
+    "side_effects": [
+      "Constipation",
+      "Dizziness",
+      "Stomach cramps",
+      "Nausea"
+    ],
+    "precautions": "Do not use if you have bloody stools or fever. Maintain hydration with ORS."
+  },
+  {
+    "name": "Diclofenac (Voltaren)",
+    "description": "Diclofenac is an NSAID used to reduce pain and inflammation.",
+    "uses": [
+      "Relief of pain and inflammation in arthritis, gout, and acute musculoskeletal disorders.",
+      "Post-operative pain relief."
+    ],
+    "dosage": "Adults: 50mg to 150mg daily in divided doses, or as prescribed.",
+    "side_effects": [
+      "Stomach pain",
+      "Heartburn",
+      "Nausea",
+      "Dizziness"
+    ],
+    "precautions": "Take with food. Not recommended for people with stomach ulcers or heart disease."
+  },
+  {
+    "name": "Aspirin",
+    "description": "Aspirin is used to reduce fever, pain, and inflammation.",
+    "uses": [
+      "Relief of mild to moderate pain.",
+      "Prevention of blood clots in heart disease (low dose)."
+    ],
+    "dosage": "Adults: 300mg to 900mg every 4 to 6 hours for pain. 75mg daily for heart health (low dose).",
+    "side_effects": [
+      "Stomach upset",
+      "Gastrointestinal bleeding",
+      "Increased bleeding tendency"
+    ],
+    "precautions": "Do not give to children under 16 due to risk of Reye's syndrome. Avoid if you have asthma or stomach ulcers."
+  },
+  {
+    "name": "Enervon-C",
+    "description": "Enervon-C is a multivitamin supplement containing Vitamin C and B-complex.",
+    "uses": [
+      "Boosting the immune system and providing energy.",
+      "Treatment of vitamin deficiencies during periods of stress or illness."
+    ],
+    "dosage": "Adults: One tablet daily.",
+    "side_effects": [
+      "Bright yellow urine (harmless)",
+      "Mild stomach upset"
+    ],
+    "precautions": "Do not exceed the recommended daily dose."
+  },
+  {
+    "name": "Chlorpheniramine (Burmeton)",
+    "description": "Chlorpheniramine is an antihistamine used to relieve allergy symptoms.",
+    "uses": [
+      "Relief of sneezing, itchy and watery eyes, and runny nose caused by hay fever or common cold.",
+      "Relief of itchy skin rashes and hives."
+    ],
+    "dosage": "Adults: 4mg every 4 to 6 hours.",
+    "side_effects": [
+      "Drowsiness",
+      "Dry mouth",
+      "Blurred vision",
+      "Dizziness"
+    ],
+    "precautions": "Highly sedating; avoid driving or operating machinery. Avoid alcohol."
+  },
+  {
+    "name": "Metronidazole (Flagyl)",
+    "description": "Metronidazole is an antibiotic used to treat various infections caused by bacteria and parasites.",
+    "uses": [
+      "Treatment of infections of the digestive system, skin, and joints.",
+      "Treatment of dental infections and infected leg ulcers."
+    ],
+    "dosage": "Adults: 200mg to 400mg three times a day for 3 to 10 days.",
+    "side_effects": [
+      "Metallic taste in mouth",
+      "Nausea",
+      "Headache",
+      "Loss of appetite"
+    ],
+    "precautions": "Do not drink alcohol during treatment and for 48 hours after finishing the course."
+  },
+  {
+    "name": "Mefenamic Acid (Ponstan)",
+    "description": "Mefenamic acid is an NSAID used for short-term relief of mild to moderate pain.",
+    "uses": [
+      "Relief of period pain and heavy bleeding.",
+      "Relief of toothache, muscle pain, and joint pain."
+    ],
+    "dosage": "Adults: 500mg three times a day after meals.",
+    "side_effects": [
+      "Stomach pain",
+      "Diarrhea",
+      "Nausea",
+      "Heartburn"
+    ],
+    "precautions": "Take with food. Not suitable for people with stomach ulcers or asthma."
+  },
+  {
+    "name": "Cefixime (Zifi)",
+    "description": "Cefixime is a cephalosporin antibiotic used to treat a wide variety of bacterial infections.",
+    "uses": [
+      "Treatment of urinary tract infections, ear infections, and throat infections.",
+      "Treatment of bronchitis and gonorrhea."
+    ],
+    "dosage": "Adults: 200mg to 400mg daily, as a single dose or divided into two doses.",
+    "side_effects": [
+      "Diarrhea",
+      "Stomach upset",
+      "Nausea",
+      "Gas"
+    ],
+    "precautions": "Inform your doctor if you are allergic to penicillin or other cephalosporins."
+  },
+  {
+    "name": "Loratadine (Claritin)",
+    "description": "Loratadine is a non-drowsy antihistamine used to treat allergy symptoms.",
+    "uses": [
+      "Relief of sneezing, runny nose, and itchy eyes caused by hay fever.",
+      "Treatment of hives and itchy skin rashes."
+    ],
+    "dosage": "Adults: 10mg once daily.",
+    "side_effects": [
+      "Headache",
+      "Feeling tired",
+      "Dry mouth"
+    ],
+    "precautions": "Generally non-drowsy, but use caution if performing tasks requiring alertness."
+  },
+  {
+    "name": "Salbutamol Inhaler (Ventolin)",
+    "description": "Salbutamol is a bronchodilator that opens up the airways in the lungs.",
+    "uses": [
+      "Relief of symptoms of asthma and COPD.",
+      "Prevention of exercise-induced bronchospasm."
+    ],
+    "dosage": "1 or 2 puffs as needed, up to 4 times a day.",
+    "side_effects": [
+      "Trembling",
+      "Rapid heartbeat",
+      "Headache",
+      "Muscle cramps"
+    ],
+    "precautions": "If your usual dose does not provide relief, seek emergency medical help immediately."
+  },
+  {
+    "name": "Gaviscon",
+    "description": "Gaviscon is an antacid and alginate used to treat acid reflux and indigestion.",
+    "uses": [
+      "Relief of heartburn and acid indigestion.",
+      "Treatment of symptoms of hiatus hernia and reflux oesophagitis."
+    ],
+    "dosage": "10-20ml or 1-2 tablets after meals and at bedtime.",
+    "side_effects": [
+      "Constipation (rare)",
+      "Diarrhea (rare)"
+    ],
+    "precautions": "Avoid taking other medicines within 2 hours of taking Gaviscon."
+  },
+  {
+    "name": "Vitamin B-complex (Neurobion)",
+    "description": "Neurobion is a combination of B vitamins (B1, B6, B12) used to support nerve health.",
+    "uses": [
+      "Prevention and treatment of vitamin B deficiencies.",
+      "Support for nerve health and treatment of neuritis."
+    ],
+    "dosage": "One tablet daily or as directed by a doctor.",
+    "side_effects": [
+      "Nausea",
+      "Vomiting",
+      "Diarrhea",
+      "Abdominal pain"
+    ],
+    "precautions": "Do not exceed the recommended dose. Consult a doctor for prolonged use."
+  },
+  {
+    "name": "Ferrous Sulfate (Sangobion)",
+    "description": "Sangobion is an iron supplement with vitamins and minerals to treat iron-deficiency anemia.",
+    "uses": [
+      "Treatment and prevention of iron-deficiency anemia.",
+      "Supplementation during pregnancy and breastfeeding."
+    ],
+    "dosage": "One capsule daily after meals.",
+    "side_effects": [
+      "Black stools (harmless)",
+      "Constipation",
+      "Stomach upset",
+      "Nausea"
+    ],
+    "precautions": "Best taken on an empty stomach, but can be taken with food if it causes stomach upset."
+  },
+  {
+    "name": "Azithromycin (Zithromax)",
+    "description": "Azithromycin is a macrolide antibiotic used to treat various bacterial infections.",
+    "uses": [
+      "Treatment of respiratory infections, skin infections, and ear infections.",
+      "Treatment of some sexually transmitted diseases."
+    ],
+    "dosage": "Adults: 500mg once daily for 3 days, or as directed by a doctor.",
+    "side_effects": [
+      "Diarrhea",
+      "Nausea",
+      "Abdominal pain",
+      "Vomiting"
+    ],
+    "precautions": "Do not take antacids containing aluminum or magnesium at the same time."
+  },
+  {
+    "name": "Albendazole (Zentel)",
+    "description": "Albendazole is an anthelmintic medication used to treat a variety of parasitic worm infestations.",
+    "uses": [
+      "Treatment of tapeworm, roundworm, and hookworm infections.",
+      "Treatment of pinworm infections."
+    ],
+    "dosage": "Adults: Usually 400mg as a single dose. Some infections may require a longer course.",
+    "side_effects": [
+      "Headache",
+      "Nausea",
+      "Vomiting",
+      "Stomach pain"
+    ],
+    "precautions": "Avoid use during pregnancy. Consult a doctor before giving to children."
+  },
+  {
+    "name": "Atenolol",
+    "description": "Atenolol is a beta-blocker used to treat high blood pressure and heart-related chest pain.",
+    "uses": [
+      "Treatment of hypertension (high blood pressure).",
+      "Prevention of angina (chest pain).",
+      "Treatment of irregular heartbeats."
+    ],
+    "dosage": "Adults: 25mg to 100mg once daily, or as prescribed.",
+    "side_effects": [
+      "Dizziness",
+      "Tiredness",
+      "Cold hands and feet",
+      "Slow heart rate"
+    ],
+    "precautions": "Do not stop taking this medication suddenly. Consult your doctor first."
+  },
+  {
+    "name": "Enalapril",
+    "description": "Enalapril is an ACE inhibitor used to treat high blood pressure and heart failure.",
+    "uses": [
+      "Treatment of high blood pressure.",
+      "Management of heart failure."
+    ],
+    "dosage": "Adults: 5mg to 40mg daily, usually divided into one or two doses.",
+    "side_effects": [
+      "Dry cough",
+      "Dizziness",
+      "Low blood pressure",
+      "Headache"
+    ],
+    "precautions": "May cause a dry cough. Inform your doctor if you experience swelling of the face or throat."
+  },
+  {
+    "name": "Glibenclamide (Daonil)",
+    "description": "Glibenclamide is a sulfonylurea medication used to treat type 2 diabetes.",
+    "uses": [
+      "Control of blood sugar levels in type 2 diabetes."
+    ],
+    "dosage": "Adults: 2.5mg to 15mg daily, usually taken with breakfast.",
+    "side_effects": [
+      "Low blood sugar (hypoglycemia)",
+      "Nausea",
+      "Heartburn",
+      "Weight gain"
+    ],
+    "precautions": "Monitor blood sugar regularly. Carry a source of sugar in case of hypoglycemia."
+  },
+  {
+    "name": "Sitagliptin (Januvia)",
+    "description": "Sitagliptin is a DPP-4 inhibitor used to treat type 2 diabetes.",
+    "uses": [
+      "Improving blood sugar control in adults with type 2 diabetes."
+    ],
+    "dosage": "Adults: 100mg once daily, with or without food.",
+    "side_effects": [
+      "Upper respiratory tract infection",
+      "Stuffy or runny nose",
+      "Headache"
+    ],
+    "precautions": "Consult a doctor if you have a history of pancreatitis or kidney problems."
+  },
+  {
+    "name": "Fluconazole (Diflucan)",
+    "description": "Fluconazole is an antifungal medication used to treat various fungal infections.",
+    "uses": [
+      "Treatment of vaginal, oral, and esophageal yeast infections.",
+      "Treatment of fungal meningitis."
+    ],
+    "dosage": "Adults: 150mg as a single dose for vaginal yeast infections. Other doses vary by infection.",
+    "side_effects": [
+      "Headache",
+      "Nausea",
+      "Stomach pain",
+      "Dizziness"
+    ],
+    "precautions": "Inform your doctor if you have liver disease or heart rhythm disorders."
+  },
+  {
+    "name": "Carbocisteine (Solmux)",
+    "description": "Carbocisteine is a mucolytic that helps thin and loosen mucus in the lungs.",
+    "uses": [
+      "Relief of cough associated with excessive mucus.",
+      "Treatment of respiratory tract disorders like bronchitis and asthma."
+    ],
+    "dosage": "Adults: 750mg three times a day initially, then reduced as symptoms improve.",
+    "side_effects": [
+      "Nausea",
+      "Diarrhea",
+      "Stomach upset",
+      "Skin rash"
+    ],
+    "precautions": "Avoid use if you have a history of stomach ulcers. Consult a doctor if cough persists."
+  },
+  {
+    "name": "Bromhexine (Bisolvon)",
+    "description": "Bromhexine is a mucolytic agent used to treat respiratory disorders associated with productive cough.",
+    "uses": [
+      "Thinning and loosening phlegm in the airways.",
+      "Relief of chest congestion."
+    ],
+    "dosage": "Adults: 8mg to 16mg three times a day.",
+    "side_effects": [
+      "Nausea",
+      "Vomiting",
+      "Diarrhea",
+      "Dizziness"
+    ],
+    "precautions": "Consult a doctor if you have stomach ulcers or liver/kidney problems."
+  },
+  {
+    "name": "Kremil-S",
+    "description": "Kremil-S is a combination of antacids and simethicone used to treat stomach issues.",
+    "uses": [
+      "Relief of stomach pain, heartburn, and acid indigestion.",
+      "Relief of gas and bloating (flatulence)."
+    ],
+    "dosage": "Adults: 1 to 2 tablets after meals and at bedtime, or as needed.",
+    "side_effects": [
+      "Constipation",
+      "Diarrhea",
+      "Chalky taste"
+    ],
+    "precautions": "Do not take more than 12 tablets in 24 hours. Consult a doctor for long-term use."
+  },
+  {
+    "name": "Betamethasone (Skin Cream)",
+    "description": "Betamethasone is a potent corticosteroid used topically to reduce skin inflammation and itching.",
+    "uses": [
+      "Treatment of eczema, psoriasis, and dermatitis.",
+      "Relief of itchy and inflamed skin rashes."
+    ],
+    "dosage": "Apply a small amount thinly to the affected area 1 or 2 times daily.",
+    "side_effects": [
+      "Skin thinning",
+      "Burning or stinging sensation",
+      "Stretch marks (long-term use)"
+    ],
+    "precautions": "Do not use on the face, groin, or underarms unless directed by a doctor. Avoid long-term use."
+  },
+  {
+    "name": "Clotrimazole (Canesten)",
+    "description": "Clotrimazole is an antifungal medication used to treat skin and vaginal fungal infections.",
+    "uses": [
+      "Treatment of athlete's foot, ringworm, and jock itch.",
+      "Treatment of vaginal yeast infections (thrush)."
+    ],
+    "dosage": "Apply to the affected area 2 to 3 times daily for 2 to 4 weeks.",
+    "side_effects": [
+      "Skin irritation",
+      "Redness",
+      "Peeling",
+      "Blistering"
+    ],
+    "precautions": "Continue treatment for 1-2 weeks after symptoms disappear to prevent recurrence."
+  },
+  {
+    "name": "Povidone-iodine (Betadine)",
+    "description": "Povidone-iodine is an antiseptic used to prevent infection in minor wounds.",
+    "uses": [
+      "Disinfection of minor cuts, scrapes, and burns.",
+      "Pre-operative skin preparation."
+    ],
+    "dosage": "Apply to the cleaned affected area as needed.",
+    "side_effects": [
+      "Skin irritation",
+      "Allergic reactions (rare)",
+      "Staining of skin/clothing"
+    ],
+    "precautions": "Do not use over large areas of the body. Consult a doctor if the wound is deep or severe."
+  },
+  {
+    "name": "Simvastatin",
+    "description": "Simvastatin is used to lower cholesterol and triglycerides in the blood.",
+    "uses": [
+      "Lowering high cholesterol and triglycerides.",
+      "Reducing the risk of heart attack, stroke, and other heart complications."
+    ],
+    "dosage": "10mg to 40mg once daily in the evening.",
+    "side_effects": [
+      "Muscle pain",
+      "Stomach upset",
+      "Constipation",
+      "Nausea"
+    ],
+    "precautions": "Avoid large amounts of grapefruit juice. Report unexplained muscle pain to your doctor."
+  },
+  {
+    "name": "Rosuvastatin (Crestor)",
+    "description": "Rosuvastatin is a statin medication used to lower cholesterol and prevent cardiovascular disease.",
+    "uses": [
+      "Lowering LDL (bad) cholesterol and increasing HDL (good) cholesterol.",
+      "Slowing the build-up of plaque in blood vessels."
+    ],
+    "dosage": "5mg to 20mg once daily.",
+    "side_effects": [
+      "Headache",
+      "Muscle pain",
+      "Abdominal pain",
+      "Weakness",
+      "Nausea"
+    ],
+    "precautions": "Consult a doctor if you have liver disease or persistent muscle weakness."
+  },
+  {
+    "name": "Bisoprolol (Concor)",
+    "description": "Bisoprolol is a beta-blocker used to treat high blood pressure and heart failure.",
+    "uses": [
+      "Treatment of hypertension.",
+      "Management of chronic heart failure."
+    ],
+    "dosage": "1.25mg to 10mg once daily.",
+    "side_effects": [
+      "Dizziness",
+      "Fatigue",
+      "Cold extremities",
+      "Slow heart rate"
+    ],
+    "precautions": "Do not stop taking abruptly. May mask symptoms of low blood sugar in diabetics."
+  },
+  {
+    "name": "Telmisartan (Micardis)",
+    "description": "Telmisartan is an angiotensin II receptor blocker (ARB) used to treat high blood pressure.",
+    "uses": [
+      "Treatment of hypertension.",
+      "Reduction of cardiovascular risk in patients unable to take ACE inhibitors."
+    ],
+    "dosage": "40mg to 80mg once daily.",
+    "side_effects": [
+      "Back pain",
+      "Sinus pain",
+      "Diarrhea",
+      "Dizziness"
+    ],
+    "precautions": "Do not use during pregnancy. Monitor kidney function and potassium levels."
+  },
+  {
+    "name": "Spironolactone (Aldactone)",
+    "description": "Spironolactone is a potassium-sparing diuretic used to treat fluid retention and high blood pressure.",
+    "uses": [
+      "Treatment of edema in heart failure or liver cirrhosis.",
+      "Treatment of high blood pressure.",
+      "Treatment of primary hyperaldosteronism."
+    ],
+    "dosage": "25mg to 100mg daily.",
+    "side_effects": [
+      "High potassium levels",
+      "Nausea",
+      "Breast tenderness or enlargement",
+      "Dizziness"
+    ],
+    "precautions": "Avoid potassium supplements and salt substitutes containing potassium."
+  },
+  {
+    "name": "Montelukast (Singulair)",
+    "description": "Montelukast is a leukotriene receptor antagonist used to prevent asthma attacks and treat allergies.",
+    "uses": [
+      "Maintenance treatment of asthma.",
+      "Relief of symptoms of seasonal and year-round allergies."
+    ],
+    "dosage": "10mg once daily in the evening.",
+    "side_effects": [
+      "Headache",
+      "Stomach pain",
+      "Cough",
+      "Dizziness"
+    ],
+    "precautions": "Not for the treatment of acute asthma attacks. Report any mood or behavior changes."
+  },
+  {
+    "name": "Theophylline",
+    "description": "Theophylline is a bronchodilator used to treat symptoms of asthma and other lung diseases.",
+    "uses": [
+      "Relief and prevention of symptoms of asthma, chronic bronchitis, and emphysema."
+    ],
+    "dosage": "As prescribed (dosage requires careful monitoring of blood levels).",
+    "side_effects": [
+      "Nausea",
+      "Vomiting",
+      "Headache",
+      "Insomnia",
+      "Rapid heartbeat"
+    ],
+    "precautions": "Limit caffeine intake. Many drugs interact with theophylline; consult your doctor."
+  },
+  {
+    "name": "Lansoprazole (Prevacid)",
+    "description": "Lansoprazole is a proton pump inhibitor that reduces stomach acid.",
+    "uses": [
+      "Treatment of stomach and intestinal ulcers.",
+      "Treatment of GERD and erosive esophagitis."
+    ],
+    "dosage": "15mg to 30mg once daily before a meal.",
+    "side_effects": [
+      "Diarrhea",
+      "Abdominal pain",
+      "Nausea",
+      "Constipation",
+      "Headache"
+    ],
+    "precautions": "Consult a doctor if symptoms do not improve after 2 weeks of use."
+  },
+  {
+    "name": "Hyoscine Butylbromide (Buscopan)",
+    "description": "Hyoscine butylbromide is an antispasmodic used to relieve cramps in the stomach and intestines.",
+    "uses": [
+      "Relief of stomach cramps, period pains, and symptoms of irritable bowel syndrome (IBS)."
+    ],
+    "dosage": "10mg to 20mg three to four times daily.",
+    "side_effects": [
+      "Dry mouth",
+      "Blurred vision",
+      "Rapid heartbeat",
+      "Constipation"
+    ],
+    "precautions": "Consult a doctor if you have glaucoma or an enlarged prostate."
+  },
+  {
+    "name": "Ondansetron (Zofran)",
+    "description": "Ondansetron is used to prevent nausea and vomiting caused by surgery, chemotherapy, or radiation.",
+    "uses": [
+      "Prevention of nausea and vomiting."
+    ],
+    "dosage": "4mg to 8mg every 8 to 12 hours as needed.",
+    "side_effects": [
+      "Headache",
+      "Constipation",
+      "Dizziness",
+      "Fatigue"
+    ],
+    "precautions": "Consult a doctor if you have a history of heart rhythm problems (QT prolongation)."
+  },
+  {
+    "name": "Levothyroxine (Thyroxin)",
+    "description": "Levothyroxine is a synthetic thyroid hormone used to treat an underactive thyroid (hypothyroidism).",
+    "uses": [
+      "Replacement therapy for hypothyroidism.",
+      "Treatment of goiter."
+    ],
+    "dosage": "As prescribed by a doctor, usually taken on an empty stomach 30-60 minutes before breakfast.",
+    "side_effects": [
+      "Weight loss",
+      "Increased appetite",
+      "Nervousness",
+      "Heat intolerance",
+      "Palpitations"
+    ],
+    "precautions": "Requires regular blood tests to monitor thyroid levels. Do not switch brands without consulting your doctor."
+  },
+  {
+    "name": "Glimepiride (Amaryl)",
+    "description": "Glimepiride is a sulfonylurea used to control blood sugar in type 2 diabetes.",
+    "uses": [
+      "Lowering blood sugar levels in type 2 diabetes."
+    ],
+    "dosage": "1mg to 4mg once daily with breakfast.",
+    "side_effects": [
+      "Low blood sugar (hypoglycemia)",
+      "Nausea",
+      "Dizziness",
+      "Headache"
+    ],
+    "precautions": "Monitor blood sugar regularly. Carry a sugar source for emergencies."
+  },
+  {
+    "name": "Pioglitazone (Actos)",
+    "description": "Pioglitazone is a thiazolidinedione used to improve blood sugar control in type 2 diabetes.",
+    "uses": [
+      "Improving insulin sensitivity in type 2 diabetes."
+    ],
+    "dosage": "15mg to 45mg once daily.",
+    "side_effects": [
+      "Weight gain",
+      "Edema (swelling)",
+      "Upper respiratory tract infection",
+      "Headache"
+    ],
+    "precautions": "Not recommended for people with heart failure or bladder cancer history."
+  },
+  {
+    "name": "Cephalexin (Keflex)",
+    "description": "Cephalexin is a cephalosporin antibiotic used to treat bacterial infections.",
+    "uses": [
+      "Treatment of respiratory, skin, bone, and urinary tract infections."
+    ],
+    "dosage": "250mg to 500mg every 6 hours.",
+    "side_effects": [
+      "Diarrhea",
+      "Nausea",
+      "Vomiting",
+      "Stomach upset"
+    ],
+    "precautions": "Inform your doctor if you are allergic to penicillin."
+  },
+  {
+    "name": "Doxycycline",
+    "description": "Doxycycline is a tetracycline antibiotic used to treat various infections and acne.",
+    "uses": [
+      "Treatment of respiratory, urinary, and skin infections.",
+      "Treatment of acne and prevention of malaria."
+    ],
+    "dosage": "100mg once or twice daily.",
+    "side_effects": [
+      "Nausea",
+      "Vomiting",
+      "Diarrhea",
+      "Photosensitivity (increased risk of sunburn)"
+    ],
+    "precautions": "Avoid taking with dairy products, antacids, or iron supplements. Stay out of direct sunlight."
+  },
+  {
+    "name": "Clindamycin",
+    "description": "Clindamycin is an antibiotic used to treat serious infections caused by bacteria.",
+    "uses": [
+      "Treatment of serious respiratory, skin, and soft tissue infections."
+    ],
+    "dosage": "150mg to 450mg every 6 hours.",
+    "side_effects": [
+      "Diarrhea (can be severe)",
+      "Nausea",
+      "Vomiting",
+      "Stomach pain"
+    ],
+    "precautions": "Report severe or persistent diarrhea to your doctor immediately."
+  },
+  {
+    "name": "Clarithromycin (Klacid)",
+    "description": "Clarithromycin is a macrolide antibiotic used to treat various bacterial infections.",
+    "uses": [
+      "Treatment of respiratory tract infections, skin infections, and stomach ulcers (with other drugs)."
+    ],
+    "dosage": "250mg to 500mg every 12 hours.",
+    "side_effects": [
+      "Metallic taste",
+      "Nausea",
+      "Diarrhea",
+      "Vomiting",
+      "Headache"
+    ],
+    "precautions": "Consult a doctor if you have heart rhythm disorders or liver/kidney disease."
+  },
+  {
+    "name": "Acyclovir (Zovirax)",
+    "description": "Acyclovir is an antiviral medication used to treat infections caused by herpes viruses.",
+    "uses": [
+      "Treatment of cold sores, shingles, and chickenpox.",
+      "Management of genital herpes."
+    ],
+    "dosage": "200mg to 800mg multiple times daily depending on the infection.",
+    "side_effects": [
+      "Nausea",
+      "Diarrhea",
+      "Headache",
+      "Dizziness"
+    ],
+    "precautions": "Start treatment as soon as possible after the first symptoms appear. Drink plenty of water."
+  },
+  {
+    "name": "Ketoconazole (Nizoral)",
+    "description": "Ketoconazole is an antifungal medication used to treat fungal infections of the skin.",
+    "uses": [
+      "Treatment of athlete's foot, ringworm, and seborrheic dermatitis (dandruff)."
+    ],
+    "dosage": "Apply cream 1-2 times daily. Use shampoo 2 times a week.",
+    "side_effects": [
+      "Skin irritation",
+      "Itching",
+      "Burning sensation"
+    ],
+    "precautions": "Avoid contact with eyes. Consult a doctor for oral use due to risk of liver damage."
+  },
+  {
+    "name": "Gabapentin (Neurontin)",
+    "description": "Gabapentin is used to treat nerve pain and certain types of seizures.",
+    "uses": [
+      "Relief of nerve pain (neuropathic pain).",
+      "Management of partial seizures."
+    ],
+    "dosage": "As prescribed (dosage is usually increased gradually).",
+    "side_effects": [
+      "Dizziness",
+      "Drowsiness",
+      "Swelling of legs/feet",
+      "Fatigue"
+    ],
+    "precautions": "Do not stop suddenly. May cause mood or behavior changes."
+  },
+  {
+    "name": "Pregabalin (Lyrica)",
+    "description": "Pregabalin is used to treat nerve pain, fibromyalgia, and certain types of seizures.",
+    "uses": [
+      "Relief of nerve pain from diabetes or shingles.",
+      "Treatment of fibromyalgia and generalized anxiety disorder."
+    ],
+    "dosage": "75mg to 150mg twice daily.",
+    "side_effects": [
+      "Dizziness",
+      "Drowsiness",
+      "Dry mouth",
+      "Weight gain",
+      "Blurred vision"
+    ],
+    "precautions": "May be habit-forming. Do not stop suddenly. Avoid alcohol."
+  },
+  {
+    "name": "Amitriptyline",
+    "description": "Amitriptyline is a tricyclic antidepressant used to treat depression and nerve pain.",
+    "uses": [
+      "Treatment of depression.",
+      "Prevention of migraines and relief of chronic nerve pain (off-label)."
+    ],
+    "dosage": "10mg to 75mg daily at bedtime (lower doses for pain).",
+    "side_effects": [
+      "Drowsiness",
+      "Dry mouth",
+      "Constipation",
+      "Blurred vision",
+      "Weight gain"
+    ],
+    "precautions": "May cause drowsiness; avoid driving. Monitor for suicidal thoughts in young adults."
+  },
+  {
+    "name": "Escitalopram (Lexapro)",
+    "description": "Escitalopram is an SSRI used to treat depression and anxiety.",
+    "uses": [
+      "Treatment of major depressive disorder.",
+      "Treatment of generalized anxiety disorder."
+    ],
+    "dosage": "10mg to 20mg once daily.",
+    "side_effects": [
+      "Nausea",
+      "Sleep problems",
+      "Sexual dysfunction",
+      "Fatigue",
+      "Sweating"
+    ],
+    "precautions": "Do not stop suddenly. May take several weeks to see full effect."
+  },
+  {
+    "name": "Naproxen (Synflex)",
+    "description": "Naproxen is an NSAID used to reduce pain, inflammation, and fever.",
+    "uses": [
+      "Relief of pain from arthritis, gout, menstrual cramps, and minor injuries."
+    ],
+    "dosage": "250mg to 500mg twice daily.",
+    "side_effects": [
+      "Stomach upset",
+      "Heartburn",
+      "Dizziness",
+      "Headache",
+      "Nausea"
+    ],
+    "precautions": "Take with food or milk. Avoid if you have stomach ulcers or heart disease."
+  },
+  {
+    "name": "Celecoxib (Celebrex)",
+    "description": "Celecoxib is a COX-2 inhibitor (NSAID) used to treat pain and inflammation with less stomach irritation.",
+    "uses": [
+      "Relief of pain and inflammation in arthritis and acute pain."
+    ],
+    "dosage": "100mg to 200mg once or twice daily.",
+    "side_effects": [
+      "Stomach pain",
+      "Gas",
+      "Dizziness",
+      "Swelling of legs/feet"
+    ],
+    "precautions": "Consult a doctor if you have heart disease or a history of stomach ulcers."
+  },
+  {
+    "name": "Allopurinol (Zyloric)",
+    "description": "Allopurinol is used to lower uric acid levels in the blood and prevent gout attacks.",
+    "uses": [
+      "Prevention of gout attacks.",
+      "Prevention of kidney stones."
+    ],
+    "dosage": "100mg to 300mg once daily after a meal.",
+    "side_effects": [
+      "Skin rash (can be serious)",
+      "Stomach upset",
+      "Drowsiness"
+    ],
+    "precautions": "Drink plenty of fluids. Stop immediately and see a doctor if a rash develops."
+  },
+  {
+    "name": "Colchicine",
+    "description": "Colchicine is used to prevent or treat gout attacks.",
+    "uses": [
+      "Treatment of acute gout flares.",
+      "Prevention of gout attacks."
+    ],
+    "dosage": "As prescribed (requires specific dosing for acute attacks).",
+    "side_effects": [
+      "Diarrhea",
+      "Nausea",
+      "Vomiting",
+      "Abdominal pain"
+    ],
+    "precautions": "Do not exceed the prescribed dose. Report severe diarrhea to your doctor."
+  },
+  {
+    "name": "Fexofenadine (Telfast)",
+    "description": "Fexofenadine is a non-drowsy antihistamine used for allergy relief.",
+    "uses": [
+      "Relief of hay fever symptoms (sneezing, runny nose, itchy eyes).",
+      "Treatment of itchy skin rashes and hives."
+    ],
+    "dosage": "60mg twice daily or 120mg-180mg once daily.",
+    "side_effects": [
+      "Headache",
+      "Dizziness",
+      "Nausea",
+      "Dry mouth"
+    ],
+    "precautions": "Avoid taking with fruit juices (apple, orange, or grapefruit)."
+  },
+  {
+    "name": "Betahistine (Serc)",
+    "description": "Betahistine is used to treat symptoms of Meniere's disease such as vertigo and tinnitus.",
+    "uses": [
+      "Relief of vertigo (dizziness).",
+      "Treatment of tinnitus (ringing in the ears) and hearing loss associated with Meniere's."
+    ],
+    "dosage": "8mg to 16mg three times daily.",
+    "side_effects": [
+      "Nausea",
+      "Indigestion",
+      "Headache"
+    ],
+    "precautions": "Take with food to reduce stomach upset. Consult a doctor if you have asthma or stomach ulcers."
+  },
+  {
+    "name": "Hyoscine Hydrobromide (Travelmin)",
+    "description": "Hyoscine hydrobromide is used to prevent motion sickness.",
+    "uses": [
+      "Prevention of nausea and vomiting caused by motion sickness."
+    ],
+    "dosage": "0.3mg to 0.6mg 30-60 minutes before travel.",
+    "side_effects": [
+      "Drowsiness",
+      "Dry mouth",
+      "Blurred vision",
+      "Dizziness"
+    ],
+    "precautions": "May cause significant drowsiness. Avoid alcohol and driving."
+  },
+  {
+    "name": "Simethicone (Air-X)",
+    "description": "Simethicone is used to relieve symptoms of extra gas such as bloating and pressure.",
+    "uses": [
+      "Relief of gas, bloating, and discomfort in the stomach and intestines."
+    ],
+    "dosage": "40mg to 125mg after meals and at bedtime.",
+    "side_effects": [
+      "Rarely causes side effects."
+    ],
+    "precautions": "Chew tablets thoroughly before swallowing."
+  },
+  {
+    "name": "Lactulose (Duphalac)",
+    "description": "Lactulose is a synthetic sugar used to treat constipation.",
+    "uses": [
+      "Treatment of chronic constipation.",
+      "Management of portal-systemic encephalopathy."
+    ],
+    "dosage": "15ml to 30ml daily, adjusted based on response.",
+    "side_effects": [
+      "Gas (flatulence)",
+      "Stomach cramps",
+      "Nausea",
+      "Diarrhea (if dose is too high)"
+    ],
+    "precautions": "May take 24-48 hours to work. Consult a doctor if you have diabetes."
+  },
+  {
+    "name": "Senna (Senokot)",
+    "description": "Senna is a stimulant laxative used for short-term relief of constipation.",
+    "uses": [
+      "Relief of occasional constipation."
+    ],
+    "dosage": "1-2 tablets at bedtime.",
+    "side_effects": [
+      "Stomach cramps",
+      "Diarrhea",
+      "Discoloration of urine (harmless)"
+    ],
+    "precautions": "Do not use for more than 7 days without medical advice. Avoid if you have severe abdominal pain."
+  },
+  {
+    "name": "Bisacodyl (Dulcolax)",
+    "description": "Bisacodyl is a stimulant laxative used to treat constipation or clear the bowels before surgery.",
+    "uses": [
+      "Relief of constipation.",
+      "Bowel preparation for medical procedures."
+    ],
+    "dosage": "5mg to 10mg once daily, usually at bedtime.",
+    "side_effects": [
+      "Stomach cramps",
+      "Nausea",
+      "Diarrhea",
+      "Burning sensation (if using suppositories)"
+    ],
+    "precautions": "Do not take within 1 hour of antacids or milk. Do not use daily for more than 5 days."
+  },
+  {
+    "name": "Spasmo-canulase",
+    "description": "Spasmo-canulase is a combination medicine used to treat digestive disorders and bloating.",
+    "uses": [
+      "Relief of digestive discomfort, gas, and bloating.",
+      "Improvement of digestion."
+    ],
+    "dosage": "1-2 capsules with meals.",
+    "side_effects": [
+      "Mild stomach upset",
+      "Nausea"
+    ],
+    "precautions": "Swallow capsules whole. Consult a doctor if symptoms persist."
+  },
+  {
+    "name": "Zinc Sulfate",
+    "description": "Zinc sulfate is a mineral supplement used to treat and prevent zinc deficiency.",
+    "uses": [
+      "Treatment of zinc deficiency.",
+      "Support for immune function and wound healing.",
+      "Management of diarrhea in children (with ORS)."
+    ],
+    "dosage": "As prescribed (varies by age and condition).",
+    "side_effects": [
+      "Stomach upset",
+      "Nausea",
+      "Metallic taste"
+    ],
+    "precautions": "Best taken with food to reduce nausea. Do not exceed the recommended dose."
+  },
+  {
+    "name": "Folic Acid",
+    "description": "Folic acid is a B-vitamin used to treat anemia and prevent birth defects.",
+    "uses": [
+      "Prevention of neural tube defects during pregnancy.",
+      "Treatment of folic acid deficiency anemia."
+    ],
+    "dosage": "400mcg to 5mg daily depending on the condition.",
+    "side_effects": [
+      "Rarely causes side effects at normal doses."
+    ],
+    "precautions": "Consult a doctor for the appropriate dose during pregnancy."
+  },
+  {
+    "name": "Vitamin C (Ascorbic Acid)",
+    "description": "Vitamin C is an essential vitamin used to support the immune system and prevent scurvy.",
+    "uses": [
+      "Prevention and treatment of vitamin C deficiency.",
+      "Support for immune health and skin repair."
+    ],
+    "dosage": "100mg to 1000mg daily.",
+    "side_effects": [
+      "Stomach upset or diarrhea (at high doses)."
+    ],
+    "precautions": "High doses may increase the risk of kidney stones in some people."
+  },
+  {
+    "name": "Calcium Carbonate",
+    "description": "Calcium carbonate is a mineral supplement used to prevent or treat low blood calcium levels.",
+    "uses": [
+      "Support for bone health and prevention of osteoporosis.",
+      "Relief of heartburn and acid indigestion (as an antacid)."
+    ],
+    "dosage": "500mg to 1200mg daily in divided doses.",
+    "side_effects": [
+      "Constipation",
+      "Gas",
+      "Bloating"
+    ],
+    "precautions": "Best taken with food. Consult a doctor if you have kidney stones."
+  },
+  {
+    "name": "Vitamin D3 (Cholecalciferol)",
+    "description": "Vitamin D3 is essential for calcium absorption and bone health.",
+    "uses": [
+      "Prevention and treatment of vitamin D deficiency.",
+      "Support for bone and immune health."
+    ],
+    "dosage": "400IU to 2000IU daily, or as prescribed.",
+    "side_effects": [
+      "Rarely causes side effects at normal doses."
+    ],
+    "precautions": "High doses should be taken under medical supervision."
+  },
+  {
+    "name": "Mebeverine (Colofac)",
+    "description": "Mebeverine is an antispasmodic used to treat irritable bowel syndrome (IBS).",
+    "uses": [
+      "Relief of stomach pain and cramps associated with IBS."
+    ],
+    "dosage": "135mg three times a day, 20 minutes before meals.",
+    "side_effects": [
+      "Skin rash",
+      "Itching",
+      "Rarely causes significant side effects."
+    ],
+    "precautions": "Consult a doctor if symptoms change or worsen."
+  },
+  {
+    "name": "Oseltamivir (Tamiflu)",
+    "description": "Oseltamivir is an antiviral medication used to treat and prevent influenza (flu).",
+    "uses": [
+      "Treatment of flu symptoms if started within 48 hours of onset.",
+      "Prevention of flu in people exposed to the virus."
+    ],
+    "dosage": "75mg twice daily for 5 days for treatment.",
+    "side_effects": [
+      "Nausea",
+      "Vomiting",
+      "Headache"
+    ],
+    "precautions": "Not a substitute for the flu vaccine. Complete the full course."
+  },
+  {
+    "name": "Metoclopramide (Maxolon)",
+    "description": "Metoclopramide is used to treat nausea, vomiting, and heartburn.",
+    "uses": [
+      "Relief of nausea and vomiting.",
+      "Treatment of GERD and slow stomach emptying (gastroparesis)."
+    ],
+    "dosage": "10mg three times a day, 30 minutes before meals.",
+    "side_effects": [
+      "Drowsiness",
+      "Restlessness",
+      "Fatigue",
+      "Involuntary muscle movements (rare but serious)"
+    ],
+    "precautions": "Do not use for more than 5 days. Avoid alcohol."
+  },
+  {
+    "name": "Hydroxyzine (Atarax)",
+    "description": "Hydroxyzine is an antihistamine used to treat itching and anxiety.",
+    "uses": [
+      "Relief of itching caused by allergies.",
+      "Treatment of short-term anxiety and tension.",
+      "Sedation before surgery."
+    ],
+    "dosage": "25mg to 50mg three to four times daily.",
+    "side_effects": [
+      "Drowsiness",
+      "Dry mouth",
+      "Dizziness",
+      "Blurred vision"
+    ],
+    "precautions": "Highly sedating; avoid driving. Consult a doctor if you have heart rhythm issues."
+  },
+  {
+    "name": "Miconazole (Daktarin)",
+    "description": "Miconazole is an antifungal medication used for skin and oral fungal infections.",
+    "uses": [
+      "Treatment of athlete's foot, ringworm, and oral thrush.",
+      "Treatment of vaginal yeast infections."
+    ],
+    "dosage": "Apply cream twice daily. Use oral gel after meals.",
+    "side_effects": [
+      "Skin irritation",
+      "Nausea or vomiting (with oral gel)"
+    ],
+    "precautions": "Avoid contact with eyes. Inform your doctor if you are taking blood thinners like warfarin."
+  },
+  {
+    "name": "Silver Sulfadiazine (Flammazine)",
+    "description": "Silver sulfadiazine is a topical antibiotic used to prevent and treat infections in burns.",
+    "uses": [
+      "Prevention and treatment of infection in second- and third-degree burns."
+    ],
+    "dosage": "Apply to the cleaned burn area 1-2 times daily.",
+    "side_effects": [
+      "Skin discoloration",
+      "Burning or itching sensation",
+      "Rash"
+    ],
+    "precautions": "Do not use during late pregnancy or on premature infants. Consult a doctor if a rash develops."
+  },
+  {
+    "name": "Mupirocin (Bactroban)",
+    "description": "Mupirocin is a topical antibiotic used to treat skin infections like impetigo.",
+    "uses": [
+      "Treatment of bacterial skin infections (impetigo, folliculitis).",
+      "Elimination of MRSA from the nose."
+    ],
+    "dosage": "Apply a small amount to the affected area 3 times daily for up to 10 days.",
+    "side_effects": [
+      "Burning",
+      "Stinging",
+      "Itching",
+      "Dryness"
+    ],
+    "precautions": "Avoid contact with eyes. Consult a doctor if no improvement in 3-5 days."
+  },
+  {
+    "name": "Permethrin (Scaboma)",
+    "description": "Permethrin is used to treat scabies and head lice.",
+    "uses": [
+      "Treatment of scabies (skin mites).",
+      "Treatment of head lice."
+    ],
+    "dosage": "Apply cream/lotion thoroughly from neck to toes and wash off after 8-14 hours.",
+    "side_effects": [
+      "Itching",
+      "Redness",
+      "Stinging"
+    ],
+    "precautions": "All family members may need treatment. Wash all clothing and bedding in hot water."
+  },
+  {
+    "name": "Terbinafine (Lamisil)",
+    "description": "Terbinafine is an antifungal used to treat skin and nail infections.",
+    "uses": [
+      "Treatment of athlete's foot, jock itch, and ringworm.",
+      "Treatment of fungal nail infections."
+    ],
+    "dosage": "Apply cream 1-2 times daily. Oral tablets as prescribed.",
+    "side_effects": [
+      "Skin irritation",
+      "Taste changes (with oral tablets)",
+      "Stomach upset"
+    ],
+    "precautions": "Oral use requires liver function monitoring. Continue topical treatment for recommended duration."
+  },
+  {
+    "name": "Koffy Syrup",
+    "description": "Koffy is a common cough syrup in Myanmar used to relieve various types of cough.",
+    "uses": [
+      "Relief of dry cough and productive cough.",
+      "Soothing an irritated throat."
+    ],
+    "dosage": "Adults: 10ml to 15ml three times a day.",
+    "side_effects": [
+      "Drowsiness",
+      "Dry mouth",
+      "Dizziness"
+    ],
+    "precautions": "May cause drowsiness. Consult a doctor if cough persists for more than a week."
+  },
+  {
+    "name": "Sunkist (Vitamin C)",
+    "description": "Sunkist is a popular Vitamin C supplement in Myanmar.",
+    "uses": [
+      "Boosting the immune system.",
+      "Prevention of Vitamin C deficiency."
+    ],
+    "dosage": "One tablet daily.",
+    "side_effects": [
+      "Stomach upset (at high doses)."
+    ],
+    "precautions": "Do not exceed the recommended dose."
+  },
+  {
+    "name": "Tiger Balm",
+    "description": "Tiger Balm is a topical ointment used for pain relief.",
+    "uses": [
+      "Relief of muscle aches and pains.",
+      "Relief of tension headaches (apply to temples).",
+      "Relief of itchiness from insect bites."
+    ],
+    "dosage": "Rub gently over the affected area 3-4 times daily.",
+    "side_effects": [
+      "Skin irritation or redness in some people."
+    ],
+    "precautions": "For external use only. Avoid contact with eyes and mucous membranes."
+  },
+  {
+    "name": "Zam-Buk",
+    "description": "Zam-Buk is a traditional medicated ointment.",
+    "uses": [
+      "Relief of minor cuts, burns, and bruises.",
+      "Relief of insect bites and itchy skin."
+    ],
+    "dosage": "Apply to the affected area as needed.",
+    "side_effects": [
+      "Skin irritation (rare)."
+    ],
+    "precautions": "For external use only."
+  },
+  {
+    "name": "Eno",
+    "description": "Eno is an effervescent fruit salt used as an antacid.",
+    "uses": [
+      "Rapid relief of acidity, heartburn, and indigestion."
+    ],
+    "dosage": "One sachet (5g) dissolved in a glass of water. Do not take more than 2 doses a day.",
+    "side_effects": [
+      "Gas",
+      "Stomach bloating"
+    ],
+    "precautions": "Not suitable for people on a low-sodium diet. Consult a doctor if you have kidney or heart problems."
+  },
+  {
+    "name": "Traditional Medicine No. 1 (Digestive)",
+    "description": "A common Myanmar traditional medicine for digestion.",
+    "uses": [
+      "Relief of indigestion, stomach bloating, and loss of appetite."
+    ],
+    "dosage": "1-2 tablets or 1/2 teaspoon of powder after meals.",
+    "side_effects": [
+      "Mild stomach upset (rare)."
+    ],
+    "precautions": "Consult a traditional medicine practitioner for prolonged use."
+  },
+  {
+    "name": "Traditional Medicine No. 2 (Anti-flatulence)",
+    "description": "Myanmar traditional medicine used for relieving gas and wind.",
+    "uses": [
+      "Relief of flatulence, dizziness, and body aches attributed to 'wind' in traditional medicine."
+    ],
+    "dosage": "As directed on the package, usually twice daily.",
+    "side_effects": [
+      "None reported at normal doses."
+    ],
+    "precautions": "Keep in a cool, dry place."
+  },
+  {
+    "name": "Traditional Medicine No. 16 (Heat Relief)",
+    "description": "Myanmar traditional medicine used to balance body heat.",
+    "uses": [
+      "Relief of symptoms attributed to 'excessive heat' such as sore throat, mouth ulcers, and constipation."
+    ],
+    "dosage": "One tablet or small amount of powder twice daily.",
+    "side_effects": [
+      "Mild diarrhea (rare)."
+    ],
+    "precautions": "Consult a practitioner if symptoms persist."
+  },
+  {
+    "name": "Methycobal (Mecobalamin)",
+    "description": "Methycobal is a form of vitamin B12 used to treat peripheral neuropathies and megaloblastic anemia.",
+    "uses": [
+      "Treatment of peripheral neuropathies (nerve damage).",
+      "Treatment of megaloblastic anemia due to vitamin B12 deficiency."
+    ],
+    "dosage": "500mcg three times a day, or as prescribed by a doctor.",
+    "side_effects": [
+      "Loss of appetite",
+      "Nausea",
+      "Diarrhea",
+      "Skin rash (rare)"
+    ],
+    "precautions": "Consult a doctor if you are pregnant or breastfeeding. Long-term use requires monitoring."
+  },
+  {
+    "name": "Warfarin (Panwarfin)",
+    "description": "Warfarin is an anticoagulant (blood thinner) used to prevent blood clots.",
+    "uses": [
+      "Prevention of blood clots in the legs, lungs, and heart.",
+      "Reducing the risk of stroke and heart attack."
+    ],
+    "dosage": "As prescribed (requires regular blood tests to monitor INR).",
+    "side_effects": [
+      "Bleeding more easily",
+      "Bruising",
+      "Nosebleeds",
+      "Heavy periods"
+    ],
+    "precautions": "Avoid activities that may cause injury. Maintain a consistent intake of vitamin K-rich foods (green leafy vegetables). Consult a doctor before taking other medicines."
+  },
+  {
+    "name": "Insulin (Human Insulin)",
+    "description": "Insulin is used to control blood sugar in people with diabetes.",
+    "uses": [
+      "Treatment of type 1 and type 2 diabetes mellitus."
+    ],
+    "dosage": "As prescribed (injected subcutaneously).",
+    "side_effects": [
+      "Low blood sugar (hypoglycemia)",
+      "Weight gain",
+      "Swelling or itching at the injection site"
+    ],
+    "precautions": "Monitor blood sugar regularly. Learn the signs of hypoglycemia and how to treat it."
+  },
+  {
+    "name": "Valsartan (Diovan)",
+    "description": "Valsartan is an angiotensin II receptor blocker (ARB) used to treat high blood pressure and heart failure.",
+    "uses": [
+      "Treatment of hypertension.",
+      "Treatment of heart failure.",
+      "Improving survival after a heart attack."
+    ],
+    "dosage": "40mg to 320mg once daily.",
+    "side_effects": [
+      "Dizziness",
+      "Headache",
+      "Fatigue",
+      "Cough (less common than with ACE inhibitors)"
+    ],
+    "precautions": "Do not use during pregnancy. Monitor kidney function and potassium levels."
+  },
+  {
+    "name": "Metoprolol (Betaloc)",
+    "description": "Metoprolol is a beta-blocker used to treat high blood pressure, chest pain, and heart failure.",
+    "uses": [
+      "Treatment of hypertension.",
+      "Prevention of angina (chest pain).",
+      "Improving survival after a heart attack."
+    ],
+    "dosage": "25mg to 200mg once or twice daily.",
+    "side_effects": [
+      "Slow heart rate",
+      "Dizziness",
+      "Fatigue",
+      "Depression"
+    ],
+    "precautions": "Do not stop taking abruptly. Consult a doctor if you have asthma."
+  },
+  {
+    "name": "Diazepam (Valium)",
+    "description": "Diazepam is a benzodiazepine used to treat anxiety, muscle spasms, and seizures.",
+    "uses": [
+      "Short-term relief of anxiety.",
+      "Relief of muscle spasms.",
+      "Management of seizures and alcohol withdrawal."
+    ],
+    "dosage": "2mg to 10mg two to four times daily (as prescribed).",
+    "side_effects": [
+      "Drowsiness",
+      "Fatigue",
+      "Muscle weakness",
+      "Dizziness"
+    ],
+    "precautions": "High potential for addiction and dependence. Avoid alcohol. Do not drive while taking this medicine."
+  },
+  {
+    "name": "Alprazolam (Xanax)",
+    "description": "Alprazolam is used to treat anxiety and panic disorders.",
+    "uses": [
+      "Short-term management of anxiety disorders.",
+      "Treatment of panic disorder."
+    ],
+    "dosage": "0.25mg to 0.5mg three times daily (as prescribed).",
+    "side_effects": [
+      "Drowsiness",
+      "Lightheadedness",
+      "Dry mouth",
+      "Weight changes"
+    ],
+    "precautions": "May be habit-forming. Do not stop suddenly. Avoid alcohol."
+  },
+  {
+    "name": "Digoxin (Lanoxin)",
+    "description": "Digoxin is used to treat heart failure and certain types of irregular heartbeats.",
+    "uses": [
+      "Management of heart failure.",
+      "Control of heart rate in atrial fibrillation."
+    ],
+    "dosage": "0.125mg to 0.25mg once daily (as prescribed).",
+    "side_effects": [
+      "Nausea",
+      "Vomiting",
+      "Dizziness",
+      "Vision changes (yellow/green tint)"
+    ],
+    "precautions": "Requires regular monitoring of blood levels and heart rate. Report signs of toxicity (nausea, vision changes) to a doctor."
+  },
+  {
+    "name": "Isosorbide Dinitrate (Isordil)",
+    "description": "Isosorbide dinitrate is a nitrate used to prevent chest pain (angina).",
+    "uses": [
+      "Prevention of angina attacks.",
+      "Treatment of chronic heart failure (with other drugs)."
+    ],
+    "dosage": "5mg to 40mg two to three times daily.",
+    "side_effects": [
+      "Headache (common)",
+      "Dizziness",
+      "Flushing",
+      "Low blood pressure"
+    ],
+    "precautions": "Do not use with medications for erectile dysfunction (e.g., sildenafil). Sit or lie down if feeling dizzy."
+  },
+  {
+    "name": "Prednisone",
+    "description": "Prednisone is a corticosteroid used to reduce inflammation and suppress the immune system.",
+    "uses": [
+      "Treatment of allergic reactions, asthma, and autoimmune diseases.",
+      "Treatment of inflammatory conditions like arthritis."
+    ],
+    "dosage": "5mg to 60mg per day (dosage varies widely).",
+    "side_effects": [
+      "Weight gain",
+      "Increased appetite",
+      "Difficulty sleeping",
+      "High blood sugar"
+    ],
+    "precautions": "May mask signs of infection. Do not stop suddenly if used for a long period."
+  },
+  {
+    "name": "Hydrocortisone (Skin Cream)",
+    "description": "Hydrocortisone is a mild corticosteroid used to reduce skin inflammation and itching.",
+    "uses": [
+      "Relief of itching and inflammation from insect bites, eczema, and rashes."
+    ],
+    "dosage": "Apply thinly to the affected area 2 to 4 times daily.",
+    "side_effects": [
+      "Skin thinning (with long-term use)",
+      "Burning or stinging sensation"
+    ],
+    "precautions": "Avoid use on the face or broken skin unless directed by a doctor."
+  },
+  {
+    "name": "Moxifloxacin (Vigamox)",
+    "description": "Moxifloxacin is an antibiotic used to treat bacterial infections, including eye infections.",
+    "uses": [
+      "Treatment of bacterial conjunctivitis (pink eye).",
+      "Treatment of respiratory infections (oral form)."
+    ],
+    "dosage": "One drop in the affected eye 3 times a day.",
+    "side_effects": [
+      "Eye irritation",
+      "Dry eyes",
+      "Blurry vision"
+    ],
+    "precautions": "Do not wear contact lenses while you have signs of a bacterial eye infection."
+  },
+  {
+    "name": "Tamsulosin (Harnal)",
+    "description": "Tamsulosin is used to treat symptoms of an enlarged prostate (BPH).",
+    "uses": [
+      "Improving urination in men with benign prostatic hyperplasia."
+    ],
+    "dosage": "0.4mg once daily, 30 minutes after the same meal each day.",
+    "side_effects": [
+      "Dizziness",
+      "Runny nose",
+      "Abnormal ejaculation"
+    ],
+    "precautions": "May cause a drop in blood pressure when standing up. Consult a doctor before cataract surgery."
+  },
+  {
+    "name": "Finasteride (Proscar)",
+    "description": "Finasteride is used to treat enlarged prostate and male pattern hair loss.",
+    "uses": [
+      "Treatment of symptoms of BPH.",
+      "Treatment of male pattern baldness (at lower doses)."
+    ],
+    "dosage": "1mg to 5mg once daily.",
+    "side_effects": [
+      "Decreased libido",
+      "Erectile dysfunction",
+      "Breast tenderness"
+    ],
+    "precautions": "Pregnant women should not handle crushed tablets as it can affect a male fetus."
+  },
+  {
+    "name": "Sildenafil (Viagra)",
+    "description": "Sildenafil is used to treat erectile dysfunction and pulmonary arterial hypertension.",
+    "uses": [
+      "Treatment of erectile dysfunction.",
+      "Improving exercise capacity in pulmonary hypertension."
+    ],
+    "dosage": "25mg to 100mg as needed, about 1 hour before sexual activity.",
+    "side_effects": [
+      "Headache",
+      "Flushing",
+      "Indigestion",
+      "Vision changes"
+    ],
+    "precautions": "Do not use with nitrates for chest pain. Seek emergency help if an erection lasts more than 4 hours."
+  },
+  {
+    "name": "Levofloxacin (Cravit)",
+    "description": "Levofloxacin is a fluoroquinolone antibiotic used to treat bacterial infections.",
+    "uses": [
+      "Treatment of pneumonia, sinus infections, and urinary tract infections.",
+      "Treatment of skin infections and chronic bronchitis."
+    ],
+    "dosage": "250mg to 750mg once daily for 7 to 14 days.",
+    "side_effects": [
+      "Nausea",
+      "Diarrhea",
+      "Headache",
+      "Tendonitis (rare)"
+    ],
+    "precautions": "Drink plenty of fluids. Avoid excessive sun exposure. Not recommended for children or pregnant women."
+  },
+  {
+    "name": "Gliclazide (Diamicron)",
+    "description": "Gliclazide is an oral hypoglycemic medicine used to treat type 2 diabetes.",
+    "uses": [
+      "Control of blood sugar levels in type 2 diabetes mellitus."
+    ],
+    "dosage": "30mg to 120mg once daily with breakfast.",
+    "side_effects": [
+      "Hypoglycemia (low blood sugar)",
+      "Nausea",
+      "Stomach upset"
+    ],
+    "precautions": "Monitor blood sugar regularly. Carry a sugar source in case of hypoglycemia."
+  },
+  {
+    "name": "Spironolactone (Aldactone)",
+    "description": "Spironolactone is a potassium-sparing diuretic used to treat high blood pressure and fluid retention.",
+    "uses": [
+      "Treatment of heart failure and liver cirrhosis edema.",
+      "Treatment of hypertension and hyperaldosteronism."
+    ],
+    "dosage": "25mg to 100mg daily.",
+    "side_effects": [
+      "Hyperkalemia (high potassium)",
+      "Breast tenderness",
+      "Dizziness"
+    ],
+    "precautions": "Avoid potassium supplements. Monitor kidney function and potassium levels."
+  },
+  {
+    "name": "Carvedilol (Dilatrend)",
+    "description": "Carvedilol is a beta-blocker used to treat heart failure and high blood pressure.",
+    "uses": [
+      "Management of congestive heart failure.",
+      "Treatment of hypertension."
+    ],
+    "dosage": "3.125mg to 25mg twice daily.",
+    "side_effects": [
+      "Dizziness",
+      "Fatigue",
+      "Low blood pressure",
+      "Weight gain"
+    ],
+    "precautions": "Do not stop suddenly. Take with food to reduce the risk of low blood pressure."
+  },
+  {
+    "name": "Hydrochlorothiazide (HCTZ)",
+    "description": "Hydrochlorothiazide is a thiazide diuretic (water pill) used to treat high blood pressure.",
+    "uses": [
+      "Treatment of hypertension.",
+      "Treatment of edema caused by heart failure or kidney disease."
+    ],
+    "dosage": "12.5mg to 50mg once daily.",
+    "side_effects": [
+      "Dizziness",
+      "Lightheadedness",
+      "Frequent urination",
+      "Muscle cramps"
+    ],
+    "precautions": "May cause potassium loss. Use sunscreen as it may increase sun sensitivity."
+  },
+  {
+    "name": "Candesartan (Blopress)",
+    "description": "Candesartan is an ARB used to treat high blood pressure and heart failure.",
+    "uses": [
+      "Treatment of hypertension.",
+      "Management of heart failure with reduced ejection fraction."
+    ],
+    "dosage": "8mg to 32mg once daily.",
+    "side_effects": [
+      "Dizziness",
+      "Back pain",
+      "Respiratory infection"
+    ],
+    "precautions": "Do not use during pregnancy. Monitor kidney function regularly."
+  },
+  {
+    "name": "Sitagliptin + Metformin (Janumet)",
+    "description": "A combination medicine used to improve blood sugar control in adults with type 2 diabetes.",
+    "uses": [
+      "Treatment of type 2 diabetes mellitus when single agent therapy is insufficient."
+    ],
+    "dosage": "One tablet twice daily with meals.",
+    "side_effects": [
+      "Nausea",
+      "Diarrhea",
+      "Upper respiratory tract infection"
+    ],
+    "precautions": "Risk of lactic acidosis (rare but serious). Monitor kidney function."
+  },
+  {
+    "name": "Clarithromycin (Klacid)",
+    "description": "Clarithromycin is a macrolide antibiotic used to treat various bacterial infections.",
+    "uses": [
+      "Treatment of throat, sinus, and lung infections.",
+      "Treatment of skin infections and stomach ulcers (with other drugs)."
+    ],
+    "dosage": "250mg to 500mg twice daily for 7 to 14 days.",
+    "side_effects": [
+      "Metallic taste",
+      "Nausea",
+      "Vomiting",
+      "Diarrhea"
+    ],
+    "precautions": "Consult a doctor if you have heart rhythm disorders. Many drug interactions."
+  },
+  {
+    "name": "Loratadine (Claritin)",
+    "description": "Loratadine is a non-drowsy antihistamine used to treat allergy symptoms.",
+    "uses": [
+      "Relief of sneezing, runny nose, and itchy eyes.",
+      "Treatment of hives and skin allergies."
+    ],
+    "dosage": "10mg once daily.",
+    "side_effects": [
+      "Headache",
+      "Dry mouth",
+      "Fatigue"
+    ],
+    "precautions": "Generally non-drowsy, but use caution if performing tasks requiring alertness."
+  },
+  {
+    "name": "Cetirizine (Zyrtec)",
+    "description": "Cetirizine is an antihistamine used to treat cold and allergy symptoms.",
+    "uses": [
+      "Relief of hay fever and allergy symptoms.",
+      "Treatment of itching and swelling caused by hives."
+    ],
+    "dosage": "5mg to 10mg once daily.",
+    "side_effects": [
+      "Drowsiness",
+      "Dry mouth",
+      "Dizziness"
+    ],
+    "precautions": "May cause drowsiness. Avoid alcohol while taking this medicine."
+  },
+  {
+    "name": "Domperidone (Motilium)",
+    "description": "Domperidone is an anti-sickness medicine used to treat nausea and vomiting.",
+    "uses": [
+      "Relief of nausea and vomiting.",
+      "Treatment of stomach discomfort and bloating."
+    ],
+    "dosage": "10mg up to 3 times a day, 30 minutes before meals.",
+    "side_effects": [
+      "Dry mouth",
+      "Drowsiness",
+      "Headache"
+    ],
+    "precautions": "Not for long-term use. Consult a doctor if you have heart conditions."
+  },
+  {
+    "name": "Ranitidine (Zantac)",
+    "description": "Ranitidine is an H2 blocker used to reduce stomach acid.",
+    "uses": [
+      "Treatment of heartburn, acid reflux, and stomach ulcers."
+    ],
+    "dosage": "150mg twice daily or 300mg at bedtime.",
+    "side_effects": [
+      "Headache",
+      "Constipation",
+      "Diarrhea"
+    ],
+    "precautions": "Consult a doctor if symptoms persist for more than 2 weeks."
+  },
+  {
+    "name": "Pantoprazole (Controloc)",
+    "description": "Pantoprazole is a proton pump inhibitor used to treat acid-related stomach and throat problems.",
+    "uses": [
+      "Treatment of GERD and erosive esophagitis.",
+      "Prevention of stomach ulcers."
+    ],
+    "dosage": "20mg to 40mg once daily before breakfast.",
+    "side_effects": [
+      "Headache",
+      "Diarrhea",
+      "Stomach pain",
+      "Gas"
+    ],
+    "precautions": "Long-term use may affect vitamin B12 absorption and bone density."
+  },
+  {
+    "name": "Bisacodyl (Dulcolax)",
+    "description": "Bisacodyl is a stimulant laxative used to treat constipation.",
+    "uses": [
+      "Short-term relief of occasional constipation.",
+      "Bowel preparation before surgery or medical procedures."
+    ],
+    "dosage": "5mg to 10mg once daily at bedtime.",
+    "side_effects": [
+      "Stomach cramps",
+      "Nausea",
+      "Diarrhea"
+    ],
+    "precautions": "Do not take with milk or antacids. Do not use for more than 5 days without medical advice."
+  },
+  {
+    "name": "Loperamide (Imodium)",
+    "description": "Loperamide is used to treat sudden diarrhea.",
+    "uses": [
+      "Symptomatic relief of acute diarrhea."
+    ],
+    "dosage": "4mg initially, then 2mg after each loose stool. Maximum 16mg per day.",
+    "side_effects": [
+      "Constipation",
+      "Dizziness",
+      "Stomach cramps"
+    ],
+    "precautions": "Do not use if you have bloody stools or fever. Drink plenty of fluids."
+  },
+  {
+    "name": "Hyoscine (Buscopan)",
+    "description": "Hyoscine is an antispasmodic used to relieve stomach and intestinal cramps.",
+    "uses": [
+      "Relief of abdominal cramps and spasms.",
+      "Treatment of irritable bowel syndrome (IBS) symptoms."
+    ],
+    "dosage": "10mg to 20mg three to four times daily.",
+    "side_effects": [
+      "Dry mouth",
+      "Blurred vision",
+      "Constipation"
+    ],
+    "precautions": "Consult a doctor if you have glaucoma or an enlarged prostate."
+  },
+  {
+    "name": "Mebeverine (Colofac)",
+    "description": "Mebeverine is used to treat symptoms of irritable bowel syndrome (IBS).",
+    "uses": [
+      "Relief of abdominal pain, cramps, and bloating associated with IBS."
+    ],
+    "dosage": "135mg three times a day, 20 minutes before meals.",
+    "side_effects": [
+      "Rarely causes side effects. May cause a rash."
+    ],
+    "precautions": "Consult a doctor if symptoms worsen or change."
+  },
+  {
+    "name": "Dicycloverine (Bentyl)",
+    "description": "Dicycloverine is used to treat functional bowel/irritable bowel syndrome.",
+    "uses": [
+      "Relief of stomach and intestinal spasms."
+    ],
+    "dosage": "10mg to 20mg four times daily.",
+    "side_effects": [
+      "Dizziness",
+      "Dry mouth",
+      "Blurred vision",
+      "Nausea"
+    ],
+    "precautions": "May cause drowsiness. Avoid use in infants under 6 months."
+  },
+  {
+    "name": "Simethicone (Air-X)",
+    "description": "Simethicone is used to relieve the painful symptoms of too much gas in the stomach and intestines.",
+    "uses": [
+      "Relief of pressure, bloating, and gas (flatulence)."
+    ],
+    "dosage": "40mg to 125mg after meals and at bedtime.",
+    "side_effects": [
+      "Rarely causes side effects."
+    ],
+    "precautions": "Chew tablets thoroughly before swallowing."
+  },
+  {
+    "name": "Calcium + Vitamin D3",
+    "description": "A combination supplement for bone health.",
+    "uses": [
+      "Prevention and treatment of osteoporosis.",
+      "Calcium and Vitamin D deficiency."
+    ],
+    "dosage": "One tablet daily or as prescribed.",
+    "side_effects": [
+      "Constipation",
+      "Stomach upset"
+    ],
+    "precautions": "Consult a doctor if you have kidney stones."
+  },
+  {
+    "name": "Cetzy (Cetirizine)",
+    "description": "Cetzy is a brand of Cetirizine, an antihistamine used to relieve allergy symptoms.",
+    "uses": [
+      "Relief of sneezing, runny nose, and watery eyes.",
+      "Treatment of itchy skin rashes and hives."
+    ],
+    "dosage": "One 10mg tablet once daily.",
+    "side_effects": [
+      "Drowsiness",
+      "Dry mouth",
+      "Fatigue"
+    ],
+    "precautions": "May cause drowsiness; avoid driving or operating machinery until you know how it affects you."
+  },
+  {
+    "name": "V.Rohto (Vitamin Eye Drops)",
+    "description": "V.Rohto contains various vitamins and amino acids to relieve eye fatigue and redness.",
+    "uses": [
+      "Relief of eye strain and tiredness.",
+      "Reduction of eye redness and irritation caused by dust or sweat."
+    ],
+    "dosage": "Instill 2 to 3 drops, 5 to 6 times daily.",
+    "side_effects": [
+      "Stinging sensation (temporary)",
+      "Blurred vision (temporary)"
+    ],
+    "precautions": "Do not use while wearing soft contact lenses. If irritation persists, consult a doctor."
+  },
+  {
+    "name": "Tears Naturale (Artificial Tears)",
+    "description": "Tears Naturale is a lubricant eye drop used to relieve dry and irritated eyes.",
+    "uses": [
+      "Relief of burning and irritation due to dryness of the eye.",
+      "Protection against further irritation."
+    ],
+    "dosage": "Instill 1 or 2 drops in the affected eye(s) as needed.",
+    "side_effects": [
+      "Minor eye irritation",
+      "Temporary blurred vision"
+    ],
+    "precautions": "Discard the container 30 days after opening. If you experience eye pain or vision changes, stop use."
+  },
+  {
+    "name": "Gentamicin (Antibiotic Eye Drops)",
+    "description": "Gentamicin is an antibiotic eye drop used to treat bacterial infections of the eye.",
+    "uses": [
+      "Treatment of conjunctivitis (pink eye).",
+      "Treatment of other superficial bacterial eye infections."
+    ],
+    "dosage": "Instill 1 to 2 drops every 4 hours into the affected eye.",
+    "side_effects": [
+      "Burning or stinging",
+      "Redness",
+      "Itching"
+    ],
+    "precautions": "Use for the full prescribed duration even if symptoms improve. Do not touch the dropper tip to any surface."
+  },
+  {
+    "name": "Amoxicillin (Amoxil)",
+    "description": "Amoxicillin is a penicillin antibiotic that fights bacteria.",
+    "uses": [
+      "Treatment of infections of the ear, nose, throat, urinary tract, and skin."
+    ],
+    "dosage": "Usually 250mg to 500mg every 8 hours or 500mg to 875mg every 12 hours.",
+    "side_effects": [
+      "Nausea",
+      "Vomiting",
+      "Diarrhea",
+      "Rash"
+    ],
+    "precautions": "Do not use if you are allergic to penicillin. Complete the full course."
+  },
+  {
+    "name": "Omeprazole (Prilosec / Losec)",
+    "description": "Omeprazole is a proton pump inhibitor that decreases the amount of acid produced in the stomach.",
+    "uses": [
+      "Treatment of gastroesophageal reflux disease (GERD)",
+      "Stomach ulcers",
+      "Heartburn"
+    ],
+    "dosage": "Usually 20mg once daily before a meal.",
+    "side_effects": [
+      "Headache",
+      "Abdominal pain",
+      "Nausea",
+      "Diarrhea"
+    ],
+    "precautions": "Take 30-60 minutes before breakfast for best results."
+  },
+  {
+    "name": "Gaviscon (Antacid)",
+    "description": "Gaviscon is an antacid that provides fast relief from heartburn and acid indigestion.",
+    "uses": [
+      "Relief of heartburn",
+      "Acid reflux",
+      "Indigestion after meals"
+    ],
+    "dosage": "10-20ml of liquid or 2-4 tablets after meals and at bedtime.",
+    "side_effects": [
+      "Constipation",
+      "Diarrhea (rare)"
+    ],
+    "precautions": "If symptoms persist for more than 7 days, consult a doctor."
+  },
+  {
+    "name": "Neurobion (Vitamin B1+B6+B12)",
+    "description": "Neurobion is a combination of three essential neurotropic B vitamins.",
+    "uses": [
+      "Treatment of vitamin B deficiency",
+      "Relief of nerve pain, numbness, and tingling."
+    ],
+    "dosage": "One tablet 1-3 times daily.",
+    "side_effects": [
+      "Nausea",
+      "Diarrhea",
+      "Abdominal pain (rare)"
+    ],
+    "precautions": "Consult a doctor if you are pregnant or breastfeeding."
+  },
+  {
+    "name": "Decolgen (Cold & Flu)",
+    "description": "Decolgen is a combined medicine for the relief of common cold and flu symptoms.",
+    "uses": [
+      "Relief of nasal congestion",
+      "Runny nose",
+      "Headache",
+      "Fever"
+    ],
+    "dosage": "One tablet every 4 to 6 hours.",
+    "side_effects": [
+      "Drowsiness",
+      "Dry mouth",
+      "Dizziness"
+    ],
+    "precautions": "May cause drowsiness. Do not drive or operate machinery."
+  },
+  {
+    "name": "Amlodipine (Norvasc)",
+    "description": "Amlodipine is a calcium channel blocker used to treat high blood pressure.",
+    "uses": [
+      "Treatment of high blood pressure (hypertension)",
+      "Prevention of chest pain (angina)."
+    ],
+    "dosage": "Usually 5mg once daily, can be increased to 10mg.",
+    "side_effects": [
+      "Swelling of ankles",
+      "Headache",
+      "Dizziness",
+      "Fatigue"
+    ],
+    "precautions": "Check blood pressure regularly. Do not stop suddenly."
+  },
+  {
+    "name": "Atorvastatin (Lipitor)",
+    "description": "Atorvastatin is a statin medicine used to lower cholesterol.",
+    "uses": [
+      "Prevention of cardiovascular disease",
+      "Lowering high cholesterol and triglycerides."
+    ],
+    "dosage": "10mg to 80mg once daily.",
+    "side_effects": [
+      "Joint pain",
+      "Diarrhea",
+      "Muscle pain (rare)"
+    ],
+    "precautions": "Avoid large amounts of grapefruit juice. Take at the same time each day."
+  },
+  {
+    "name": "Burmeton (Chlorpheniramine)",
+    "description": "Burmeton is an antihistamine used to relieve allergy symptoms.",
+    "uses": [
+      "Relief of runny nose",
+      "Sneezing",
+      "Itchy eyes",
+      "Allergic skin reactions."
+    ],
+    "dosage": "4mg every 4 to 6 hours.",
+    "side_effects": [
+      "Strong drowsiness",
+      "Dry mouth",
+      "Blurred vision"
+    ],
+    "precautions": "Causes significant drowsiness. Avoid alcohol."
+  }
+]

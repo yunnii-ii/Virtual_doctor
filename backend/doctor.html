@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor - Virtual Doctor Telemedicine</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background-color: #f0f4f8;
+            height: 100vh;
+            max-height: 100vh;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+        .header {
+            background: linear-gradient(135deg, #2EC4B6 0%, #0d9488 100%);
+            color: white;
+            padding: 12px 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            flex-shrink: 0;
+        }
+        .header h1 {
+            font-size: 22px;
+            font-weight: 600;
+        }
+        .content {
+            flex: 1;
+            padding: 16px 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            max-width: 1600px;
+            width: 100%;
+            margin: 0 auto;
+            min-height: 0;
+        }
+        .control-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+        .status {
+            padding: 12px 20px;
+            border-radius: 10px;
+            background: white;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            font-weight: 500;
+            color: #374151;
+            flex: 1;
+        }
+        button {
+            padding: 14px 28px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        button.primary {
+            background: linear-gradient(135deg, #2EC4B6 0%, #0d9488 100%);
+            color: white;
+        }
+        button.primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(46, 196, 182, 0.3);
+        }
+        button.danger {
+            background: linear-gradient(135deg, #EF4444 0%, #dc2626 100%);
+            color: white;
+        }
+        button.danger:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
+        }
+        .main-area {
+            display: flex;
+            gap: 16px;
+            flex: 1;
+            min-height: 0;
+        }
+        .summary {
+            width: 300px;
+            background: white;
+            border-radius: 12px;
+            padding: 16px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            border-left: 5px solid #2EC4B6;
+            flex-shrink: 0;
+            overflow-y: auto;
+        }
+        .summary h3 {
+            color: #1f2937;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+        .summary #summaryText {
+            color: #4b5563;
+            line-height: 1.5;
+            white-space: pre-wrap;
+            font-size: 14px;
+        }
+        .videos {
+            display: flex;
+            gap: 16px;
+            flex: 1;
+            min-width: 0;
+        }
+        .video-box {
+            flex: 1;
+            min-width: 0;
+            background: white;
+            border-radius: 12px;
+            padding: 12px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .video-box h3 {
+            color: #1f2937;
+            font-size: 16px;
+            font-weight: 600;
+        }
+        video {
+            flex: 1;
+            width: 100%;
+            background: #000;
+            border-radius: 10px;
+            object-fit: cover;
+            min-height: 0;
+        }
+        .hidden {
+            display: none !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>👨‍⚕️ Virtual Doctor - Telemedicine Console</h1>
+    </div>
+    <div class="content">
+        <div class="control-bar">
+            <button class="primary" onclick="joinRoom()" id="startBtn">
+                📞 Start Direct Call
+            </button>
+            <div class="status" id="status">Status: Not connected</div>
+            <button class="danger hidden" onclick="endCall()" id="endCallBtn">
+                🛑 End Call
+            </button>
+        </div>
+        
+        <div class="main-area">
+            <div class="summary hidden" id="patientSummary">
+                <h3>📋 Patient Summary</h3>
+                <div id="summaryText"></div>
+            </div>
+            
+            <div class="videos">
+                <div class="video-box">
+                    <h3>👨‍⚕️ You (Your Camera)</h3>
+                    <video id="localVideo" autoplay muted playsinline></video>
+                </div>
+                <div class="video-box">
+                    <h3>👤 Patient</h3>
+                    <video id="remoteVideo" autoplay playsinline></video>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let localStream;
+        let peerConnection;
+        let socket;
+        const signalingBaseURL = 'ws://' + window.location.host;
+
+        const statusDiv = document.getElementById('status');
+        const localVideo = document.getElementById('localVideo');
+        const remoteVideo = document.getElementById('remoteVideo');
+        const patientSummaryDiv = document.getElementById('patientSummary');
+        const summaryTextDiv = document.getElementById('summaryText');
+        const endCallBtn = document.getElementById('endCallBtn');
+        const startBtn = document.getElementById('startBtn');
+
+        function updateStatus(message) {
+            statusDiv.textContent = 'Status: ' + message;
+        }
+
+        const FIXED_ROOM_ID = 'virtual-doctor-direct-call';
+        async function joinRoom() {
+            const roomId = FIXED_ROOM_ID;
+            updateStatus('Connecting to direct call...');
+
+            try {
+                // Get local media
+                localStream = await navigator.mediaDevices.getUserMedia({ video: true, audio: true });
+                localVideo.srcObject = localStream;
+
+                // Connect to signaling server
+                socket = new WebSocket(signalingBaseURL + '/telemedicine/ws/' + roomId + '/doctor');
+
+                socket.onopen = () => {
+                    updateStatus('Connected to signaling server');
+                };
+
+                socket.onmessage = async (event) => {
+                    const data = JSON.parse(event.data);
+                    console.log('Received:', data);
+
+                    if (data.type === 'joined') {
+                        updateStatus('Waiting for patient...');
+                    } else if (data.from === 'patient') {
+                        if (data.payload.type === 'patient-ready') {
+                            summaryTextDiv.textContent = data.payload.summary;
+                            patientSummaryDiv.classList.remove('hidden');
+                            updateStatus('Patient ready, creating offer...');
+                            await createOffer();
+                        } else if (data.payload.type === 'answer') {
+                            await handleAnswer(data.payload.answer);
+                        } else if (data.payload.type === 'ice-candidate') {
+                            await handleIceCandidate(data.payload.candidate);
+                        }
+                    }
+                };
+
+                socket.onerror = (error) => {
+                    updateStatus('Error: ' + error);
+                };
+
+                socket.onclose = () => {
+                    updateStatus('Connection closed');
+                    endCall();
+                };
+
+                endCallBtn.classList.remove('hidden');
+                startBtn.classList.add('hidden');
+
+            } catch (error) {
+                console.error('Error joining room:', error);
+                updateStatus('Error: ' + error.message);
+                alert('Error joining room: ' + error.message);
+            }
+        }
+
+        async function createOffer() {
+            try {
+                const configuration = {
+                    iceServers: [
+                        { urls: 'stun:stun.l.google.com:19302' }
+                    ]
+                };
+                peerConnection = new RTCPeerConnection(configuration);
+
+                // Add local tracks
+                localStream.getTracks().forEach(track => {
+                    peerConnection.addTrack(track, localStream);
+                });
+
+                // Handle remote tracks
+                peerConnection.ontrack = (event) => {
+                    console.log('Received remote track:', event.track.kind);
+                    // Only set srcObject once to avoid AbortError from multiple play() interruptions
+                    if (remoteVideo.srcObject !== event.streams[0]) {
+                        remoteVideo.srcObject = event.streams[0];
+                    }
+                    updateStatus('Receiving remote stream (video + audio)');
+                };
+
+                // Handle ICE candidates
+                peerConnection.onicecandidate = (event) => {
+                    if (event.candidate) {
+                        socket.send(JSON.stringify({
+                            type: 'ice-candidate',
+                            candidate: event.candidate
+                        }));
+                    }
+                };
+
+                // Create and send offer
+                const offer = await peerConnection.createOffer();
+                await peerConnection.setLocalDescription(offer);
+                socket.send(JSON.stringify({
+                    type: 'offer',
+                    offer: offer
+                }));
+                updateStatus('Offer sent, waiting for answer...');
+
+            } catch (error) {
+                console.error('Error creating offer:', error);
+                updateStatus('Error creating offer: ' + error.message);
+            }
+        }
+
+        async function handleAnswer(answer) {
+            try {
+                await peerConnection.setRemoteDescription(new RTCSessionDescription(answer));
+                updateStatus('Answer received, connection established!');
+            } catch (error) {
+                console.error('Error handling answer:', error);
+                updateStatus('Error handling answer: ' + error.message);
+            }
+        }
+
+        async function handleIceCandidate(candidate) {
+            try {
+                await peerConnection.addIceCandidate(new RTCIceCandidate(candidate));
+            } catch (error) {
+                console.error('Error adding ICE candidate:', error);
+            }
+        }
+
+        function endCall() {
+            if (peerConnection) {
+                peerConnection.close();
+                peerConnection = null;
+            }
+            if (localStream) {
+                localStream.getTracks().forEach(track => track.stop());
+                localStream = null;
+            }
+            if (socket) {
+                socket.close();
+                socket = null;
+            }
+            localVideo.srcObject = null;
+            remoteVideo.srcObject = null;
+            patientSummaryDiv.classList.add('hidden');
+            endCallBtn.classList.add('hidden');
+            startBtn.classList.remove('hidden');
+            updateStatus('Call ended');
+        }
+    </script>
+</body>
+</html>

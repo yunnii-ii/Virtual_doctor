@@ -1,0 +1,52 @@
+[
+  {
+    "title": "Stay Hydrated",
+    "content": "Drinking enough water is crucial for maintaining energy levels, supporting digestion, and keeping your skin healthy. Aim for at least 8 glasses a day.",
+    "category": "General Health"
+  },
+  {
+    "title": "Get Enough Sleep",
+    "content": "Quality sleep is essential for physical health and mental well-being. Aim for 7-9 hours of restful sleep each night.",
+    "category": "Mental Health"
+  },
+  {
+    "title": "Balanced Diet",
+    "content": "Eat a variety of fruits, vegetables, lean proteins, and whole grains to ensure your body gets all the necessary nutrients.",
+    "category": "Nutrition"
+  },
+  {
+    "title": "Regular Exercise",
+    "content": "Engage in at least 150 minutes of moderate-intensity aerobic activity each week to improve heart health and mood.",
+    "category": "Physical Activity"
+  },
+  {
+    "title": "Manage Stress",
+    "content": "Practice mindfulness, meditation, or deep breathing exercises to help manage daily stress and improve overall health.",
+    "category": "Mental Health"
+  },
+  {
+    "title": "Wash Your Hands",
+    "content": "Regular handwashing with soap and water is one of the most effective ways to prevent the spread of germs and infections.",
+    "category": "Hygiene"
+  },
+  {
+    "title": "Limit Sugar Intake",
+    "content": "Reducing your intake of sugary drinks and snacks can lower your risk of obesity, type 2 diabetes, and heart disease.",
+    "category": "Nutrition"
+  },
+  {
+    "title": "Regular Health Checkups",
+    "content": "Regular visits to your doctor can help identify potential health issues early, when they are easier to treat.",
+    "category": "General Health"
+  },
+  {
+    "title": "Protect Your Skin",
+    "content": "Apply sunscreen and wear protective clothing to shield your skin from harmful UV rays and reduce the risk of skin cancer.",
+    "category": "General Health"
+  },
+  {
+    "title": "Maintain Social Connections",
+    "content": "Strong social bonds can improve your mental health, reduce stress, and even increase your lifespan.",
+    "category": "Mental Health"
+  }
+]
