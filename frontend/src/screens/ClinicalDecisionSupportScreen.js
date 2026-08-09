@@ -21,19 +21,26 @@ const symptomOptions = [
 
 const followUpQuestions = [
   "When did the symptoms start?",
-  "How severe is the pain or discomfort from 1 to 10?",
-  "Do you have any long-term illness or current medicines?",
-  "Is there chest pain, breathing difficulty, fainting, or confusion?",
+  "How severe is the symptom from 1 to 10?",
+  "Do you have chest pain, breathing difficulty, fainting, or confusion?",
+  "What medicines are you currently taking?",
+  "Do you have diabetes, hypertension, pregnancy, asthma, or heart disease?",
 ];
 
 const questionTranslationMap = {
   "When did the symptoms start?": "clinical_question_when_start",
   "How severe is the pain or discomfort from 1 to 10?":
     "clinical_question_severity",
+  "How severe is the symptom from 1 to 10?": "clinical_question_severity",
   "Do you have any long-term illness or current medicines?":
+    "clinical_question_long_term",
+  "Do you have diabetes, hypertension, pregnancy, asthma, or heart disease?":
     "clinical_question_long_term",
   "Is there chest pain, breathing difficulty, fainting, or confusion?":
     "clinical_question_red_flags",
+  "Do you have chest pain, breathing difficulty, fainting, or confusion?":
+    "clinical_question_red_flags",
+  "What medicines are you currently taking?": "clinical_question_medicines",
 };
 
 const ClinicalDecisionSupportScreen = () => {
@@ -227,6 +234,7 @@ const ClinicalDecisionSupportScreen = () => {
             {result?.triage ? (
               result.triage === "urgent" ? t("triage_urgent") : 
               result.triage === "doctor_consult" ? t("triage_doctor_consult") : 
+              result.triage === "self_care" ? t("triage_self_care") :
               result.triage
             ) : t("clinical_not_analyzed_yet")}
           </Text>
@@ -268,7 +276,9 @@ const ClinicalDecisionSupportScreen = () => {
           )}
           {Object.entries(answers).map(([question, answer]) => (
             <View key={question} style={styles.answerRow}>
-              <Text style={styles.answerQuestion}>{question}</Text>
+              <Text style={styles.answerQuestion}>
+                {t(questionTranslationMap[question] || question)}
+              </Text>
               <Text style={styles.answerText}>{answer}</Text>
             </View>
           ))}

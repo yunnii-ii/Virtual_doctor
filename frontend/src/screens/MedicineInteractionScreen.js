@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import { View, StyleSheet, ScrollView } from 'react-native';
+import { View, StyleSheet, ScrollView, TouchableOpacity } from 'react-native';
 import { Text, Card, Button, Searchbar, List, Divider, useTheme } from 'react-native-paper';
 import { ShieldAlert, CheckCircle2, AlertTriangle, Pill, Plus, Volume2, VolumeX } from 'lucide-react-native';
 import { useTranslation } from 'react-i18next';
-import * as Speech from 'expo-speech';
+import { speak, stop as stopTts } from '../utils/tts';
 
 const MedicineInteractionScreen = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const [med1, setMed1] = useState('');
   const [med2, setMed2] = useState('');
   const [result, setResult] = useState(null);
@@ -24,7 +24,7 @@ const MedicineInteractionScreen = () => {
 
   const stopSpeech = async () => {
     try {
-      await Speech.stop();
+      await stopTts();
       setIsSpeaking(false);
     } catch (error) {
       console.error("Stop speech error:", error);
@@ -39,7 +39,9 @@ const MedicineInteractionScreen = () => {
       return;
     }
     
-    let speechText = `${med1} and ${med2}. `;
+    const isMM = i18n.language === "mm";
+    const conjunction = isMM ? "နှင့်" : "and";
+    let speechText = `${med1} ${conjunction} ${med2}. `;
     if (result.severity === 'none') {
       speechText += t('no_known_interaction');
     } else {
@@ -50,9 +52,8 @@ const MedicineInteractionScreen = () => {
     
     try {
       setIsSpeaking(true);
-      await Speech.speak(speechText, {
-        language: 'en-US',
-        rate: 0.8,
+      await speak(speechText, {
+        language: isMM ? 'my' : 'en',
         onStart: () => setIsSpeaking(true),
         onDone: () => setIsSpeaking(false),
         onError: () => setIsSpeaking(false),
@@ -140,18 +141,23 @@ const MedicineInteractionScreen = () => {
                 ) : (
                   <AlertTriangle size={24} color={getSeverityColor(result.severity)} />
                 )}
-                <Text variant="titleMedium" style={[styles.severityText, { color: getSeverityColor(result.severity) }]}>
+                <Text variant="titleMedium" style={[styles.severityText, { color: getSeverityColor(result.severity) }]} numberOfLines={2}>
                   {result.severity === 'none' ? t('no_known_interaction') : t('interaction_warning')}
                 </Text>
               </View>
-              <Button 
-                mode="text" 
+              <TouchableOpacity 
                 onPress={speakResult} 
-                style={styles.speakButton}
-                contentStyle={styles.speakButtonContent}
+                style={[
+                  styles.speakButton,
+                  { backgroundColor: getSeverityColor(result.severity) }
+                ]}
+                activeOpacity={0.7}
               >
-                {isSpeaking ? <VolumeX size={24} color="#FF6B6B" /> : <Volume2 size={24} color={getSeverityColor(result.severity)} />}
-              </Button>
+                {isSpeaking 
+                  ? <VolumeX size={20} color="#FFFFFF" style={{ color: '#FFFFFF' }} /> 
+                  : <Volume2 size={20} color="#FFFFFF" style={{ color: '#FFFFFF' }} />
+                }
+              </TouchableOpacity>
             </View>
             <Divider style={styles.divider} />
             <Text variant="bodyMedium" style={styles.note}>{result.note}</Text>
@@ -182,10 +188,23 @@ const styles = StyleSheet.create({
   btn: { marginTop: 16, borderRadius: 12, backgroundColor: '#F472B6', height: 48, justifyContent: 'center' },
   resultCard: { borderRadius: 16, borderLeftWidth: 8, backgroundColor: '#FFF', elevation: 3 },
   resultHeader: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' },
-  resultHeaderLeft: { flexDirection: 'row', alignItems: 'center' },
-  severityText: { marginLeft: 12, fontWeight: 'bold' },
-  speakButton: { margin: 0 },
-  speakButtonContent: { paddingHorizontal: 0 },
+  resultHeaderLeft: { flexDirection: 'row', alignItems: 'center', flex: 1, flexShrink: 1 },
+  severityText: { marginLeft: 12, fontWeight: 'bold', flex: 1, flexShrink: 1 },
+  speakButton: {
+    flexShrink: 0,
+    width: 44,
+    height: 44,
+    borderRadius: 22,
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: '#F472B6',
+    marginLeft: 8,
+    elevation: 2,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.2,
+    shadowRadius: 4,
+  },
   divider: { my: 12 },
   note: { color: '#5A5F73', lineHeight: 22 },
   disclaimer: { marginTop: 16, color: '#B0B5C0', fontStyle: 'italic' },

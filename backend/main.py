@@ -18,60 +18,36 @@ import numpy as np
 import requests
 from PIL import Image
 from thefuzz import fuzz, process
-import socket
 from sqlalchemy.orm import Session
 import database
 from database import get_db, init_db
 from dotenv import load_dotenv
 from faster_whisper import WhisperModel
-import requests
 
 # Load environment variables
 load_dotenv()
 
+# Suppress the "unauthenticated requests to HF Hub" warning that comes from
+# faster-whisper / huggingface-hub when downloading whisper models. The library
+# prints this warning even for completely public models. Setting HF_TOKEN to a
+# placeholder (without a real token) is harmless and silences the noise.
+if not os.getenv("HF_TOKEN"):
+    os.environ["HF_TOKEN"] = "hf_local_only_no_token"
+if not os.getenv("HUGGINGFACE_HUB_DISABLE_TELEMETRY"):
+    os.environ["HUGGINGFACE_HUB_DISABLE_TELEMETRY"] = "1"
+import logging
+logging.getLogger("huggingface_hub").setLevel(logging.ERROR)
+
 # Initialize local Whisper model lazily (only when needed to save memory on startup)
 # You can choose size: tiny, base, small, medium, large
+# "small" model recommended for good Burmese (my) accuracy with acceptable CPU usage
 whisper_model = None
 
 def get_whisper_model():
     global whisper_model
     if whisper_model is None:
-        whisper_model = WhisperModel("tiny", device="cpu", compute_type="int8")
+        whisper_model = WhisperModel("small", device="cpu", compute_type="int8")
     return whisper_model
-
-HUGGINGFACE_API_TOKEN = os.getenv("HUGGINGFACE_API_TOKEN", "")
-HUGGINGFACE_TRANSCRIPTION_MODEL = os.getenv("HF_TRANSCRIPTION_MODEL", "openai/whisper-large-v3")
-USE_HUGGINGFACE_TRANSCRIPTION = os.getenv("USE_HUGGINGFACE_TRANSCRIPTION", "false").lower() == "true"
-
-
-def transcribe_with_huggingface(audio_path: str) -> str:
-    if not HUGGINGFACE_API_TOKEN:
-        raise RuntimeError("HUGGINGFACE_API_TOKEN is not configured")
-
-    try:
-        socket.gethostbyname("api-inference.huggingface.co")
-    except socket.gaierror as exc:
-        raise RuntimeError("Network unavailable for Hugging Face transcription") from exc
-
-    headers = {"Authorization": f"Bearer {HUGGINGFACE_API_TOKEN}"}
-    with open(audio_path, "rb") as audio_file:
-        files = {"file": audio_file}
-        response = requests.post(
-            f"https://api-inference.huggingface.co/models/{HUGGINGFACE_TRANSCRIPTION_MODEL}",
-            headers=headers,
-            files=files,
-            timeout=120,
-        )
-
-    if response.status_code != 200:
-        raise RuntimeError(f"Hugging Face transcription failed: {response.text}")
-
-    data = response.json()
-    if isinstance(data, dict) and "text" in data:
-        return data["text"]
-    if isinstance(data, list) and data and isinstance(data[0], dict) and "text" in data[0]:
-        return data[0]["text"]
-    raise RuntimeError(f"Unexpected Hugging Face response: {data}")
 
 # Password utility functions
 def hash_password(password: str) -> str:
@@ -988,6 +964,38 @@ RED_FLAG_SYMPTOMS = {
     "high fever",
 }
 
+RED_FLAG_TRANSLATIONS_MM = {
+    "chest pain": "ရင်နာ",
+    "shortness of breath": "အသက်ရှူခက်ခြင်း",
+    "difficulty breathing": "အသက်ရှူပြင်းခြင်း",
+    "fainting": "မေ့မြောခြင်း",
+    "confusion": "စိတ်ထုံလှုပ်ခြင်း",
+    "severe headache": "ခေါင်းကိုက်ပြင်းထန်ခြင်း",
+    "weakness": "အားနည်းခြင်း",
+    "slurred speech": "မိန်းချုပ်မှု",
+    "high fever": "အဖျားကြီးတက်ခြင်း",
+}
+
+TRIAGE_RECOMMENDATIONS = {
+    "urgent": {
+        "en": "Seek urgent medical review now, especially if symptoms are worsening.",
+        "mm": "လက္ခဏာများ ပိုမိုဆိုးရွားလာပါက အထူးသဖြင့် ချက်ချင်း အရေးပေါ်စစ်ဆေးမှု ခံယူပါ။",
+    },
+    "doctor_consult": {
+        "en": "Arrange a doctor consultation and continue monitoring vital signs.",
+        "mm": "ဆရာဝန်နှင့် တိုင်ပင်ဆွေးနွေးရန် စီစဉ်ပြီး ကျန်းမာရေး လက္ခဏာများကို ဆက်လက်စောင့်ကြည့်ပါ။",
+    },
+    "self_care": {
+        "en": "Use self-care and monitor symptoms for 24-48 hours.",
+        "mm": "ကိုယ်တိုင်စောင့်ကြည့်ကုသမှုပြုလုပ်ပြီး ၂၄-၄၈ နာရီကြာ လက္ခဏာများကို စောင့်ကြည့်ပါ။",
+    },
+}
+
+CLINICAL_DISCLAIMER = {
+    "en": "Clinical decision support is not a final diagnosis. A licensed clinician must confirm care decisions.",
+    "mm": "ဆေးဘက်ဆိုင်ရာ ဆုံးဖြတ်ချက်ပံ့ပိုးမှုသည် နောက်ဆုံးရောဂါရှာဖွေချက်မဟုတ်ပါ။ လိုင်စင်ရ ဆေးဘက်ဆိုင်ရာ ဗဟုသုတရှင်က ကုသမှုဆိုင်ရာ ဆုံးဖြတ်ချက်များကို အတည်ပြုရမည်။",
+}
+
 CLINICAL_FOLLOW_UPS = [
     "When did the symptoms start?",
     "How severe is the symptom from 1 to 10?",
@@ -1004,7 +1012,7 @@ def normalize_number(value, default=None):
     except (TypeError, ValueError):
         return default
 
-def match_disease_candidates(symptoms: List[str], limit: int = 3) -> List[Dict[str, Any]]:
+def match_disease_candidates(symptoms: List[str], limit: int = 3, lang_code: str = "en") -> List[Dict[str, Any]]:
     translated = translate_incoming_symptoms(symptoms)
     terms = [s.lower().strip() for s in translated + symptoms if s and s.strip()]
     scored = []
@@ -1022,15 +1030,22 @@ def match_disease_candidates(symptoms: List[str], limit: int = 3) -> List[Dict[s
         if score:
             scored.append((score, disease))
     scored.sort(key=lambda item: item[0], reverse=True)
-    return [
-        {
-            "name": disease.get("name", "Unknown"),
-            "description": disease.get("description", ""),
-            "recommendation": disease.get("recommendation", ""),
+    result = []
+    for score, disease_en in scored[:limit]:
+        entry = {
+            "name": disease_en.get("name", "Unknown"),
+            "description": disease_en.get("description", ""),
+            "recommendation": disease_en.get("recommendation", ""),
             "score": score,
         }
-        for score, disease in scored[:limit]
-    ]
+        if lang_code == "mm":
+            equiv, _ = _find_equivalent_in_dataset(disease_en, DISEASES_MM, min_score=0.20)
+            if equiv is not None:
+                entry["name"] = equiv.get("name") or entry["name"]
+                entry["description"] = equiv.get("description") or entry["description"]
+                entry["recommendation"] = equiv.get("recommendation") or entry["recommendation"]
+        result.append(entry)
+    return result
 
 def build_health_summary(summary: Dict[str, Any], patient_name: Optional[str]) -> str:
     lines = [
@@ -1045,26 +1060,60 @@ def build_health_summary(summary: Dict[str, Any], patient_name: Optional[str]) -
     return "\n".join(lines)
 
 def voice_command_action(transcript: str) -> Dict[str, str]:
-    text = transcript.lower().strip()
-    
-    # Check if transcript contains Myanmar characters
+    text = (transcript or "").strip()
+    text_lower = text.lower()
+
     has_myanmar = any('\u1000' <= c <= '\u109F' for c in text)
-    
-    if any(word in text for word in ["hospital", "ဆေးရုံ", "emergency"]):
+
+    def matches(*keywords):
+        for kw in keywords:
+            if not kw:
+                continue
+            kw_lower = kw.lower()
+            if '\u1000' <= kw[0] <= '\u109F':
+                if kw in text:
+                    return True
+            else:
+                if kw_lower in text_lower:
+                    return True
+        return False
+
+    if matches("hospital", "clinic", "doctor", "emergency",
+                "ဆေးရုံ", "ဆေးခန်း", "ဒေါက်တာ", "အရေးပေါ်",
+                "ဆေးရုံသွား", "ဆေးခန်းသွား", "ဆေးရုံရှာ", "ဆေးရုံကို", "ဆေးခန်းရှာ"):
         reply = "အနီးဆုံး ဆေးရုံများကို ဖွင့်နေပါသည်။" if has_myanmar else "Opening nearby hospitals."
         return {"action": "navigate", "screen": "NearbyHospitals", "reply": reply}
-    if any(word in text for word in ["blood pressure", "bp", "သွေးတိုး"]):
+
+    if matches("blood pressure", "bp",
+                "သွေးတိုး", "သွေးပေါင်ချိန်", "သွေးပေါင်",
+                "သွေးပေါင်ချိန်ပြ", "သွေးပေါင်ချိန်ကို", "သွေးပေါင်ချိန်မှတ်",
+                "သွေးတိုးစစ်", "သွေးပေါင်စစ်"):
         reply = "သွေးပေါင်ချိန် မှတ်တမ်းစာမျက်နှာကို ဖွင့်နေပါသည်။" if has_myanmar else "Opening blood pressure logger."
         return {"action": "navigate", "screen": "BloodPressure", "reply": reply}
-    if any(word in text for word in ["water", "ရေ"]):
+
+    if matches("water", "drink",
+                "ရေ", "သောက်", "ရေသောက်", "ရေသောက်မယ်", "ရေသောက်တယ်",
+                "ရေသောက်ဖို့", "ရေစာရင်း", "ရေမှတ်တမ်း"):
         reply = "ရေသောက်ခြင်း မှတ်တမ်းစာမျက်နှာကို ဖွင့်နေပါသည်။" if has_myanmar else "Opening water tracker."
         return {"action": "navigate", "screen": "WaterTracker", "reply": reply}
-    if any(word in text for word in ["medicine", "ဆေး"]):
+
+    if matches("medicine", "drug", "med",
+                "ဆေး", "ဆေးဝါး", "ဆေးအကြောင်း", "ဆေးအမည်",
+                "ဆေးရှာ", "ဆေးသိချင်", "ဆေးအကြောင်းပြ"):
         reply = "ဆေးအချက်အလက် စာမျက်နှာကို ဖွင့်နေပါသည်။" if has_myanmar else "Opening medicine information."
         return {"action": "navigate", "screen": "MedicineInfo", "reply": reply}
-    if any(word in text for word in ["fever", "cough", "symptom", "ဖျား", "ချောင်းဆိုး"]):
+
+    if matches("fever", "cough", "symptom", "sick", "pain", "ill",
+                "ဖျား", "ချောင်းဆိုး", "အဖျား", "လက္ခဏာ", "မူး", "နာ",
+                "အနာ", "အန်", "ဖျားနာ", "နာကျင်", "ဝေဒနာ", "ပျက်စီး"):
         reply = "လက္ခဏာစစ်ဆေးမှု စာမျက်နှာကို ဖွင့်နေပါသည်။" if has_myanmar else "Opening clinical decision support."
         return {"action": "navigate", "screen": "ClinicalDecisionSupport", "reply": reply}
+
+    if matches("appointment", "book", "schedule",
+                "ချိန်းချိတ်", "ချိန်းဆို", "န်တစ်ချိတ်", "အစီအစဥ်"):
+        reply = "ချိန်းဆိုမှု စာမျက်နှာကို ဖွင့်နေပါသည်။" if has_myanmar else "Opening appointments."
+        return {"action": "navigate", "screen": "Appointment", "reply": reply}
+
     reply = "သင့်ကိုယ်ပိုင် ကျန်းမာရေးစီမံချက် စာမျက်နှာကို ဖွင့်နေပါသည်။" if has_myanmar else "Opening your personalized health plan."
     return {"action": "navigate", "screen": "PersonalizedIntervention", "reply": reply}
 
@@ -1339,11 +1388,12 @@ async def get_tips(accept_language: str = Header("en")):
     return TIPS_MM if lang_code == "mm" else TIPS_EN
 
 @app.post("/clinical-decision-support")
-async def clinical_decision_support(payload: ClinicalDecisionRequest):
+async def clinical_decision_support(payload: ClinicalDecisionRequest, accept_language: str = Header("en")):
+    lang_code = accept_language.split(',')[0].split('-')[0].lower()
     symptoms = [s for s in payload.symptoms if s and s.strip()]
     normalized = [s.lower().strip() for s in translate_incoming_symptoms(symptoms)]
-    red_flags = sorted({s for s in normalized if s in RED_FLAG_SYMPTOMS})
-    candidates = match_disease_candidates(symptoms)
+    red_flags_en = sorted({s for s in normalized if s in RED_FLAG_SYMPTOMS})
+    candidates = match_disease_candidates(symptoms, lang_code=lang_code)
 
     answered_questions = {k: v for k, v in payload.answers.items() if v and v.strip()}
     next_questions = [
@@ -1352,17 +1402,21 @@ async def clinical_decision_support(payload: ClinicalDecisionRequest):
 
     risk_score = min(
         100,
-        15 + len(symptoms) * 7 + len(answered_questions) * 3 + len(red_flags) * 25,
+        15 + len(symptoms) * 7 + len(answered_questions) * 3 + len(red_flags_en) * 25,
     )
-    if red_flags:
+    if red_flags_en:
         triage = "urgent"
-        recommendation = "Seek urgent medical review now, especially if symptoms are worsening."
     elif risk_score >= 55:
         triage = "doctor_consult"
-        recommendation = "Arrange a doctor consultation and continue monitoring vital signs."
     else:
         triage = "self_care"
-        recommendation = "Use self-care and monitor symptoms for 24-48 hours."
+
+    recommendation = TRIAGE_RECOMMENDATIONS.get(triage, {}).get(lang_code, TRIAGE_RECOMMENDATIONS.get(triage, {}).get("en", ""))
+
+    if lang_code == "mm":
+        red_flags = [RED_FLAG_TRANSLATIONS_MM.get(rf, rf) for rf in red_flags_en]
+    else:
+        red_flags = red_flags_en
 
     return {
         "triage": triage,
@@ -1376,7 +1430,7 @@ async def clinical_decision_support(payload: ClinicalDecisionRequest):
             "answers": answered_questions,
             "profile": payload.user_profile,
         },
-        "disclaimer": "Clinical decision support is not a final diagnosis. A licensed clinician must confirm care decisions.",
+        "disclaimer": CLINICAL_DISCLAIMER.get(lang_code, CLINICAL_DISCLAIMER.get("en", "")),
     }
 
 @app.post("/predictive-analytics")
@@ -1577,63 +1631,68 @@ async def federated_learning_update(payload: FederatedUpdateRequest):
 @app.post("/voice/transcribe")
 async def transcribe_voice(file: UploadFile = File(...)):
     try:
-        # Read the file content
         audio_content = await file.read()
-        
-        # Save to temporary file for processing
+
         import tempfile
         with tempfile.NamedTemporaryFile(delete=False, suffix=os.path.splitext(file.filename)[1] or ".wav") as temp_file:
             temp_file.write(audio_content)
             temp_file_path = temp_file.name
-        
-        try:
-            transcript = ""
-            if USE_HUGGINGFACE_TRANSCRIPTION and HUGGINGFACE_API_TOKEN:
-                try:
-                    transcript = transcribe_with_huggingface(temp_file_path)
-                    print("Used Hugging Face transcription")
-                except Exception as hf_error:
-                    print(f"Hugging Face transcription failed: {hf_error}")
-                    print("Falling back to local Whisper")
-                    transcript = ""
 
-            if not transcript.strip():
-                # Fallback to local faster-whisper
-                segments, info = get_whisper_model().transcribe(
+        try:
+            model = get_whisper_model()
+
+            transcript = ""
+            try:
+                segments, info = model.transcribe(
                     temp_file_path,
                     beam_size=5,
-                    language="en",
+                    language="my",
                     task="transcribe",
                     vad_filter=True,
                 )
-                transcript = ""
                 for segment in segments:
                     transcript += segment.text
-                
-                if len(transcript.strip()) < 2:
-                    segments, info = get_whisper_model().transcribe(
+            except Exception as my_err:
+                print(f"Burmese transcription attempt failed: {my_err}")
+
+            if len(transcript.strip()) < 2:
+                try:
+                    segments, info = model.transcribe(
                         temp_file_path,
                         beam_size=5,
-                        language="my",
+                        language="en",
                         task="transcribe",
                         vad_filter=True,
                     )
                     transcript = ""
                     for segment in segments:
                         transcript += segment.text
-            
-            # Clean transcript - keep only English letters, Burmese, numbers, and basic punctuation
+                except Exception as en_err:
+                    print(f"English fallback transcription failed: {en_err}")
+
+            if len(transcript.strip()) < 2:
+                try:
+                    segments, info = model.transcribe(
+                        temp_file_path,
+                        beam_size=5,
+                        task="transcribe",
+                        vad_filter=True,
+                    )
+                    transcript = ""
+                    for segment in segments:
+                        transcript += segment.text
+                except Exception as auto_err:
+                    print(f"Auto-detect transcription failed: {auto_err}")
+
             cleaned_transcript = re.sub(r'[^\x00-\x7F\u1000-\u109F\s\d\.\,\!\?]', '', transcript).strip()
-            
+
             return {
                 "transcript": cleaned_transcript,
             }
         finally:
-            # Clean up temp file
             os.unlink(temp_file_path)
     except Exception as e:
         print(f"Transcription error: {e}")
-        # Fallback if fails - return empty string
         return {
             "transcript": "",
         }

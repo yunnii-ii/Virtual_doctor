@@ -191,6 +191,8 @@ const resources = {
         "Do you have any long-term illness or current medicines?",
       clinical_question_red_flags:
         "Is there chest pain, breathing difficulty, fainting, or confusion?",
+      clinical_question_medicines:
+        "What medicines are you currently taking?",
       clinical_summary: "Clinical Summary",
       clinical_symptoms_label: "Symptoms",
       clinical_risk_score: "Risk score",
@@ -198,6 +200,7 @@ const resources = {
       voice_input_placeholder: "Press mic to answer or describe symptoms",
       triage_urgent: "urgent",
       triage_doctor_consult: "doctor_consult",
+      triage_self_care: "Self-care",
       predictive_analytics_screen_title: "Predictive Health Analytics",
       predictive_analytics_screen_subtitle:
         "A simple digital twin view from local health logs.",
@@ -704,6 +707,8 @@ const resources = {
         "သင့်မှာ ရှည်လျားစွာ ဆက်ခံရခြင်း သို့မဟုတ် လက်ရှိ ဆေးဝါးများ ရှိပါသလား?",
       clinical_question_red_flags:
         "ရင်ဘတ်နာ, အသက်ရှူပြင်း, သတိလျော့, ဒေါသအစားအနားတို့ ရှိပါသလား?",
+      clinical_question_medicines:
+        "သင် လက်ရှိ သောက်နေသည့် ဆေးဝါးများ မည်များနည်း?",
       predictive_analytics_screen_title: "ခန့်မှန်း ကျန်းမာရေး သုံးသပ်ချက်",
       predictive_analytics_screen_subtitle:
         "ဒေသခံ ကျန်းမာရေး မှတ်တမ်းများမှ ရရှိထားသော ရိုးရှင်းတဲ့ ခန့်မှန်းချက်။",
@@ -730,6 +735,7 @@ const resources = {
       voice_input_placeholder: "ဖြေကြားရန် သို့မဟုတ် လက္ခဏာများဖော်ပြရန် မိုက်ခရိုဖုန်းကိုနှိပ်ပါ",
       triage_urgent: "အရေးပေါ်",
       triage_doctor_consult: "ဆရာဝန်နှင့်တိုင်ပင်ပါ",
+      triage_self_care: "ကိုယ်တိုင် စောင့်ကြည့်ခြင်း",
       telemedicine_screen_title: "ပေါင်းစည်းထားသော အွန်လိုင်းဆေးခန်း",
       telemedicine_screen_subtitle:
         "AI ဖန်တီးထားသည့် ကျန်းမာရေး အကျဉ်းချုပ်နှင့် ဗီဒီယို မှာဆုံ စနစ်။",

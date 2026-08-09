@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { View, StyleSheet, ScrollView, Alert } from "react-native";
+import { View, StyleSheet, ScrollView, Alert, TouchableOpacity } from "react-native";
 import {
   Text,
   Chip,
@@ -23,7 +23,7 @@ import {
 } from "lucide-react-native";
 import { useTranslation } from "react-i18next";
 import VoiceInput from "../components/VoiceInput";
-import * as Speech from "expo-speech";
+import { speak, stop as stopTts } from "../utils/tts";
 
 const ALL_SYMPTOMS = [
   "sneezing",
@@ -255,7 +255,7 @@ const SymptomCheckerScreen = () => {
 
   const stopSpeech = async () => {
     try {
-      await Speech.stop();
+      await stopTts();
       setIsSpeaking(false);
     } catch (error) {
       console.error("Stop speech error:", error);
@@ -279,9 +279,8 @@ const SymptomCheckerScreen = () => {
     
     try {
       setIsSpeaking(true);
-      await Speech.speak(speechText, {
-        language: isMM ? 'my-MM' : 'en-US',
-        rate: 0.8,
+      await speak(speechText, {
+        language: isMM ? 'my' : 'en',
         onStart: () => setIsSpeaking(true),
         onDone: () => setIsSpeaking(false),
         onError: () => setIsSpeaking(false),
@@ -407,17 +406,21 @@ const SymptomCheckerScreen = () => {
           <Card.Content>
             <View style={styles.resultHeader}>
               <Activity size={24} color="#7C8CFF" />
-              <Text variant="headlineSmall" style={styles.diseaseName}>
-                {result.disease}
-              </Text>
-              <Button 
-                mode="text" 
+              <View style={styles.diseaseNameContainer}>
+                <Text variant="headlineSmall" style={styles.diseaseName} numberOfLines={2}>
+                  {result.disease}
+                </Text>
+              </View>
+              <TouchableOpacity 
                 onPress={speakResult} 
                 style={styles.speakButton}
-                contentStyle={styles.speakButtonContent}
+                activeOpacity={0.7}
               >
-                {isSpeaking ? <VolumeX size={24} color="#FF9AA2" /> : <Volume2 size={24} color="#7C8CFF" />}
-              </Button>
+                {isSpeaking 
+                  ? <VolumeX size={20} color="#FFFFFF" style={{ color: '#FFFFFF' }} /> 
+                  : <Volume2 size={20} color="#FFFFFF" style={{ color: '#FFFFFF' }} />
+                }
+              </TouchableOpacity>
             </View>
 
             <Text variant="bodyLarge" style={styles.description}>
@@ -535,13 +538,26 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
   },
   speakButton: {
-    margin: 0,
+    flexShrink: 0,
+    width: 44,
+    height: 44,
+    borderRadius: 22,
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: '#7C8CFF',
+    marginLeft: 8,
+    elevation: 2,
+    shadowColor: '#7C8CFF',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.3,
+    shadowRadius: 4,
   },
-  speakButtonContent: {
-    paddingHorizontal: 0,
+  diseaseNameContainer: {
+    marginLeft: 12,
+    flex: 1,
+    flexShrink: 1,
   },
   diseaseName: {
-    marginLeft: 12,
     fontWeight: "bold",
     color: "#7C8CFF",
   },

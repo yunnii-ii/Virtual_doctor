@@ -3,13 +3,13 @@ import { Alert, ScrollView, StyleSheet, View } from "react-native";
 import { Button, Card, Chip, Text, TextInput } from "react-native-paper";
 import { useTranslation } from "react-i18next";
 import { Audio } from "expo-av";
-import * as Speech from "expo-speech";
 import { Mic, Send, Volume2 } from "lucide-react-native";
 import { COLORS, FONTS, SHADOWS } from "../utils/theme";
 import { transcribeVoice } from "../api";
+import { speak, stop } from "../utils/tts";
 
 const VoiceAssistantScreen = ({ navigation }) => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const sampleCommands = [
     t("voice_assistant_sample_fever"),
     t("voice_assistant_sample_bp"),
@@ -174,13 +174,17 @@ const VoiceAssistantScreen = ({ navigation }) => {
     };
   };
 
-  const speakAndNavigate = (commandResult) => {
+  const speakAndNavigate = async (commandResult) => {
     const nextReply =
       commandResult.reply || t("voice_assistant_command_completed");
     setReply(nextReply);
-    Speech.speak(nextReply, { language: "my-MM" });
+    const isMM = i18n.language === "mm";
+    await stop();
+    await speak(nextReply, { language: isMM ? "my" : "en" });
     if (commandResult.screen) {
-      navigation.navigate(commandResult.screen);
+      setTimeout(() => {
+        navigation.navigate(commandResult.screen);
+      }, 2500);
     }
   };
 

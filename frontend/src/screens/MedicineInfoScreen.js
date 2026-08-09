@@ -9,11 +9,11 @@ import { saveToHistory } from '../utils/storage';
 import { Pill, Camera, Search, Info, AlertTriangle, HelpCircle, ChevronRight, Image as ImageIcon, Volume2, VolumeX } from 'lucide-react-native';
 import { useTranslation } from 'react-i18next';
 import VoiceInput from '../components/VoiceInput';
-import * as Speech from 'expo-speech';
+import { speak, stop as stopTts } from '../utils/tts';
 
 const MedicineInfoScreen = () => {
   const { user } = useAuth();
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const [searchQuery, setSearchQuery] = useState('');
   const [loading, setLoading] = useState(false);
   const [medicine, setMedicine] = useState(null);
@@ -133,7 +133,7 @@ const MedicineInfoScreen = () => {
 
   const stopSpeech = async () => {
     try {
-      await Speech.stop();
+      await stopTts();
       setIsSpeaking(false);
     } catch (error) {
       console.error("Stop speech error:", error);
@@ -148,21 +148,21 @@ const MedicineInfoScreen = () => {
       return;
     }
     
+    const isMM = i18n.language === "mm";
     let speechText = `${medicine.name}. ${medicine.description}. `;
-    speechText += "Uses: ";
+    speechText += isMM ? "အသုံးပြုပုံ: " : "Uses: ";
     speechText += medicine.uses.join(". ");
-    speechText += ". Dosage: ";
+    speechText += isMM ? ". သောက်ပမာဏ: " : ". Dosage: ";
     speechText += medicine.dosage;
-    speechText += ". Side effects: ";
+    speechText += isMM ? ". ဘေးထွက်ဆိုးကျိုးများ: " : ". Side effects: ";
     speechText += medicine.side_effects.join(", ");
-    speechText += ". Precautions: ";
+    speechText += isMM ? ". သတိထားရန်: " : ". Precautions: ";
     speechText += medicine.precautions;
     
     try {
       setIsSpeaking(true);
-      await Speech.speak(speechText, {
-        language: 'en-US',
-        rate: 0.8,
+      await speak(speechText, {
+        language: isMM ? 'my' : 'en',
         onStart: () => setIsSpeaking(true),
         onDone: () => setIsSpeaking(false),
         onError: () => setIsSpeaking(false),
@@ -272,17 +272,19 @@ const MedicineInfoScreen = () => {
             <View style={styles.resultHeader}>
               <Pill size={32} color="#5568FF" />
               <View style={styles.titleContainer}>
-                <Text variant="headlineSmall" style={styles.medName}>{medicine.name}</Text>
-                <Text variant="bodyMedium" style={styles.medDesc}>{medicine.description}</Text>
+                <Text variant="headlineSmall" style={styles.medName} numberOfLines={2}>{medicine.name}</Text>
+                <Text variant="bodyMedium" style={styles.medDesc} numberOfLines={3}>{medicine.description}</Text>
               </View>
-              <Button 
-                mode="text" 
+              <TouchableOpacity 
                 onPress={speakResult} 
                 style={styles.speakButton}
-                contentStyle={styles.speakButtonContent}
+                activeOpacity={0.7}
               >
-                {isSpeaking ? <VolumeX size={24} color="#FF6B6B" /> : <Volume2 size={24} color="#5568FF" />}
-              </Button>
+                {isSpeaking 
+                  ? <VolumeX size={20} color="#FFFFFF" style={{ color: '#FFFFFF' }} /> 
+                  : <Volume2 size={20} color="#FFFFFF" style={{ color: '#FFFFFF' }} />
+                }
+              </TouchableOpacity>
             </View>
 
             <Divider style={styles.divider} />
@@ -409,10 +411,19 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
   },
   speakButton: {
-    margin: 0,
-  },
-  speakButtonContent: {
-    paddingHorizontal: 0,
+    flexShrink: 0,
+    width: 44,
+    height: 44,
+    borderRadius: 22,
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: '#5568FF',
+    marginLeft: 8,
+    elevation: 2,
+    shadowColor: '#5568FF',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.3,
+    shadowRadius: 4,
   },
   titleContainer: {
     marginLeft: 16,
