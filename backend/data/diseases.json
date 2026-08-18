@@ -7654,77 +7654,271 @@
     ]
   },
   {
-    "name": "/နားနားနေနေနေပါ ()",
-    "description": "လက္ခဏာများမှာ နားနားနေနေနေပါ",
+    "name": "Chikungunya",
+    "description": "Chikungunya is a viral disease transmitted by Aedes mosquitoes characterized by abrupt onset of high fever and debilitating, severe joint pain.",
     "symptoms": [
-      "နားနားနေနေနေပါ",
-      "Significant weight loss or failure to gain weight"
+      "Sudden high fever",
+      "Severe debilitating joint pain",
+      "Joint swelling",
+      "Muscle aches",
+      "Headache",
+      "Fatigue",
+      "Skin rash"
     ],
     "precautions": [
-      "ကျန်းမာရေးဆိုင်ရာ လမ်းညွှန်ချက်များကို လိုက်နာပါ",
-      "ဆရာဝန်နှင့် တိုင်ပင်ပါ"
+      "Use mosquito repellent and eliminate stagnant water around living quarters.",
+      "Get adequate bed rest and avoid strenuous joint activities."
     ],
-    "recommendation": "ဆရာဝန်နှင့် တိုင်ပင်ဆွေးနွေးပြီး လိုအပ်သော ဆေးဝါးများကို သောက်သုံးပါ။",
+    "recommendation": "Rest, adequate fluid hydration, paracetamol for pain/fever relief, physical therapy exercises for chronic joint stiffness",
     "medications": [
-      "သီးခြားဆေးဝါးအတွက် ဆရာဝန်နှင့်တိုင်ပင်ပါ"
+      "Paracetamol (Acetaminophen)",
+      "Oral Rehydration Salts (ORS)"
     ]
   },
   {
-    "name": "နာကျင်ခြင်း",
-    "description": "လက္ခဏာများမှာ နာကျင်ခြင်း",
+    "name": "Hand, Foot, and Mouth Disease (HFMD)",
+    "description": "Hand, foot, and mouth disease (HFMD) is a contagious viral infection common in young children, characterized by sores in the mouth and a rash on the hands and feet.",
     "symptoms": [
-      "နာကျင်ခြင်း",
-      "Trigger points"
+      "Fever",
+      "Sore throat",
+      "Painful blisters/sores in the mouth and on tongue",
+      "Red spots or blisters on palms of hands, soles of feet, and buttocks",
+      "Loss of appetite",
+      "Fussiness or irritability in infants"
     ],
     "precautions": [
-      "ကျန်းမာရေးဆိုင်ရာ လမ်းညွှန်ချက်များကို လိုက်နာပါ",
-      "ဆရာဝန်နှင့် တိုင်ပင်ပါ"
+      "Wash hands frequently with soap and water.",
+      "Disinfect toys and common surfaces.",
+      "Keep infected children home from school/daycare until blisters heal."
     ],
-    "recommendation": "ဆေးဝါး ( အကိုက်အခဲပျောက်ဆေးများ, )",
+    "recommendation": "Adequate hydration with cool liquids/ice pops, soft bland diet, paracetamol or ibuprofen for pain/fever, mouth numbing rinses if prescribed",
     "medications": [
-      "Diazepam",
-      "အိုင်ဗျူပရိုဖန် (Ibuprofen)",
-      "ပါရာစီတမော (Paracetamol)"
+      "Paracetamol (Acetaminophen)",
+      "Ibuprofen"
     ]
   },
   {
-    "name": "- ခါးနာခြင်း",
-    "description": "လက္ခဏာများမှာ ခါးနာခြင်း",
+    "name": "Tetanus (Lockjaw)",
+    "description": "Tetanus is a serious bacterial disease caused by Clostridium tetani spores entering puncture wounds, leading to painful muscle contractions, particularly of the jaw and neck.",
     "symptoms": [
-      "ခါးနာခြင်း",
-      "Discomfort in the pelvic area"
+      "Jaw cramping / inability to open mouth (lockjaw)",
+      "Sudden, involuntary muscle spasms, often in the stomach and back",
+      "Painful muscle stiffness throughout the body",
+      "Difficulty swallowing",
+      "Fever and sweating",
+      "Elevated blood pressure and rapid heart rate"
     ],
     "precautions": [
-      "ကျန်းမာရေးဆိုင်ရာ လမ်းညွှန်ချက်များကို လိုက်နာပါ",
-      "ဆရာဝန်နှင့် တိုင်ပင်ပါ"
+      "Keep all cuts, scrapes, and puncture wounds clean and disinfected.",
+      "Maintain up-to-date tetanus vaccination (booster shot every 10 years).",
+      "Seek immediate medical attention for deep, dirty, or rusty puncture wounds."
     ],
-    "recommendation": "ဆရာဝန်နှင့် တိုင်ပင်ဆွေးနွေးပြီး လိုအပ်သော ဆေးဝါးများကို သောက်သုံးပါ။",
+    "recommendation": "Urgent hospitalization in intensive care, wound cleaning and debridement, Tetanus Immunoglobulin (TIG), tetanus toxoid vaccine booster, intravenous antibiotics (metronidazole/penicillin), muscle relaxants",
     "medications": [
-      "Diclofenac (Voltaren)",
-      "အိုင်ဗျူပရိုဖန် (Ibuprofen)",
-      "ပါရာစီတမော (Paracetamol)"
+      "Tetanus Toxoid Vaccine",
+      "Tetanus Immunoglobulin (TIG)",
+      "Metronidazole / Penicillin"
     ]
   },
   {
-    "name": "ဖျားခြင်း",
-    "description": "လက္ခဏာများမှာ အဆစ်အမြစ်နာခြင်း, ဖျားခြင်း",
+    "name": "Fatty Liver Disease (NAFLD)",
+    "description": "Non-alcoholic fatty liver disease (NAFLD) is an umbrella term for conditions characterized by excess fat stored in liver cells, often associated with obesity, diabetes, and dyslipidemia.",
     "symptoms": [
-      "အဆစ်အမြစ်နာခြင်း",
-      "ဖျားခြင်း",
-      "အဖုအပိမ့်ထွက်ခြင်း",
-      "Heart inflammation"
+      "Fatigue and general malaise",
+      "Discomfort or dull ache in upper right abdomen",
+      "Abdominal swelling (in advanced stages)",
+      "Enlarged liver (hepatomegaly)"
     ],
     "precautions": [
-      "ကျန်းမာရေးဆိုင်ရာ လမ်းညွှန်ချက်များကို လိုက်နာပါ",
-      "ဆရာဝန်နှင့် တိုင်ပင်ပါ"
+      "Maintain a healthy body weight through gradual weight loss.",
+      "Eat a balanced diet rich in vegetables, fruits, and whole grains while avoiding sugary drinks and refined carbs.",
+      "Limit or strictly avoid alcohol consumption."
     ],
-    "recommendation": "ပဋိဇီဝဆေးများ ( ), - ဆေးဝါး, ဆေးဝါး",
+    "recommendation": "Gradual weight loss (7-10% of body weight), Mediterranean diet, regular aerobic exercise (150 mins/week), control of diabetes/blood pressure/cholesterol, liver function monitoring",
     "medications": [
-      "အမောက်ဆိုဆလင် (Amoxicillin)",
-      "အဇစ်သရိုမိုင်စင် (Azithromycin)",
-      "Diclofenac (Voltaren)",
-      "အိုင်ဗျူပရိုဖန် (Ibuprofen)",
-      "ပါရာစီတမော (Paracetamol)"
+      "Vitamin E (in non-diabetic NASH, on doctor advice)",
+      "Metformin / Atorvastatin (for underlying metabolic conditions)"
+    ]
+  },
+  {
+    "name": "Frozen Shoulder (Adhesive Capsulitis)",
+    "description": "Frozen shoulder is a condition characterized by stiffness, severe pain, and significant limitation of motion in the shoulder joint capsule.",
+    "symptoms": [
+      "Dull, aching pain in one shoulder joint, worse at night",
+      "Severe stiffness and inability to raise arm overhead",
+      "Difficulty with daily tasks like reaching back or dressing",
+      "Limited range of motion in all directions"
+    ],
+    "precautions": [
+      "Avoid forceful jerk movements of the affected shoulder.",
+      "Perform gentle stretching exercises within comfort limits."
+    ],
+    "recommendation": "Physical therapy stretching exercises, warm compresses before exercise, NSAIDs for pain relief, corticosteroid joint injection in severe stages, gradual mobilization",
+    "medications": [
+      "Ibuprofen / Naproxen",
+      "Paracetamol"
+    ]
+  },
+  {
+    "name": "Cervical Spondylosis",
+    "description": "Cervical spondylosis is age-related wear and tear affecting the spinal disks in the neck, causing neck pain, stiffness, and radiating numbness or tingling in the arms.",
+    "symptoms": [
+      "Neck pain and stiffness",
+      "Tingling, numbness, or weakness in arms, hands, or fingers",
+      "Headaches originating from the base of the skull",
+      "Grinding or popping sensation when turning the neck",
+      "Loss of balance or coordination (in severe nerve compression)"
+    ],
+    "precautions": [
+      "Maintain good neck posture and avoid prolonged looking down at mobile phones.",
+      "Use a supportive ergonomic pillow while sleeping.",
+      "Take frequent breaks during desk work."
+    ],
+    "recommendation": "Neck strengthening and stretching exercises, physical therapy, ergonomic workspace setup, NSAIDs for flare-ups, heat/cold therapy, soft cervical collar for short periods",
+    "medications": [
+      "Paracetamol / Ibuprofen",
+      "Vitamin B-complex (Neurobion / Nerve support)"
+    ]
+  },
+  {
+    "name": "Back Muscle Strain & Sprain",
+    "description": "Back Muscle Strain & Sprain is an injury to back muscles or ligaments resulting in back pain, upper back aching, muscle stiffness, and body soreness.",
+    "symptoms": [
+      "Back pain",
+      "Upper back pain",
+      "Muscle aches",
+      "Body aches",
+      "Stiffness",
+      "Tenderness"
+    ],
+    "precautions": [
+      "Avoid lifting heavy objects",
+      "Maintain proper sitting posture",
+      "Get plenty of rest",
+      "Apply heat or cold packs"
+    ],
+    "recommendation": "Rest, heat/cold therapy, pain relief medications, gentle stretching exercises, physical therapy if symptoms persist.",
+    "medications": [
+      "Paracetamol",
+      "Ibuprofen",
+      "Diclofenac"
+    ]
+  },
+  {
+    "name": "Upper Back Pain & Postural Strain",
+    "description": "Upper Back Pain is caused by poor posture, long desk hours, and muscular tension resulting in upper back soreness, neck pain, and muscle tightness.",
+    "symptoms": [
+      "Upper back pain",
+      "Back pain",
+      "Neck pain",
+      "Shoulder pain",
+      "Muscle aches",
+      "Tension headache"
+    ],
+    "precautions": [
+      "Take stretching breaks every hour while working at a desk",
+      "Sit with a straight back",
+      "Avoid overly high pillows"
+    ],
+    "recommendation": "Ergonomic workspace adjustments, neck and back stretching exercises, warm compresses, pain relief ointments.",
+    "medications": [
+      "Paracetamol",
+      "Ibuprofen",
+      "Vitamin B Complex"
+    ]
+  },
+  {
+    "name": "Lumbar Spondylosis",
+    "description": "Lumbar Spondylosis is age-related wear and tear of the spinal discs in the lower back causing chronic back pain, stiffness, and radiating numbness.",
+    "symptoms": [
+      "Back pain",
+      "Lower back pain",
+      "Muscle aches",
+      "Numbness",
+      "Joint pain",
+      "Reduced mobility"
+    ],
+    "precautions": [
+      "Avoid sudden spinal twists and heavy lifting",
+      "Use a lumbar support belt when necessary",
+      "Consult a physician regularly"
+    ],
+    "recommendation": "Physical therapy, NSAID pain management, calcium supplementation, core muscle strengthening exercises.",
+    "medications": [
+      "Diclofenac",
+      "Calcium",
+      "Vitamin B Complex"
+    ]
+  },
+  {
+    "name": "Herniated / Slipped Disc",
+    "description": "Herniated Disc occurs when the soft center of a spinal disc pushes through a tear, compressing nearby nerves and causing severe back pain and sciatica.",
+    "symptoms": [
+      "Back pain",
+      "Lower back pain",
+      "Pelvic pain",
+      "Leg numbness",
+      "Tingling sensation",
+      "Muscle weakness"
+    ],
+    "precautions": [
+      "Do not lift heavy weights",
+      "Avoid slouching",
+      "Seek immediate medical assessment"
+    ],
+    "recommendation": "Bed rest, physical therapy, MRI imaging, prescription pain management, surgery in refractory cases.",
+    "medications": [
+      "Diclofenac",
+      "Tramadol",
+      "Vitamin B Complex"
+    ]
+  },
+  {
+    "name": "Viral Fever with Body Aches",
+    "description": "Viral Fever is a viral infection characterized by elevated temperature, generalized body aches, back pain, chills, and fatigue.",
+    "symptoms": [
+      "Fever",
+      "Muscle aches",
+      "Back pain",
+      "Body aches",
+      "Headache",
+      "Chills",
+      "Fatigue"
+    ],
+    "precautions": [
+      "Drink plenty of fluids and ORS",
+      "Get sufficient sleep",
+      "Eat easily digestible, nutritious meals"
+    ],
+    "recommendation": "Adequate hydration, antipyretic medications for fever control, vitamin C supplementation, adequate bed rest.",
+    "medications": [
+      "Paracetamol",
+      "Oral Rehydration Salts (ORS)",
+      "Vitamin C"
+    ]
+  },
+  {
+    "name": "Kidney Infection (Pyelonephritis)",
+    "description": "Pyelonephritis is a bacterial infection of one or both kidneys leading to flank/back pain, high fever, chills, and painful urination.",
+    "symptoms": [
+      "Back pain",
+      "Flank pain",
+      "Fever",
+      "Chills",
+      "Nausea",
+      "Burning sensation when urinating",
+      "Frequent urination"
+    ],
+    "precautions": [
+      "Drink plenty of water",
+      "Do not hold in urine",
+      "Seek prompt medical treatment"
+    ],
+    "recommendation": "Complete the full course of prescribed antibiotics, drink generous amounts of water, perform urine cultures.",
+    "medications": [
+      "Ciprofloxacin",
+      "Paracetamol",
+      "Oral Rehydration Salts"
     ]
   }
 ]

@@ -36,9 +36,14 @@ const MedicineInfoScreen = () => {
   const fetchMedicines = async () => {
     try {
       const data = await getAllMedicines();
-      setAllMedicines(data);
+      if (Array.isArray(data)) {
+        setAllMedicines(data);
+      } else {
+        setAllMedicines([]);
+      }
     } catch (error) {
       console.error('Error fetching medicines:', error);
+      setAllMedicines([]);
     }
   };
 
@@ -149,15 +154,14 @@ const MedicineInfoScreen = () => {
     }
     
     const isMM = i18n.language === "mm";
-    let speechText = `${medicine.name}. ${medicine.description}. `;
-    speechText += isMM ? "အသုံးပြုပုံ: " : "Uses: ";
-    speechText += medicine.uses.join(". ");
-    speechText += isMM ? ". သောက်ပမာဏ: " : ". Dosage: ";
-    speechText += medicine.dosage;
-    speechText += isMM ? ". ဘေးထွက်ဆိုးကျိုးများ: " : ". Side effects: ";
-    speechText += medicine.side_effects.join(", ");
-    speechText += isMM ? ". သတိထားရန်: " : ". Precautions: ";
-    speechText += medicine.precautions;
+    const usesText = Array.isArray(medicine.uses) ? medicine.uses.join(". ") : (medicine.uses || "");
+    const sideEffectsText = Array.isArray(medicine.side_effects) ? medicine.side_effects.join(", ") : (medicine.side_effects || "");
+    
+    let speechText = `${medicine.name || ""}. ${medicine.description || ""}. `;
+    if (usesText) speechText += (isMM ? "အသုံးပြုပုံ: " : "Uses: ") + usesText + ". ";
+    if (medicine.dosage) speechText += (isMM ? "သောက်ပမာဏ: " : "Dosage: ") + medicine.dosage + ". ";
+    if (sideEffectsText) speechText += (isMM ? "ဘေးထွက်ဆိုးကျိုးများ: " : "Side effects: ") + sideEffectsText + ". ";
+    if (medicine.precautions) speechText += (isMM ? "သတိထားရန်: " : "Precautions: ") + medicine.precautions;
     
     try {
       setIsSpeaking(true);
@@ -235,7 +239,7 @@ const MedicineInfoScreen = () => {
             mode="contained"
             icon={() => <ImageIcon size={20} color="#FFF" />}
             onPress={pickFromGallery}
-            style={[styles.cameraButton, { flex: 1, marginLeft: 4, backgroundColor: '#10B981' }]}
+            style={[styles.cameraButton, { flex: 1, marginLeft: 4, backgroundColor: '#BABFCE' }]}
             labelStyle={styles.cameraButtonLabel}
           >
             {t('gallery')}
@@ -292,25 +296,25 @@ const MedicineInfoScreen = () => {
             <List.Section>
               <List.Item
                 title={t('uses')}
-                description={medicine.uses.join('\n')}
+                description={Array.isArray(medicine.uses) ? medicine.uses.join('\n') : (medicine.uses || '')}
                 left={() => <HelpCircle size={24} color="#10B981" />}
                 descriptionNumberOfLines={10}
               />
               <List.Item
                 title={t('dosage')}
-                description={medicine.dosage}
+                description={medicine.dosage || ''}
                 left={() => <Info size={24} color="#5568FF" />}
                 descriptionNumberOfLines={10}
               />
               <List.Item
                 title={t('side_effects')}
-                description={medicine.side_effects.join(', ')}
+                description={Array.isArray(medicine.side_effects) ? medicine.side_effects.join(', ') : (medicine.side_effects || '')}
                 left={() => <AlertTriangle size={24} color="#FB923C" />}
                 descriptionNumberOfLines={10}
               />
               <List.Item
                 title={t('precautions')}
-                description={medicine.precautions}
+                description={medicine.precautions || ''}
                 left={() => <Info size={24} color="#FF6B6B" />}
                 descriptionNumberOfLines={10}
               />
@@ -319,17 +323,17 @@ const MedicineInfoScreen = () => {
         </Card>
       )}
 
-      {!medicine && filteredMedicines.length === 0 && !loading && (
+      {!medicine && filteredMedicines.length === 0 && !loading && Array.isArray(allMedicines) && allMedicines.length > 0 && (
         <View style={styles.browseContainer}>
           <Text style={styles.browseTitle}>{t('popular_medicines')}</Text>
           <View style={styles.chipContainer}>
-            {allMedicines.slice(0, 10).map((med, index) => (
+            {allMedicines.slice(0, 12).map((med, index) => (
               <TouchableOpacity 
-                key={index} 
+                key={`med-chip-${index}-${med.name || index}`} 
                 style={styles.chip} 
                 onPress={() => selectMedicine(med)}
               >
-                <Text style={styles.chipText}>{med.name.split(' (')[0]}</Text>
+                <Text style={styles.chipText}>{med?.name ? med.name.split(' (')[0] : ''}</Text>
               </TouchableOpacity>
             ))}
           </View>
@@ -382,7 +386,7 @@ const styles = StyleSheet.create({
   cameraButton: {
     borderRadius: 12,
     marginTop: 8,
-    backgroundColor: '#5568FF',
+    backgroundColor: '#5994E3',
     elevation: 2,
   },
   cameraButtonLabel: {

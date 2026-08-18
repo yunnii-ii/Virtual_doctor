@@ -2,13 +2,21 @@ import axios from "axios";
 import Logger from "../utils/logger";
 import i18n from "../utils/i18n";
 
-// Replace '192.168.x.x' with your computer's local IP address (e.g., 192.168.1.5)
-// You can find it by running 'ipconfig' in your terminal (look for IPv4 Address)
-let API_BASE_URL = "http://localhost:8001";
+import AsyncStorage from "../utils/asyncStorage";
+
+// Replace '192.168.x.x' with your computer's local IP address (e.g., 192.168.100.18:8001)
+let API_BASE_URL = "http://192.168.100.18:8001";
 
 const api = axios.create({
   baseURL: API_BASE_URL,
 });
+
+// Auto-load saved URL from AsyncStorage
+AsyncStorage.getItem("api_base_url").then((saved) => {
+  if (saved) {
+    api.defaults.baseURL = saved;
+  }
+}).catch(() => {});
 
 export const setBaseURL = (url) => {
   if (url) api.defaults.baseURL = url;

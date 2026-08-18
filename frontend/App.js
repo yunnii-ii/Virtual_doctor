@@ -1,14 +1,17 @@
 import React from "react";
+import { View, StyleSheet } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { Provider as PaperProvider, MD3LightTheme } from "react-native-paper";
+import { Provider as PaperProvider, MD3LightTheme, Text, Portal, Modal, Button } from "react-native-paper";
 import { StatusBar } from "expo-status-bar";
-import { Home, User, Activity, Pill, History } from "lucide-react-native";
+import { Home, User, Activity, Pill, History, Bell } from "lucide-react-native";
+import * as Notifications from "expo-notifications";
 import { AuthProvider, useAuth } from "./src/utils/AuthContext";
 import ErrorBoundary from "./src/components/ErrorBoundary";
 import "./src/utils/i18n";
 import { useTranslation } from "react-i18next";
+import { playAlarmRingtone, stopAlarmRingtone } from "./src/utils/alarmSound";
 
 import HomeScreen from "./src/screens/HomeScreen";
 import SymptomCheckerScreen from "./src/screens/SymptomCheckerScreen";
@@ -202,70 +205,186 @@ function AuthStack() {
 
 function MainApp() {
   const { user, loading, logout } = useAuth();
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const isMM = i18n.language === "mm";
+
+  const [ringingAlarm, setRingingAlarm] = React.useState(null);
+
+  React.useEffect(() => {
+    // Listen for alarms and notifications
+    const subReceived = Notifications.addNotificationReceivedListener(async (notif) => {
+      try {
+        const title = notif.request.content.title || (isMM ? "သတိပေးချက်" : "Alarm");
+        const body = notif.request.content.body || "";
+        await playAlarmRingtone();
+        setRingingAlarm({ title, body });
+      } catch (e) {
+        console.log("Error handling notification sound:", e);
+      }
+    });
+
+    const subResponse = Notifications.addNotificationResponseReceivedListener(async (resp) => {
+      try {
+        const title = resp.notification.request.content.title || (isMM ? "သတိပေးချက်" : "Alarm");
+        const body = resp.notification.request.content.body || "";
+        await playAlarmRingtone();
+        setRingingAlarm({ title, body });
+      } catch (e) {
+        console.log("Error handling response sound:", e);
+      }
+    });
+
+    return () => {
+      subReceived.remove();
+      subResponse.remove();
+    };
+  }, [isMM]);
+
+  const dismissAlarm = async () => {
+    await stopAlarmRingtone();
+    setRingingAlarm(null);
+  };
 
   if (loading) return null;
 
   return (
-    <NavigationContainer>
-      {!user ? (
-        <AuthStack />
-      ) : (
-        <Tab.Navigator
-          screenOptions={({ route }) => ({
-            tabBarIcon: ({ color, size }) => {
-              if (route.name === "Home")
-                return <Home size={size} color={color} />;
-              if (route.name === "Symptom")
-                return <Activity size={size} color={color} />;
-              if (route.name === "Medicine")
-                return <Pill size={size} color={color} />;
-              if (route.name === "HistoryTab")
-                return <History size={size} color={color} />;
-              if (route.name === "Profile")
-                return <User size={size} color={color} />;
-            },
-            tabBarActiveTintColor: "#1A73E8",
-            tabBarInactiveTintColor: "gray",
-            headerShown: false,
-            tabBarStyle: { height: 60, paddingBottom: 10, paddingTop: 10 },
-            tabBarLabelStyle: { fontFamily: appFontFamily },
-            headerTitleStyle: {
-              fontFamily: appFontFamily,
-              fontWeight: "bold",
-            },
-          })}
-        >
-          <Tab.Screen
-            name="Home"
-            component={HomeStack}
-            options={{ title: t("welcome") }}
-          />
-          <Tab.Screen
-            name="Symptom"
-            component={SymptomCheckerScreen}
-            options={{ headerShown: true, title: t("symptom_checker") }}
-          />
-          <Tab.Screen
-            name="Medicine"
-            component={MedicineInfoScreen}
-            options={{ headerShown: true, title: t("medicine_info") }}
-          />
-          <Tab.Screen
-            name="HistoryTab"
-            component={HistoryScreen}
-            options={{ headerShown: true, title: t("history") }}
-          />
-          <Tab.Screen
-            name="Profile"
-            component={ProfileScreen}
-            options={{ headerShown: true, title: t("profile") }}
-          />
-        </Tab.Navigator>
+    <>
+      <NavigationContainer>
+        {!user ? (
+          <AuthStack />
+        ) : (
+          <Tab.Navigator
+            screenOptions={({ route }) => ({
+              tabBarIcon: ({ color, size }) => {
+                if (route.name === "Home")
+                  return <Home size={size} color={color} />;
+                if (route.name === "Symptom")
+                  return <Activity size={size} color={color} />;
+                if (route.name === "Medicine")
+                  return <Pill size={size} color={color} />;
+                if (route.name === "HistoryTab")
+                  return <History size={size} color={color} />;
+                if (route.name === "Profile")
+                  return <User size={size} color={color} />;
+              },
+              tabBarActiveTintColor: "#1A73E8",
+              tabBarInactiveTintColor: "gray",
+              headerShown: false,
+              tabBarStyle: { height: 60, paddingBottom: 10, paddingTop: 10 },
+              tabBarLabelStyle: { fontFamily: appFontFamily },
+              headerTitleStyle: {
+                fontFamily: appFontFamily,
+                fontWeight: "bold",
+              },
+            })}
+          >
+            <Tab.Screen
+              name="Home"
+              component={HomeStack}
+              options={{ title: t("welcome") }}
+            />
+            <Tab.Screen
+              name="Symptom"
+              component={SymptomCheckerScreen}
+              options={{ headerShown: true, title: t("symptom_checker") }}
+            />
+            <Tab.Screen
+              name="Medicine"
+              component={MedicineInfoScreen}
+              options={{ headerShown: true, title: t("medicine_info") }}
+            />
+            <Tab.Screen
+              name="HistoryTab"
+              component={HistoryScreen}
+              options={{ headerShown: true, title: t("history") }}
+            />
+            <Tab.Screen
+              name="Profile"
+              component={ProfileScreen}
+              options={{ headerShown: true, title: t("profile") }}
+            />
+          </Tab.Navigator>
+        )}
+      </NavigationContainer>
+
+      {/* ── Global Alarm Ringing Popup ── */}
+      {ringingAlarm && (
+        <Portal>
+          <Modal
+            visible={!!ringingAlarm}
+            onDismiss={dismissAlarm}
+            contentContainerStyle={styles.ringingModal}
+          >
+            <View style={styles.ringingHeader}>
+              <View style={styles.ringingIconCircle}>
+                <Bell size={32} color="#FFFFFF" />
+              </View>
+              <Text style={styles.ringingTitle}>{ringingAlarm.title}</Text>
+              <Text style={styles.ringingBody}>{ringingAlarm.body}</Text>
+            </View>
+
+            <Button
+              mode="contained"
+              buttonColor="#EF4444"
+              textColor="#FFFFFF"
+              style={styles.ringingDismissBtn}
+              contentStyle={{ paddingVertical: 8 }}
+              labelStyle={{ fontSize: 16, fontWeight: "bold" }}
+              onPress={dismissAlarm}
+            >
+              {isMM ? "🔔 Alarm ပိတ်မည်" : "Dismiss Alarm"}
+            </Button>
+          </Modal>
+        </Portal>
       )}
-    </NavigationContainer>
+    </>
   );
 }
+
+const styles = {
+  ringingModal: {
+    backgroundColor: "#FFFFFF",
+    margin: 24,
+    borderRadius: 24,
+    padding: 24,
+    alignItems: "center",
+    elevation: 10,
+    shadowColor: "#000",
+    shadowOpacity: 0.2,
+    shadowRadius: 10,
+  },
+  ringingHeader: {
+    alignItems: "center",
+    marginBottom: 20,
+  },
+  ringingIconCircle: {
+    width: 64,
+    height: 64,
+    borderRadius: 32,
+    backgroundColor: "#EF4444",
+    justifyContent: "center",
+    alignItems: "center",
+    marginBottom: 14,
+    elevation: 4,
+  },
+  ringingTitle: {
+    fontSize: 18,
+    fontWeight: "bold",
+    color: "#0F172A",
+    textAlign: "center",
+    marginBottom: 6,
+  },
+  ringingBody: {
+    fontSize: 14,
+    color: "#64748B",
+    textAlign: "center",
+    lineHeight: 20,
+  },
+  ringingDismissBtn: {
+    width: "100%",
+    borderRadius: 14,
+  },
+};
 
 export default function App() {
   return (

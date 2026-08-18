@@ -1,7 +1,7 @@
 Write-Host "Building Android release APK..."
 $ErrorActionPreference = "Stop"
 $env:ANDROID_SDK_ROOT = "C:\Android"
-$env:NODE_OPTIONS = "--max-old-space-size=8192"
+$env:NODE_OPTIONS = "--max-old-space-size=2048"
 if (-not (Test-Path -LiteralPath "android")) {
     Write-Host "Running expo prebuild..."
     npx expo prebuild
