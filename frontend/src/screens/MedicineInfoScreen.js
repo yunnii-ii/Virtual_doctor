@@ -235,7 +235,7 @@ const MedicineInfoScreen = () => {
             mode="contained"
             icon={() => <ImageIcon size={20} color="#FFF" />}
             onPress={pickFromGallery}
-            style={[styles.cameraButton, { flex: 1, marginLeft: 4, backgroundColor: '#10B981' }]}
+            style={[styles.cameraButton, { flex: 1, marginLeft: 4, backgroundColor: '#3e096c' }]}
             labelStyle={styles.cameraButtonLabel}
           >
             {t('gallery')}
