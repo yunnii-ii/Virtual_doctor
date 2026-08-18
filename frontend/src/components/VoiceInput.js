@@ -7,8 +7,9 @@ import { useTranslation } from "react-i18next";
 import { transcribeVoice } from "../api";
 import { COLORS } from "../utils/theme";
 
-const VoiceInput = ({ onTranscriptionComplete, placeholderText = "Press mic to speak" }) => {
+const VoiceInput = ({ onTranscriptionComplete, placeholderText }) => {
   const { t } = useTranslation();
+  const displayText = placeholderText || t("voice_input_speak");
   const [recording, setRecording] = useState(null);
   const [processing, setProcessing] = useState(false);
 
@@ -99,7 +100,7 @@ const VoiceInput = ({ onTranscriptionComplete, placeholderText = "Press mic to s
           ? t("voice_assistant_stop_transcribe")
           : processing
           ? t("voice_assistant_transcribing")
-          : placeholderText}
+          : displayText}
       </Button>
       {recording && (
         <Text style={styles.statusText}>{t("voice_assistant_listening")}</Text>
@@ -120,6 +121,8 @@ const styles = StyleSheet.create({
   statusText: {
     marginTop: 8,
     color: COLORS.textSecondary,
+    fontWeight: "500",
+    fontSize: 13,
   },
 });
 

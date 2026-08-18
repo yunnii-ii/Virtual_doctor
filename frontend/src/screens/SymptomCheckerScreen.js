@@ -367,7 +367,7 @@ const SymptomCheckerScreen = () => {
         />
         <VoiceInput
           onTranscriptionComplete={handleVoiceTranscription}
-          placeholderText="Press mic to say symptoms"
+          placeholderText={t("voice_input_symptoms")}
         />
       </View>
 

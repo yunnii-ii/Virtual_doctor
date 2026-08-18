@@ -218,7 +218,7 @@ const MedicineInfoScreen = () => {
         />
         <VoiceInput
           onTranscriptionComplete={handleVoiceTranscription}
-          placeholderText="Press mic to say medicine name"
+          placeholderText={t("voice_input_medicine")}
         />
         <View style={styles.orContainer}>
           <Divider style={styles.orDivider} />
@@ -239,7 +239,7 @@ const MedicineInfoScreen = () => {
             mode="contained"
             icon={() => <ImageIcon size={20} color="#FFF" />}
             onPress={pickFromGallery}
-            style={[styles.cameraButton, { flex: 1, marginLeft: 4, backgroundColor: '#BABFCE' }]}
+            style={[styles.cameraButton, { flex: 1, marginLeft: 4, backgroundColor: '#10B981' }]}
             labelStyle={styles.cameraButtonLabel}
           >
             {t('gallery')}
@@ -386,7 +386,7 @@ const styles = StyleSheet.create({
   cameraButton: {
     borderRadius: 12,
     marginTop: 8,
-    backgroundColor: '#5994E3',
+    backgroundColor: '#5568FF',
     elevation: 2,
   },
   cameraButtonLabel: {

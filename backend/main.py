@@ -1,3 +1,8 @@
+import os
+os.environ["KMP_DUPLICATE_LIB_OK"] = "TRUE"
+os.environ["OMP_NUM_THREADS"] = "4"
+os.environ["MKL_NUM_THREADS"] = "4"
+
 from fastapi import FastAPI, UploadFile, File, HTTPException, Depends, Header, WebSocket, WebSocketDisconnect
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import FileResponse, RedirectResponse
@@ -6,7 +11,6 @@ from pydantic import BaseModel, ConfigDict
 from typing import Any, Dict, List, Optional
 from contextlib import asynccontextmanager
 import json
-import os
 import re
 import uuid
 import hashlib
@@ -46,7 +50,11 @@ whisper_model = None
 def get_whisper_model():
     global whisper_model
     if whisper_model is None:
-        whisper_model = WhisperModel("small", device="cpu", compute_type="int8")
+        try:
+            whisper_model = WhisperModel("base", device="cpu", compute_type="float32", cpu_threads=2)
+        except Exception as e:
+            print(f"Failed to load base Whisper model, falling back to tiny: {e}")
+            whisper_model = WhisperModel("tiny", device="cpu", compute_type="float32", cpu_threads=2)
     return whisper_model
 
 # Password utility functions
@@ -1759,32 +1767,48 @@ async def get_medicine_info(name: str, accept_language: str = Header("en")):
     lang_code = accept_language.split(',')[0].split('-')[0].lower()
     name_query = name.lower().strip()
     
-    all_meds = MEDICINES_MM + MEDICINES_EN
+    is_myanmar_query = any('\u1000' <= c <= '\u109F' for c in name_query)
     
-    # 1. Try exact match or partial match first (fastest)
-    for med in all_meds:
+    if lang_code == "mm" or is_myanmar_query:
+        primary_dataset = MEDICINES_MM
+        secondary_dataset = MEDICINES_EN
+    else:
+        primary_dataset = MEDICINES_EN
+        secondary_dataset = MEDICINES_MM
+        
+    all_meds = primary_dataset + secondary_dataset
+    
+    # 1. Try exact match or partial match in primary dataset first
+    for med in primary_dataset:
         med_name = med["name"].lower()
         if name_query == med_name or name_query in med_name or med_name in name_query:
             return med
             
-    # 2. Use Fuzzy Matching if no direct match found
+    # 2. Try match in secondary dataset if not in primary
+    for med in secondary_dataset:
+        med_name = med["name"].lower()
+        if name_query == med_name or name_query in med_name or med_name in name_query:
+            return med
+            
+    # 3. Use Fuzzy Matching if no direct match found
     best_match = None
     highest_score = 0
     
     for med in all_meds:
         med_name = med["name"].lower()
-        # Clean the name for better matching (remove brackets content)
         clean_name = re.sub(r'\(.*?\)', '', med_name).strip()
         
-        # Check against full name and clean name
         score = max(fuzz.partial_ratio(name_query, med_name), 
                     fuzz.partial_ratio(name_query, clean_name))
         
+        if med in primary_dataset:
+            score += 5
+            
         if score > highest_score:
             highest_score = score
             best_match = med
             
-    if best_match and highest_score > 80:
+    if best_match and highest_score > 75:
         return best_match
                 
     raise HTTPException(status_code=404, detail="Medicine not found")
@@ -2066,7 +2090,8 @@ async def federated_learning_update(payload: FederatedUpdateRequest):
     }
 
 @app.post("/voice/transcribe")
-async def transcribe_voice(file: UploadFile = File(...)):
+async def transcribe_voice(file: UploadFile = File(...), accept_language: str = Header("en")):
+    lang_code = accept_language.split(',')[0].split('-')[0].lower()
     try:
         audio_content = await file.read()
 
@@ -2077,49 +2102,39 @@ async def transcribe_voice(file: UploadFile = File(...)):
 
         try:
             model = get_whisper_model()
-
             transcript = ""
+            
+            # Primary pass based on requested language
+            primary_lang = "my" if lang_code == "mm" else "en"
+            secondary_lang = "en" if lang_code == "mm" else "my"
+
             try:
                 segments, info = model.transcribe(
                     temp_file_path,
-                    beam_size=5,
-                    language="my",
+                    beam_size=1,
+                    language=primary_lang,
                     task="transcribe",
-                    vad_filter=True,
+                    vad_filter=False,
                 )
                 for segment in segments:
                     transcript += segment.text
-            except Exception as my_err:
-                print(f"Burmese transcription attempt failed: {my_err}")
+            except Exception as primary_err:
+                print(f"Primary transcription attempt ({primary_lang}) failed: {primary_err}")
 
             if len(transcript.strip()) < 2:
                 try:
                     segments, info = model.transcribe(
                         temp_file_path,
-                        beam_size=5,
-                        language="en",
+                        beam_size=1,
+                        language=secondary_lang,
                         task="transcribe",
-                        vad_filter=True,
+                        vad_filter=False,
                     )
                     transcript = ""
                     for segment in segments:
                         transcript += segment.text
-                except Exception as en_err:
-                    print(f"English fallback transcription failed: {en_err}")
-
-            if len(transcript.strip()) < 2:
-                try:
-                    segments, info = model.transcribe(
-                        temp_file_path,
-                        beam_size=5,
-                        task="transcribe",
-                        vad_filter=True,
-                    )
-                    transcript = ""
-                    for segment in segments:
-                        transcript += segment.text
-                except Exception as auto_err:
-                    print(f"Auto-detect transcription failed: {auto_err}")
+                except Exception as secondary_err:
+                    print(f"Secondary transcription attempt ({secondary_lang}) failed: {secondary_err}")
 
             cleaned_transcript = re.sub(r'[^\x00-\x7F\u1000-\u109F\s\d\.\,\!\?]', '', transcript).strip()
 
