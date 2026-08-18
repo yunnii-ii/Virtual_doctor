@@ -2384,5 +2384,165 @@
       "Blurred vision"
     ],
     "precautions": "Causes significant drowsiness. Avoid alcohol."
+  },
+  {
+    "name": "Simethicone (Air-X / Disflatyl)",
+    "description": "Simethicone is an anti-foaming agent that helps break down gas bubbles in the gut, relieving bloating and abdominal fullness.",
+    "uses": [
+      "Relief of painful pressure caused by excess gas in the stomach and intestines.",
+      "Reduction of bloating, fullness, and belching."
+    ],
+    "dosage": "40mg to 125mg chewed thoroughly after meals and at bedtime (Max 500mg daily).",
+    "side_effects": [
+      "Mild loose stools (rare)",
+      "Nausea (rare)"
+    ],
+    "precautions": "Chew tablets thoroughly before swallowing. Safe for most adults and children."
+  },
+  {
+    "name": "Bromhexine (Bisolvon / Mucolytic)",
+    "description": "Bromhexine is a mucolytic agent that thins and loosens thick phlegm (mucus) in the airways, making it easier to cough out.",
+    "uses": [
+      "Relief of productive cough with thick mucus/phlegm.",
+      "Treatment of respiratory conditions associated with excessive mucus (bronchitis, cold)."
+    ],
+    "dosage": "8mg to 16mg (1 to 2 tablets) 3 times daily after food.",
+    "side_effects": [
+      "Nausea",
+      "Mild indigestion",
+      "Sweating",
+      "Allergic skin rash (rare)"
+    ],
+    "precautions": "Drink plenty of warm water while taking this medicine to help dissolve phlegm effectively."
+  },
+  {
+    "name": "Dextromethorphan (Cough Suppressant)",
+    "description": "Dextromethorphan is a cough suppressant (antitussive) that acts on the cough center in the brain to temporarily relieve dry cough.",
+    "uses": [
+      "Temporary relief of dry, tickly, non-productive cough without phlegm.",
+      "Relief of nighttime cough disturbing sleep."
+    ],
+    "dosage": "15mg to 30mg every 6 to 8 hours as needed (Max 120mg in 24 hours).",
+    "side_effects": [
+      "Drowsiness",
+      "Dizziness",
+      "Stomach upset",
+      "Nausea"
+    ],
+    "precautions": "Do not use for productive cough with thick phlegm. Do not combine with MAO inhibitor antidepressants."
+  },
+  {
+    "name": "Kremil-S (Antacid & Antiflatulent)",
+    "description": "Kremil-S is a combination of Aluminum Hydroxide, Magnesium Carbonate, and Simethicone that neutralizes excess stomach acid and relieves gas.",
+    "uses": [
+      "Fast relief of heartburn, acid indigestion, and sour stomach.",
+      "Relief of gas pain, bloating, and stomach ulcer discomfort."
+    ],
+    "dosage": "1 to 2 tablets chewed 1 hour after meals and at bedtime.",
+    "side_effects": [
+      "Constipation or loose stools",
+      "Chalky taste in mouth"
+    ],
+    "precautions": "Chew tablets thoroughly before swallowing. Separate from other medications by at least 2 hours."
+  },
+  {
+    "name": "Zinc Sulfate (Zinc Supplement)",
+    "description": "Zinc Sulfate is an essential trace mineral supplement vital for cellular immunity, wound healing, and reducing the duration of acute diarrhea.",
+    "uses": [
+      "Management of acute diarrhea in children and adults (alongside ORS).",
+      "Immune system support and faster wound recovery."
+    ],
+    "dosage": "20mg daily for 10 to 14 days during/after diarrhea episodes.",
+    "side_effects": [
+      "Nausea or metallic taste (if taken on an empty stomach)",
+      "Mild abdominal cramping"
+    ],
+    "precautions": "Take after meals to minimize stomach upset."
+  },
+  {
+    "name": "Povidone Iodine (Betadine Antiseptic)",
+    "description": "Povidone Iodine is a topical broad-spectrum antiseptic that kills bacteria, fungi, and viruses to prevent and treat skin infections.",
+    "uses": [
+      "Antiseptic cleansing of minor cuts, scrapes, burns, and wounds.",
+      "Skin disinfection before and after minor surgical procedures."
+    ],
+    "dosage": "Apply a small amount to the affected clean area 1 to 3 times daily.",
+    "side_effects": [
+      "Mild skin irritation or staining",
+      "Redness or itching at application site"
+    ],
+    "precautions": "For external topical use only. Do not swallow. Avoid in patients allergic to iodine."
+  },
+  {
+    "name": "Clotrimazole (Canesten Anti-fungal Cream)",
+    "description": "Clotrimazole is a broad-spectrum antifungal medication that treats skin fungal infections by preventing the growth of fungus.",
+    "uses": [
+      "Treatment of ringworm (Tinea corporis), athlete's foot (Tinea pedis), and jock itch (Tinea cruris).",
+      "Treatment of fungal skin infections, tinea versicolor (nyin), and cutaneous candidiasis."
+    ],
+    "dosage": "Apply thinly to clean and dry affected skin 2 to 3 times daily for 2 to 4 weeks.",
+    "side_effects": [
+      "Mild burning or stinging at application site",
+      "Redness or peeling of skin"
+    ],
+    "precautions": "Continue applying for 1 to 2 weeks after symptoms disappear to prevent fungal recurrence."
+  },
+  {
+    "name": "Calamine Lotion (Soothing Anti-itch Lotion)",
+    "description": "Calamine lotion is a soothing topical suspension containing zinc oxide and ferric oxide that cools the skin and relieves mild itching and irritation.",
+    "uses": [
+      "Relief of itching and discomfort from insect bites, sunburn, hives, and prickly heat.",
+      "Drying oozing blisters of chickenpox, poison ivy, or contact dermatitis."
+    ],
+    "dosage": "Shake well and apply to affected skin with cotton wool as needed.",
+    "side_effects": [
+      "Mild skin dryness"
+    ],
+    "precautions": "For external use only. Shake bottle well before use. Do not apply on open bleeding wounds."
+  },
+  {
+    "name": "Telmisartan (Micardis / Antihypertensive)",
+    "description": "Telmisartan is an Angiotensin II Receptor Blocker (ARB) used to lower high blood pressure and protect kidney function in cardiovascular risk patients.",
+    "uses": [
+      "Treatment of essential hypertension (high blood pressure).",
+      "Reduction of cardiovascular risk (stroke, heart attack) in high-risk patients."
+    ],
+    "dosage": "40mg to 80mg once daily in the morning, with or without food.",
+    "side_effects": [
+      "Dizziness or lightheadedness",
+      "Fatigue",
+      "Sinus congestion"
+    ],
+    "precautions": "Take daily at the same time. Contraindicated during pregnancy. Monitor blood pressure regularly."
+  },
+  {
+    "name": "Levothyroxine (Eltroxin / Thyroid Hormone)",
+    "description": "Levothyroxine is a synthetic thyroid hormone (T4) that replaces missing thyroid hormone in patients with hypothyroidism (underactive thyroid).",
+    "uses": [
+      "Treatment of hypothyroidism (underactive thyroid gland).",
+      "Goiter management and thyroid hormone replacement therapy."
+    ],
+    "dosage": "25mcg to 100mcg once daily taken on an empty stomach 30 to 60 minutes before breakfast.",
+    "side_effects": [
+      "Palpitations or rapid heart rate (if dose is too high)",
+      "Weight loss",
+      "Heat sensitivity"
+    ],
+    "precautions": "Must be taken with water on an empty stomach first thing in the morning. Do not take with calcium or iron supplements."
+  },
+  {
+    "name": "Montelukast (Singulair / Leukotriene Inhibitor)",
+    "description": "Montelukast is a leukotriene receptor antagonist that reduces airway inflammation, bronchoconstriction, and allergic symptoms.",
+    "uses": [
+      "Prevention and chronic treatment of asthma in adults and children.",
+      "Relief of symptoms of allergic rhinitis (seasonal and perennial allergies)."
+    ],
+    "dosage": "10mg once daily in the evening for adults (5mg for children 6-14 years).",
+    "side_effects": [
+      "Headache",
+      "Abdominal pain",
+      "Sleep disturbances or vivid dreams (rare)"
+    ],
+    "precautions": "Not for the relief of acute sudden asthma attacks (use a rescue inhaler for acute attacks)."
   }
 ]

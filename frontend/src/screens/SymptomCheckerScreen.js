@@ -26,21 +26,10 @@ import VoiceInput from "../components/VoiceInput";
 import { speak, stop as stopTts } from "../utils/tts";
 
 const ALL_SYMPTOMS = [
-  "sneezing",
-  "runny_nose",
-  "sore_throat",
-  "cough",
-  "congestion",
   "fever",
-  "chills",
-  "muscle_aches",
+  "cough",
   "headache",
-  "fatigue",
-  "high_fever",
-  "joint_pain",
-  "rash",
   "dizziness",
-  "chest_pain",
 ];
 
 const SymptomCheckerScreen = () => {
@@ -271,11 +260,30 @@ const SymptomCheckerScreen = () => {
     }
     
     const isMM = i18n.language === "mm";
-    let speechText = `${result.disease}. ${result.description}. `;
-    speechText += isMM ? "ကာကွယ်ရန်: " : "For prevention: ";
-    speechText += result.prevention.join(". ");
-    speechText += isMM ? ". အကြံပြုချက်: " : ". Recommendation: ";
-    speechText += result.recommendation;
+    let speechText = "";
+    if (isMM) {
+      speechText = `ရောဂါရှာဖွေတွေ့ရှိချက်။ ${result.disease} ဖြစ်နိုင်ပါသည်။ ${result.description}။ `;
+      if (result.prevention && result.prevention.length > 0) {
+        speechText += `ကြိုတင်ကာကွယ်ရန် နည်းလမ်းများ - ${result.prevention.join("။ ")}။ `;
+      }
+      if (result.recommendation) {
+        speechText += `ဆရာဝန် အကြံပြုချက် - ${result.recommendation}။ `;
+      }
+      if (result.medications && result.medications.length > 0) {
+        speechText += `အထောက်အကူပြု ဆေးဝါးများ - ${result.medications.join("၊ ")}။ `;
+      }
+    } else {
+      speechText = `Diagnosis result: You may have ${result.disease}. ${result.description}. `;
+      if (result.prevention && result.prevention.length > 0) {
+        speechText += `Prevention: ${result.prevention.join(". ")}. `;
+      }
+      if (result.recommendation) {
+        speechText += `Recommendations: ${result.recommendation}. `;
+      }
+      if (result.medications && result.medications.length > 0) {
+        speechText += `Recommended medications: ${result.medications.join(", ")}. `;
+      }
+    }
     
     try {
       setIsSpeaking(true);
@@ -305,18 +313,22 @@ const SymptomCheckerScreen = () => {
       );
       const data = await diagnose(apiSymptoms);
       setResult(data);
+      const isMM = i18n.language === "mm";
+      const displaySymptoms = selectedSymptoms.map((s) => t(s) || s).join(isMM ? "၊ " : ", ");
+      const historyDetails = isMM ? `ရောဂါလက္ခဏာများ: ${displaySymptoms}` : `Symptoms: ${apiSymptoms.join(", ")}`;
+
       // Save to Local Storage
       await saveToHistory({
         type: "Diagnosis",
         title: data.disease,
-        details: `Symptoms: ${apiSymptoms.join(", ")}`,
+        details: historyDetails,
       });
       // Save to Backend Database
       if (user && user.id) {
         await saveHistoryToDB(
           "Diagnosis",
           data.disease,
-          `Symptoms: ${apiSymptoms.join(", ")}`,
+          historyDetails,
           user.id,
         );
       }
@@ -429,47 +441,53 @@ const SymptomCheckerScreen = () => {
 
             <Divider style={styles.divider} />
 
-            <View style={styles.section}>
-              <View style={styles.sectionHeader}>
-                <ShieldAlert size={20} color="#A8E6CF" />
-                <Text variant="titleMedium" style={styles.sectionTitle}>
-                  {t("prevention")}
-                </Text>
-              </View>
-              {result.prevention.map((item, i) => (
-                <View key={i} style={styles.listItem}>
-                  <CheckCircle2 size={16} color="#A8E6CF" />
-                  <Text style={styles.listText}>{item}</Text>
+            {(result.prevention || result.precautions) && (
+              <View style={styles.section}>
+                <View style={styles.sectionHeader}>
+                  <ShieldAlert size={20} color="#A8E6CF" />
+                  <Text variant="titleMedium" style={styles.sectionTitle}>
+                    {t("prevention")}
+                  </Text>
                 </View>
-              ))}
-            </View>
-
-            <View style={styles.section}>
-              <View style={styles.sectionHeader}>
-                <AlertCircle size={20} color="#FFDAC1" />
-                <Text variant="titleMedium" style={styles.sectionTitle}>
-                  {t("recommendation")}
-                </Text>
-              </View>
-              <Text style={styles.recommendationText}>
-                {result.recommendation}
-              </Text>
-            </View>
-
-            <View style={styles.section}>
-              <View style={styles.sectionHeader}>
-                <Text variant="titleMedium" style={styles.sectionTitle}>
-                  {t("medications")}
-                </Text>
-              </View>
-              <View style={styles.medicationContainer}>
-                {result.medications.map((med, i) => (
-                  <Chip key={i} style={styles.medChip}>
-                    {med}
-                  </Chip>
+                {(result.prevention || result.precautions || []).map((item, i) => (
+                  <View key={i} style={styles.listItem}>
+                    <CheckCircle2 size={16} color="#A8E6CF" />
+                    <Text style={styles.listText}>{item}</Text>
+                  </View>
                 ))}
               </View>
-            </View>
+            )}
+
+            {result.recommendation ? (
+              <View style={styles.section}>
+                <View style={styles.sectionHeader}>
+                  <AlertCircle size={20} color="#FFDAC1" />
+                  <Text variant="titleMedium" style={styles.sectionTitle}>
+                    {t("recommendation")}
+                  </Text>
+                </View>
+                <Text style={styles.recommendationText}>
+                  {result.recommendation}
+                </Text>
+              </View>
+            ) : null}
+
+            {result.medications && result.medications.length > 0 ? (
+              <View style={styles.section}>
+                <View style={styles.sectionHeader}>
+                  <Text variant="titleMedium" style={styles.sectionTitle}>
+                    {t("medications")}
+                  </Text>
+                </View>
+                <View style={styles.medicationContainer}>
+                  {(result.medications || []).map((med, i) => (
+                    <Chip key={i} style={styles.medChip} textStyle={styles.medChipText}>
+                      {med}
+                    </Chip>
+                  ))}
+                </View>
+              </View>
+            ) : null}
           </Card.Content>
         </Card>
       )}
@@ -601,10 +619,19 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     flexWrap: "wrap",
     marginTop: 8,
+    gap: 4,
   },
   medChip: {
-    margin: 4,
-    backgroundColor: "#E8ECFF",
+    margin: 3,
+    backgroundColor: "#EEF2FF",
+    borderRadius: 12,
+    borderWidth: 1,
+    borderColor: "#C7D2FE",
+  },
+  medChipText: {
+    fontSize: 12,
+    color: "#3730A3",
+    fontWeight: "600",
   },
 });
 

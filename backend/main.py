@@ -965,15 +965,15 @@ RED_FLAG_SYMPTOMS = {
 }
 
 RED_FLAG_TRANSLATIONS_MM = {
-    "chest pain": "ရင်နာ",
-    "shortness of breath": "အသက်ရှူခက်ခြင်း",
-    "difficulty breathing": "အသက်ရှူပြင်းခြင်း",
-    "fainting": "မေ့မြောခြင်း",
-    "confusion": "စိတ်ထုံလှုပ်ခြင်း",
+    "chest pain": "ရင်ဘတ်အောင့်ခြင်း",
+    "shortness of breath": "အသက်ရှူရခက်ခြင်း",
+    "difficulty breathing": "မောကျပ်ခြင်း",
+    "fainting": "သတိလစ်မူးမေ့ခြင်း",
+    "confusion": "စိတ်ရှုပ်ထွေးခြင်း",
     "severe headache": "ခေါင်းကိုက်ပြင်းထန်ခြင်း",
-    "weakness": "အားနည်းခြင်း",
-    "slurred speech": "မိန်းချုပ်မှု",
-    "high fever": "အဖျားကြီးတက်ခြင်း",
+    "weakness": "အားအင်ကုန်ခမ်းခြင်း",
+    "slurred speech": "စကားမပီမသဖြစ်ခြင်း",
+    "high fever": "အဖျားကြီးခြင်း",
 }
 
 TRIAGE_RECOMMENDATIONS = {
@@ -1012,44 +1012,356 @@ def normalize_number(value, default=None):
     except (TypeError, ValueError):
         return default
 
-def match_disease_candidates(symptoms: List[str], limit: int = 3, lang_code: str = "en") -> List[Dict[str, Any]]:
+DISEASE_NAME_TRANSLATIONS_MM = {
+    "mumps": "ပါးချိတ်ရောင်ရောဂါ (Mumps)",
+    "ludwig's angina": "ပါးစပ်နှင့် လည်ချောင်း ပြင်းထန်စွာ ရောင်ရမ်းပိုးဝင်ခြင်း (Ludwig's Angina)",
+    "abscess": "ပြည်တည်နာ (Abscess)",
+    "common cold": "ရိုးရိုးအအေးမိခြင်း (Common Cold)",
+    "influenza": "တုပ်ကွေးရောဂါ (Flu / Influenza)",
+    "acute bronchitis": "ရုတ်တရက် လေပြွန်ရောင်ခြင်း (Bronchitis)",
+    "bronchitis": "လေပြွန်ရောင်ခြင်း (Bronchitis)",
+    "pneumonia": "အဆုတ်ရောင်ရောဂါ (Pneumonia)",
+    "tonsillitis": "အာသီးရောင်ခြင်း (Tonsillitis)",
+    "pharyngitis": "လည်ချောင်းရောင်ခြင်း (Pharyngitis)",
+    "laryngitis": "အသံအိုးရောင်ခြင်း (Laryngitis)",
+    "sinusitis": "ထိပ်ကပ်နာ (Sinusitis)",
+    "gastroenteritis": "အစာအိမ်နှင့် အူလမ်းကြောင်းရောင်ခြင်း (Gastroenteritis)",
+    "gastritis": "အစာအိမ်ရောင်ခြင်း (Gastritis)",
+    "gerd": "အစာအိမ်အက်ဆစ်ပြန်တက်ခြင်း (GERD)",
+    "peptic ulcer disease": "အစာအိမ်အနာရောဂါ (Peptic Ulcer)",
+    "migraine": "ခေါင်းတစ်ခြမ်းကိုက်ခြင်း (Migraine)",
+    "tension headache": "စိတ်ဖိစီးမှုကြောင့် ခေါင်းကိုက်ခြင်း (Tension Headache)",
+    "dengue fever": "သွေးလွန်တုပ်ကွေးရောဂါ (Dengue Fever)",
+    "malaria": "ငှက်ဖျားရောဂါ (Malaria)",
+    "typhoid fever": "အူရောင်ငန်းဖျားရောဂါ (Typhoid Fever)",
+    "urinary tract infection": "ဆီးလမ်းကြောင်းပိုးဝင်ခြင်း (UTI)",
+    "allergic rhinitis": "ဓာတ်မတည့် နှာစေးခြင်း (Allergic Rhinitis)",
+    "asthma": "ပန်းနာရင်ကျပ်ရောဂါ (Asthma)",
+    "copd": "နာတာရှည် အဆုတ်ရောဂါ (COPD)",
+    "hypertension": "သွေးတိုးရောဂါ (Hypertension)",
+    "type 2 diabetes": "အမျိုးအစား ၂ ဆီးချိုရောဂါ (Type 2 Diabetes)",
+    "food poisoning": "အစာအဆိပ်သင့်ခြင်း (Food Poisoning)",
+    "panic disorder": "ထိတ်လန့်တကြားဖြစ်ခြင်း (Panic Disorder)",
+    "urticaria": "အင်ပြင်ထွက်ခြင်း (Hives / Urticaria)",
+    "eczema": "နှင်းခူ / အရေပြားရောင်ခြင်း (Eczema)",
+    "covid-19": "ကိုဗစ်-၁၉ ရောဂါ (COVID-19)",
+}
+
+COMMON_DISEASE_BOOST = {
+    "influenza": 15,
+    "common cold": 15,
+    "acute bronchitis": 10,
+    "bronchitis": 10,
+    "gastroenteritis": 12,
+    "gastritis": 12,
+    "gerd": 10,
+    "migraine": 10,
+    "tension headache": 10,
+    "allergic rhinitis": 12,
+    "tonsillitis": 10,
+    "pharyngitis": 10,
+    "urinary tract infection": 10,
+    "covid-19": 10,
+    "dengue fever": 8,
+    "food poisoning": 10,
+}
+
+DISEASE_NAME_TRANSLATIONS_MM = {
+    "mumps": "ပါးချိတ်ရောင်ရောဂါ (Mumps)",
+    "ludwig's angina": "ပါးစပ်နှင့် လည်ချောင်း ပြင်းထန်စွာ ရောင်ရမ်းပိုးဝင်ခြင်း (Ludwig's Angina)",
+    "abscess": "ပြည်တည်နာ (Abscess)",
+    "common cold": "ရိုးရိုးအအေးမိခြင်း (Common Cold)",
+    "influenza": "ရာသီတုပ်ကွေး / ဗိုင်းရပ်စ်ကြောင့် ဖျားနာခြင်း (Flu / Viral Fever)",
+    "acute bronchitis": "ရုတ်တရက် လေပြွန်ရောင်ခြင်း (Bronchitis)",
+    "bronchitis": "လေပြွန်ရောင်ခြင်း (Bronchitis)",
+    "pneumonia": "အဆုတ်ရောင်ရောဂါ (Pneumonia)",
+    "tonsillitis": "အာသီးရောင်ခြင်း (Tonsillitis)",
+    "pharyngitis": "လည်ချောင်းရောင်ခြင်း (Pharyngitis)",
+    "laryngitis": "အသံအိုးရောင်ခြင်း (Laryngitis)",
+    "sinusitis": "ထိပ်ကပ်နာ (Sinusitis)",
+    "gastroenteritis": "အစာအိမ်နှင့် အူလမ်းကြောင်းရောင်ခြင်း (Gastroenteritis)",
+    "gastritis": "အစာအိမ်ရောင်ခြင်း (Gastritis)",
+    "gerd": "အစာအိမ်အက်ဆစ်ပြန်တက်ခြင်း (GERD)",
+    "peptic ulcer disease": "အစာအိမ်အနာရောဂါ (Peptic Ulcer)",
+    "migraine": "ခေါင်းတစ်ခြမ်းကိုက်ခြင်း (Migraine)",
+    "tension headache": "စိတ်ဖိစီးမှုကြောင့် ခေါင်းကိုက်ခြင်း (Tension Headache)",
+    "dengue fever": "သွေးလွန်တုပ်ကွေးရောဂါ (Dengue Fever)",
+    "malaria": "ငှက်ဖျားရောဂါ (Malaria)",
+    "typhoid fever": "အူရောင်ငန်းဖျားရောဂါ (Typhoid Fever)",
+    "urinary tract infection": "ဆီးလမ်းကြောင်းပိုးဝင်ခြင်း (UTI)",
+    "allergic rhinitis": "ဓာတ်မတည့် နှာစေးခြင်း (Allergic Rhinitis)",
+    "asthma": "ပန်းနာရင်ကျပ်ရောဂါ (Asthma)",
+    "copd": "နာတာရှည် အဆုတ်ရောဂါ (COPD)",
+    "hypertension": "သွေးတိုးရောဂါ (Hypertension)",
+    "type 2 diabetes": "အမျိုးအစား ၂ ဆီးချိုရောဂါ (Type 2 Diabetes)",
+    "food poisoning": "အစာအဆိပ်သင့်ခြင်း (Food Poisoning)",
+    "panic disorder": "ထိတ်လန့်တကြားဖြစ်ခြင်း (Panic Disorder)",
+    "urticaria": "အင်ပြင်ထွက်ခြင်း (Hives / Urticaria)",
+    "eczema": "နှင်းခူ / အရေပြားရောင်ခြင်း (Eczema)",
+    "covid-19": "ကိုဗစ်-၁၉ ရောဂါ (COVID-19)",
+}
+
+def clean_clinical_text(text: str) -> str:
+    if not text:
+        return ""
+    cleaned = re.sub(r'[\(\s]*,\s*,\s*[\)\s]*', ' ', text)
+    cleaned = re.sub(r'\(\s*\)', '', cleaned)
+    cleaned = re.sub(r'\s*,\s*$', '', cleaned)
+    cleaned = re.sub(r'\s{2,}', ' ', cleaned).strip()
+    return cleaned
+
+def match_disease_candidates(symptoms: List[str], limit: int = 5, lang_code: str = "en") -> List[Dict[str, Any]]:
     translated = translate_incoming_symptoms(symptoms)
     terms = [s.lower().strip() for s in translated + symptoms if s and s.strip()]
     scored = []
+    
     for disease in DISEASES_EN:
+        disease_name = (disease.get("name") or "").lower().strip()
         disease_symptoms = [s.lower() for s in disease.get("symptoms", [])]
         score = 0
+        matched_terms = []
+        
         for term in terms:
             for known in disease_symptoms:
                 if term == known:
                     score += 18
+                    matched_terms.append(term)
                 elif term in known or known in term:
                     score += 10
+                    matched_terms.append(term)
                 elif len(term) > 3 and fuzz.partial_ratio(term, known) > 85:
                     score += 7
-        if score:
-            scored.append((score, disease))
+                    matched_terms.append(term)
+                    
+        if score > 0:
+            # Apply clinical base-rate prevalence boost for common everyday illnesses
+            if disease_name in COMMON_DISEASE_BOOST:
+                score += COMMON_DISEASE_BOOST[disease_name]
+            scored.append((score, disease, list(set(matched_terms))))
+            
     scored.sort(key=lambda item: item[0], reverse=True)
     result = []
-    for score, disease_en in scored[:limit]:
+    for score, disease_en, matched in scored[:limit]:
+        raw_name = disease_en.get("name", "Unknown")
+        name_lower = raw_name.lower().strip()
+        
+        # Determine likelihood label
+        if score >= 32:
+            likelihood_mm = "ဖြစ်နိုင်ခြေ အလွန်မြင့်မား"
+            likelihood_en = "Very High Likelihood"
+        elif score >= 20:
+            likelihood_mm = "ဖြစ်နိုင်ခြေ မြင့်မား"
+            likelihood_en = "High Likelihood"
+        elif score >= 12:
+            likelihood_mm = "ဖြစ်နိုင်ခြေ အလယ်အလတ်"
+            likelihood_en = "Moderate Likelihood"
+        else:
+            likelihood_mm = "ဖြစ်နိုင်ခြေ အနည်းငယ်"
+            likelihood_en = "Possible"
+
+        # Generate intelligent clinical reasoning explaining WHY this condition is suspected
+        matched_str = "၊ ".join(symptoms) if symptoms else "ဖော်ပြထားသော လက္ခဏာများ"
+        if lang_code == "mm":
+            reason = f"လူနာတွင် {matched_str} လက္ခဏာများ တွေ့ရှိရသဖြင့် ဤရောဂါဖြစ်နိုင်ခြေ အထူးမြင့်မားပါသည်။"
+        else:
+            reason = f"Patient presents with {', '.join(symptoms) if symptoms else 'reported symptoms'}, which strongly correlates with this condition."
+
         entry = {
-            "name": disease_en.get("name", "Unknown"),
-            "description": disease_en.get("description", ""),
-            "recommendation": disease_en.get("recommendation", ""),
+            "name": raw_name,
+            "description": clean_clinical_text(disease_en.get("description", "")),
+            "recommendation": clean_clinical_text(disease_en.get("recommendation", "")),
+            "reason": reason,
             "score": score,
+            "likelihood": likelihood_mm if lang_code == "mm" else likelihood_en,
         }
         if lang_code == "mm":
-            equiv, _ = _find_equivalent_in_dataset(disease_en, DISEASES_MM, min_score=0.20)
-            if equiv is not None:
-                entry["name"] = equiv.get("name") or entry["name"]
-                entry["description"] = equiv.get("description") or entry["description"]
-                entry["recommendation"] = equiv.get("recommendation") or entry["recommendation"]
+            if name_lower in DISEASE_NAME_TRANSLATIONS_MM:
+                entry["name"] = DISEASE_NAME_TRANSLATIONS_MM[name_lower]
+            else:
+                equiv, _ = _find_equivalent_in_dataset(disease_en, DISEASES_MM, min_score=0.20)
+                if equiv is not None and equiv.get("name"):
+                    entry["name"] = equiv.get("name")
+                    if equiv.get("description"):
+                        entry["description"] = clean_clinical_text(equiv.get("description"))
+                    if equiv.get("recommendation"):
+                        entry["recommendation"] = clean_clinical_text(equiv.get("recommendation"))
         result.append(entry)
     return result
 
+def generate_clinical_action_plan(
+    symptoms: List[str],
+    answers: Dict[str, str],
+    user_profile: Dict[str, Any],
+    candidates: List[Dict[str, Any]],
+    red_flags: List[str],
+    triage: str,
+    lang_code: str = "en"
+) -> Dict[str, Any]:
+    onset_text = ""
+    severity_val = 5
+    chronic_text = ""
+    meds_text = ""
+
+    for q, a in answers.items():
+        q_lower = q.lower()
+        a_str = str(a).strip()
+        if "start" in q_lower or "ဘယ်အချိန်" in q_lower or "စတင်" in q_lower:
+            onset_text = a_str
+        elif "1 to 10" in q_lower or "severity" in q_lower or "၁ မှ ၁၀" in q_lower or "ပြင်းထန်မှု" in q_lower:
+            nums = re.findall(r'\d+', a_str)
+            if nums:
+                severity_val = int(nums[0])
+        elif "long-term" in q_lower or "diabetes" in q_lower or "နာတာရှည်" in q_lower or "ဆက်ခံ" in q_lower:
+            chronic_text = a_str
+        elif "taking" in q_lower or "medicines" in q_lower or "ဆေးဝါး" in q_lower:
+            meds_text = a_str
+
+    normalized_symptoms = [s.lower() for s in translate_incoming_symptoms(symptoms)]
+    has_fever = any("fever" in s or "ဖျား" in s or "ကိုယ်ပူ" in s for s in normalized_symptoms)
+    has_cough = any("cough" in s or "ချောင်း" in s or "cold" in s for s in normalized_symptoms)
+    has_throat = any("throat" in s or "လည်ချောင်း" in s for s in normalized_symptoms)
+    has_stomach = any("abdom" in s or "stomach" in s or "diarrhea" in s or "vomit" in s or "ဗိုက်" in s or "ဝမ်း" in s or "အန်" in s for s in normalized_symptoms)
+    has_headache = any("headache" in s or "ခေါင်း" in s for s in normalized_symptoms)
+    has_chest = any("chest" in s or "breath" in s or "ရင်" in s or "မော" in s or "အသက်ရှူ" in s for s in normalized_symptoms)
+
+    is_mm = (lang_code == "mm")
+    top_disease = candidates[0]["name"] if candidates else ("ရာသီတုပ်ကွေး / ဖျားနာခြင်း" if is_mm else "Viral Fever")
+
+    # 0. ChatGPT-Style Doctor Assessment Narrative (ဆရာဝန် သုံးသပ်ချက်)
+    symptoms_str = "၊ ".join(symptoms) if symptoms else ("ဖျားနာခြင်း" if is_mm else "Fever")
+    onset_phrase = onset_text if onset_text else ("မကြာသေးမီက" if is_mm else "recently")
+
+    if is_mm:
+        clinical_narrative = (
+            f"လူနာသည် {onset_phrase} မှ စတင်၍ {symptoms_str} ဝေဒနာကို နာကျင်မှုပြင်းထန်မှုအဆင့် ({severity_val}/၁၀) ဖြင့် ခံစားနေရပါသည်။ "
+            f"ဆေးဘက်ဆိုင်ရာ ခွဲခြမ်းစိတ်ဖြာချက်အရ အဓိကအားဖြင့် **{top_disease}** ဖြစ်နိုင်ခြေ အများဆုံး ရှိနေပါသည်။ "
+            f"အောက်ပါ ဆေးဝါးများနှင့် နေထိုင်စားသောက်မှု အစီအစဉ်အတိုင်း လိုက်နာပြုစုပေးရန် အကြံပြုအပ်ပါသည်။"
+        )
+    else:
+        clinical_narrative = (
+            f"Patient has been experiencing {symptoms_str} since {onset_phrase} with a severity level of {severity_val}/10. "
+            f"Clinical assessment suggests **{top_disease}** as the most likely primary condition. "
+            f"Please follow the recommended medications, home care instructions, and precautions outlined below."
+        )
+
+    # 1. Action Plan (ဘာတွေ လုပ်သင့်တယ် / နေထိုင်စားသောက် ပြုစုနည်း)
+    action_plan = []
+    if is_mm:
+        action_plan.append("လုံလောက်စွာ အနားယူပါ (ခန္ဓာကိုယ် ခုခံအား ပြန်လည်ကောင်းမွန်စေရန် အနည်းဆုံး ၇-၈ နာရီ အိပ်စက်အနားယူပါ)။")
+        action_plan.append("ရေဓာတ်မခမ်းခြောက်စေရန် ရေနွေးနွေး သို့မဟုတ် အရည်များများ (တစ်နေ့လျှင် ၂ မှ ၃ လီတာအထိ) မကြာခဏ သောက်ပေးပါ။")
+        if has_fever or has_headache:
+            action_plan.append("ခန္ဓာကိုယ်အပူချိန် မြင့်တက်နေပါက ရေခဲရေမဟုတ်သော ရေကျက်အေး/ရေနွေးနွေးဖြင့် ရေပတ်တိုက်ပေးပါ။")
+            action_plan.append("ခန္ဓာကိုယ်အပူချိန်နှင့် ဝေဒနာအခြေအနေကို ၄ နာရီတစ်ကြိမ် စစ်ဆေးမှတ်သားထားပါ။")
+        if has_cough or has_throat:
+            action_plan.append("ဆားရည်နွေးနွေး (ရေနွေး ၁ ဖန်ခွက်တွင် ဆားလက်ဖက်ရည်ဇွန်းတစ်ဝက်) ဖြင့် တစ်နေ့ ၃ ကြိမ် ပလုတ်ကျင်းပေးပါ။")
+            action_plan.append("ရေနွေးငွေ့ ရှူရှိုက်ပေးခြင်းဖြင့် ချွဲသလိပ်များနှင့် အသက်ရှူလမ်းကြောင်းကို သက်သာစေပါသည်။")
+        if has_stomach:
+            action_plan.append("အစာမာများရှောင်၍ ဆန်ပြုတ်၊ စွပ်ပြုတ်ကဲ့သို့ အစာကြေလွယ်သော အစားအစာများကို အနည်းငယ်စီ မကြာခဏ စားပေးပါ။")
+            action_plan.append("ဝမ်းသွား/အန်ပါက ဆုံးရှုံးသွားသော ရေနှင့်ဆားဓာတ်အတွက် ဓာတ်ဆားရည် (ORS) ကို တစ်ငုံချင်း မကြာခဏ သောက်ပါ။")
+        if has_chest or red_flags:
+            action_plan.append("အသက်ရှူရလွယ်ကူစေရန် ဦးခေါင်းကို အနည်းငယ်မြှင့်၍ သက်သောင့်သက်သာ ထိုင်နေပါ။ လေဝင်လေထွက်ကောင်းသောနေရာတွင် နေပါ။")
+    else:
+        action_plan.append("Get plenty of bed rest (7-8 hours) to allow your immune system to recover.")
+        action_plan.append("Stay well hydrated by drinking 2-3 liters of warm water, clear broths, or herbal teas daily.")
+        if has_fever or has_headache:
+            action_plan.append("Apply a lukewarm wet compress to help reduce body temperature safely.")
+            action_plan.append("Monitor body temperature and symptom progression every 4 hours.")
+        if has_cough or has_throat:
+            action_plan.append("Gargle with warm salt water (1/2 tsp salt in warm water) 3 times daily.")
+        if has_stomach:
+            action_plan.append("Stick to a bland congee diet and sip oral rehydration solutions (ORS).")
+
+    # 2. Recommended Medications (သောက်သုံးနိုင်သော ဆေးဝါးများနှင့် သောက်သုံးပုံ)
+    meds = []
+    if is_mm:
+        if has_fever or has_headache or severity_val >= 4 or not (has_cough or has_stomach):
+            meds.append({
+                "name": "ပါရာစီတမော (Paracetamol 500mg)",
+                "dosage": "လိုအပ်ပါက ၄ နာရီမှ ၆ နာရီခြား တစ်ခါ ၁ ပြား သောက်နိုင်ပါသည်။",
+                "purpose": "အဖျားကျစေရန်နှင့် ခေါင်းကိုက်၊ ကိုယ်လက်ကိုက်ခဲမှု သက်သာစေရန်",
+                "precaution": "၂၄ နာရီအတွင်း ဆေးပမာဏ ၄၀၀၀ မီလီဂရမ် (၈ ပြား) ထက် ပိုမသောက်ရပါ။"
+            })
+        if has_cough or has_throat:
+            meds.append({
+                "name": "စီထရီဇင်း (Cetirizine 10mg) သို့မဟုတ် ချောင်းဆိုးပျောက်ဆေး",
+                "dosage": "တစ်နေ့လျှင် ၁ ကြိမ် ညအိပ်ရာဝင် ၁ ပြား သောက်ပါ။",
+                "purpose": "နှာစေး၊ နှာချေ၊ လည်ချောင်းယားယံခြင်းနှင့် ဓာတ်မတည့်မှု သက်သာစေရန်",
+                "precaution": "အိပ်ငိုက်စေနိုင်သဖြင့် ကားမောင်းခြင်း သို့မဟုတ် စက်ယန္တရား ကိုင်တွယ်ခြင်း ရှောင်ပါ။"
+            })
+        if has_stomach:
+            meds.append({
+                "name": "ဓာတ်ဆားရည် (Oral Rehydration Salts - ORS)",
+                "dosage": "ရေနွေးကျက်အေး ၂၅၀-၅၀၀ မီလီလီတာတွင် ဖျော်၍ ဝမ်းသွား/အန်တိုင်း တစ်ငုံချင်းသောက်ပါ။",
+                "purpose": "ခန္ဓာကိုယ်အတွင်း ရေနှင့် သတ္တုဓာတ်များ ပြန်လည်ဖြည့်တင်းရန်",
+                "precaution": "ဆီးချိုရောဂါရှိပါက သကြားဓာတ်ပါဝင်မှု သတိပြုပါ။"
+            })
+            meds.append({
+                "name": "အစာအိမ်လေဆေး (Antacid သို့မဟုတ် Omeprazole 20mg)",
+                "dosage": "မနက်စာမစားမီ နာရီဝက်အလို ၁ ပြား သောက်ပါ။",
+                "purpose": "အစာအိမ်အက်ဆစ် လျော့ကျစေရန်နှင့် လေထိုးလေအောင့် သက်သာစေရန်",
+                "precaution": "အခြားဆေးများနှင့် အနည်းဆုံး ၂ နာရီခြား သောက်ပါ။"
+            })
+    else:
+        meds.append({
+            "name": "Paracetamol (Acetaminophen 500mg)",
+            "dosage": "1 tablet every 4 to 6 hours as needed (Max 4,000mg / 8 tabs in 24 hours).",
+            "purpose": "Fever reduction and pain relief.",
+            "precaution": "Do not combine with other medications containing paracetamol."
+        })
+        if has_cough or has_throat:
+            meds.append({
+                "name": "Cetirizine 10mg / Cough expectorant",
+                "dosage": "1 tablet at bedtime.",
+                "purpose": "Relief of runny nose, sneezing, and throat irritation.",
+                "precaution": "May cause drowsiness."
+            })
+        if has_stomach:
+            meds.append({
+                "name": "Oral Rehydration Salts (ORS)",
+                "dosage": "Dissolve in clean water and sip slowly after each loose stool.",
+                "purpose": "Prevent dehydration and electrolyte imbalance.",
+                "precaution": "Do not mix with milk or sugary juices."
+            })
+
+    # 3. Things to Avoid (ဘာတွေ ရှောင်သင့်တယ်)
+    avoid_list = []
+    if is_mm:
+        avoid_list.append("ဆရာဝန်ညွှန်ကြားချက်မရှိဘဲ ပိုးသတ်ဆေးများ (Antibiotics) ကို မိမိသဘောဖြင့် ဝယ်ယူသောက်သုံးခြင်း လုံးဝရှောင်ကြဉ်ပါ (ဆေးယဉ်ပါးမှု ဖြစ်စေနိုင်သည်)။")
+        avoid_list.append("ပါရာစီတမော ပါဝင်ပြီးဖြစ်သော အအေးမိပျောက်ဆေးများနှင့် ပါရာစီတမောဆေးပြားကို ထပ်မံတွဲမသောက်ပါနှင့် (အသည်းထိခိုက်နိုင်သည်)။")
+        avoid_list.append("ရေခဲရေ၊ အလွန်အေးသော အဖျော်ယမကာများ၊ အစပ်လွန်ကဲသော အစားအစာများ၊ အရက်၊ ဘီယာနှင့် ဆေးလိပ်တို့ကို လုံးဝရှောင်ကြဉ်ပါ။")
+        avoid_list.append("ပြင်းထန်သော ကိုယ်လက်လေ့ကျင့်ခန်းများနှင့် အလေးအပင်မခြင်းများကို ခေတ္တရှောင်ကြဉ်ပါ။")
+        if chronic_text:
+            avoid_list.append(f"သင့်တွင် နာတာရှည်ရောဂါရာဇဝင် ({chronic_text}) ရှိသဖြင့် ပုံမှန်သောက်နေသော ဆေးများကို ဆရာဝန်ခွင့်ပြုချက်မရှိဘဲ မရပ်တန့်ပါနှင့်။")
+    else:
+        avoid_list.append("Do not self-prescribe antibiotics without a physician's prescription (prevents antibiotic resistance).")
+        avoid_list.append("Avoid taking multiple combination cold medicines that already contain paracetamol/acetaminophen.")
+        avoid_list.append("Avoid alcohol, icy cold drinks, smoking, and heavy/spicy greasy foods.")
+        avoid_list.append("Avoid strenuous physical exertion and heavy lifting while ill.")
+
+    # 4. Emergency Warnings (အရေးပေါ် ဆေးရုံ/ဆေးခန်း ပြသရမည့် လက္ခဏာများ)
+    emergency_warnings = []
+    if is_mm:
+        emergency_warnings.append("အဖျား ၃၉ ဒီဂရီစင်တီဂရိတ် (၁၀၂ ဒီဂရီဖာရင်ဟိုက်) ထက်ကျော်လွန်ပြီး ၃ ရက်ကျော် ကြာမြင့်ခြင်း။")
+        emergency_warnings.append("ရုတ်တရက် အသက်ရှူရခက်ခဲလာခြင်း၊ ရင်ဘတ်အောင့်ခြင်း သို့မဟုတ် နှုတ်ခမ်းပြာနှမ်းလာခြင်း။")
+        emergency_warnings.append("သတိလစ်မူးမေ့ခြင်း၊ စိတ်ရှုပ်ထွေးခြင်း သို့မဟုတ် တက်ခြင်း။")
+        emergency_warnings.append("အစာနှင့် ရေ လုံးဝမဝင်အောင် အဆက်မပြတ် အန်ခြင်း၊ သွေးအန်ခြင်း သို့မဟုတ် မည်းနက်သော ဝမ်းသွားခြင်း။")
+    else:
+        emergency_warnings.append("High fever over 39°C (102°F) persisting for more than 3 days.")
+        emergency_warnings.append("Sudden shortness of breath, severe chest pain, or bluish lips/fingertips.")
+        emergency_warnings.append("Fainting, confusion, altered mental state, or seizures.")
+        emergency_warnings.append("Inability to keep liquids down, persistent vomiting, or vomiting blood.")
+
+    return {
+        "clinical_narrative": clinical_narrative,
+        "action_plan": action_plan,
+        "recommended_medications": meds,
+        "things_to_avoid": avoid_list,
+        "emergency_warnings": emergency_warnings,
+    }
+
 def build_health_summary(summary: Dict[str, Any], patient_name: Optional[str]) -> str:
     lines = [
-        "AI Health Summary",
+        "Health Summary",
         f"Patient: {patient_name or 'Unknown patient'}",
         f"Generated: {datetime.datetime.utcnow().isoformat()}Z",
     ]
@@ -1239,77 +1551,160 @@ def _find_equivalent_in_dataset(source_entry, target_dataset, min_score=0.30, na
         return best_equiv, best_score
     return None, 0.0
 
+MYANMAR_COLLOQUIAL_SYMPTOMS = {
+    "နောက်ကျောအောင့်": ["back pain", "ခါးနာခြင်း", "နောက်ကျောနာကျင်ခြင်း"],
+    "နောက်ကျောနာ": ["back pain", "ခါးနာခြင်း", "နောက်ကျောနာကျင်ခြင်း"],
+    "ခါးနာ": ["back pain", "ခါးနာခြင်း", "ကျောအောင့်ခြင်း"],
+    "ခါးကိုက်": ["back pain", "ခါးနာခြင်း"],
+    "ခါးအောင့်": ["back pain", "ခါးနာခြင်း"],
+    "ကျောအောင့်": ["back pain", "နောက်ကျောနာခြင်း"],
+    "ကျောနာ": ["back pain", "နောက်ကျောနာခြင်း"],
+    "ကိုယ်လက်ကိုက်": ["muscle aches", "ကြွက်သားများ နာကျင်ကိုက်ခဲခြင်း", "အဆစ်အမြစ်ကိုက်ခဲခြင်း", "fatigue"],
+    "ကိုယ်လက်နာ": ["muscle aches", "ကြွက်သားများ နာကျင်ကိုက်ခဲခြင်း"],
+    "တစ်ကိုယ်လုံးကိုက်": ["muscle aches", "ကြွက်သားများ နာကျင်ကိုက်ခဲခြင်း"],
+    "ကြွက်သားနာ": ["muscle aches", "ကြွက်သားများ နာကျင်ကိုက်ခဲခြင်း"],
+    "ကြွက်သားကိုက်": ["muscle aches", "ကြွက်သားများ နာကျင်ကိုက်ခဲခြင်း"],
+    "အကြောတက်": ["muscle aches", "ကြွက်သားများ နာကျင်ကိုက်ခဲခြင်း"],
+    "ဖျား": ["fever", "ဖျားနာခြင်း"],
+    "ကိုယ်ပူ": ["fever", "ဖျားနာခြင်း"],
+    "အဖျားကြီး": ["high fever", "ဖျားနာခြင်း"],
+    "ချမ်းတုန်": ["chills", "ချမ်းတုန်ဖျားခြင်း"],
+    "ခေါင်းကိုက်": ["headache", "ခေါင်းကိုက်ခြင်း"],
+    "ခေါင်းခဲ": ["headache", "ခေါင်းကိုက်ခြင်း"],
+    "ခေါင်းအုံ": ["headache", "ခေါင်းကိုက်ခြင်း"],
+    "ဇက်ကိုက်": ["headache", "ဇက်ဆစ်ရိုးနာခြင်း"],
+    "ချောင်းဆိုး": ["cough", "ချောင်းဆိုးခြင်း"],
+    "သလိပ်ထွက်": ["cough", "ချောင်းဆိုးခြင်း"],
+    "နှာစေး": ["runny nose", "နှာစေးခြင်း"],
+    "နှာပိတ်": ["nasal congestion", "နှာပိတ်ခြင်း"],
+    "နှာချေ": ["sneezing", "နှာချေခြင်း"],
+    "လည်ချောင်းနာ": ["sore throat", "လည်ချောင်းနာခြင်း"],
+    "ရင်ကြပ်": ["shortness of breath", "အသက်ရှူကြပ်ခြင်း"],
+    "မော": ["shortness of breath", "အသက်ရှူရခက်ခဲခြင်း"],
+    "ဗိုက်အောင့်": ["abdominal pain", "ဗိုက်အောင့်ခြင်း / ဗိုက်နာခြင်း"],
+    "ဗိုက်နာ": ["abdominal pain", "ဗိုက်အောင့်ခြင်း / ဗိုက်နာခြင်း"],
+    "ဝမ်းဗိုက်နာ": ["abdominal pain", "ဗိုက်အောင့်ခြင်း"],
+    "ရင်ပူ": ["heartburn", "ရင်ပူခြင်း"],
+    "အစာမကြေ": ["indigestion", "အစာမကြေခြင်း"],
+    "လေပွ": ["bloating", "လေပွခြင်း"],
+    "လေထိုး": ["bloating", "လေထိုးခြင်း"],
+    "ဝမ်းလျှော": ["diarrhea", "ဝမ်းသွားခြင်း"],
+    "ဝမ်းသွား": ["diarrhea", "ဝမ်းသွားခြင်း"],
+    "ဝမ်းချုပ်": ["constipation", "ဝမ်းချုပ်ခြင်း"],
+    "ပျို့": ["nausea", "ပျို့အန်ချင်ခြင်း"],
+    "အန်": ["vomiting", "အန်ခြင်း"],
+    "ခေါင်းမူး": ["dizziness", "ခေါင်းမူးခြင်း"],
+    "မူးဝေ": ["dizziness", "ခေါင်းမူးခြင်း"],
+    "ချာချာလည်": ["vertigo", "ခေါင်းမူး ချာချာလည်ခြင်း"],
+    "မောပန်း": ["fatigue", "မောပန်းနွမ်းနယ်ခြင်း"],
+    "နုံး": ["fatigue", "မောပန်းနွမ်းနယ်ခြင်း"],
+    "အားမရှိ": ["weakness", "ကြွက်သားများ အားနည်းခြင်း"],
+    "အဆစ်အမြစ်ကိုက်": ["joint pain", "အဆစ်အမြစ်ကိုက်ခဲခြင်း"],
+    "ဒူးနာ": ["joint pain", "အဆစ်အမြစ်ကိုက်ခဲခြင်း"],
+}
+
+MYANMAR_VERB_ENDINGS = [
+    "ဖြစ်နေပါသည်", "ဖြစ်နေပါတယ်", "ဖြစ်နေတယ်", "ဖြစ်နေတာ", "ဖြစ်ပါတယ်", "ဖြစ်တယ်", "ဖြစ်တာ",
+    "နေပါသည်", "နေပါတယ်", "နေတယ်", "နေတာ", "နေလို့", "လိုက်တာ", "လိုက်တယ်",
+    "ပါသည်", "ပါတယ်", "တယ်", "တာ", "ခြင်း", "လို့", "ပြီး", "နေ"
+]
+
+def strip_myanmar_verb_endings(text):
+    if not text or not isinstance(text, str):
+        return ""
+    cleaned = text.strip()
+    for ending in MYANMAR_VERB_ENDINGS:
+        if cleaned.endswith(ending) and len(cleaned) > len(ending) + 1:
+            cleaned = cleaned[:-len(ending)].strip()
+            break
+    return cleaned
+
+def translate_incoming_symptoms(symptoms):
+    expanded = []
+    for s in symptoms or []:
+        s_clean = s.lower().strip()
+        expanded.append(s_clean)
+        
+        # Stem root word
+        stemmed = strip_myanmar_verb_endings(s_clean)
+        if stemmed:
+            expanded.append(stemmed)
+            
+        for mm_key, en_aliases in MYANMAR_COLLOQUIAL_SYMPTOMS.items():
+            if mm_key in s_clean or (stemmed and mm_key in stemmed) or (stemmed and stemmed in mm_key):
+                expanded.extend(en_aliases)
+    return list(set(expanded))
+
+def get_diseases_mm():
+    return load_json("diseases_mm.json")
+
+def get_diseases_en():
+    return load_json("diseases.json")
+
 @app.post("/diagnose", response_model=DiseaseResponse)
 async def diagnose(input_data: SymptomInput, accept_language: str = Header("en")):
     lang_code = accept_language.split(',')[0].split('-')[0].lower()
-    print(f"DEBUG: Language code detected: {lang_code}")
     
-    # Translate symptoms if they are in Myanmar
+    # Dynamically load fresh datasets
+    d_mm = get_diseases_mm()
+    d_en = get_diseases_en()
+    dataset = d_mm if lang_code == "mm" else d_en
+    
+    # Translate / Expand incoming symptoms
     raw_symptoms = input_data.symptoms
     translated_symptoms = translate_incoming_symptoms(raw_symptoms)
     user_symptoms = [s.lower().strip() for s in translated_symptoms]
     
-    # Select dataset for results (primary)
-    dataset = DISEASES_MM if lang_code == "mm" else DISEASES_EN
-    
     best_match = None
     max_score = 0
     
-    # Matching Logic - Always search across both datasets to find the best conceptual match
-    all_combined_dataset = DISEASES_MM + DISEASES_EN
+    # Search prioritized by requested language dataset first
+    search_dataset = (d_mm + d_en) if lang_code == "mm" else (d_en + d_mm)
+    search_terms = list(set(user_symptoms + raw_symptoms))
     
-    for disease in all_combined_dataset:
+    for disease in search_dataset:
         disease_name = disease.get("name", "").lower()
         disease_desc = disease.get("description", "").lower()
         disease_symptoms = [s.lower() for s in disease.get("symptoms", [])]
         
         score = 0
         
-        # 1. Direct Name/Description Match (Highest priority)
-        search_terms = list(set(user_symptoms + raw_symptoms))
-        
         for term in search_terms:
             term_clean = term.lower().strip()
-            if not term_clean or len(term_clean) < 3: continue
+            if not term_clean or len(term_clean) < 2:
+                continue
             
-            # Boost for exact name match
+            # 1. Direct Name Match
             if term_clean == disease_name:
                 score += 50
-            elif term_clean in disease_name or disease_name in term_clean:
-                score += 30
+            elif term_clean in disease_name:
+                score += 35
+            elif disease_name in term_clean:
+                score += 25
             
-            # Boost for description match
+            # 2. Description Match
             if term_clean in disease_desc:
                 score += 20
                 
-            # Fuzzy match for typos in names
-            f_score = fuzz.partial_ratio(term_clean, disease_name)
-            if f_score > 90:
-                score += 15
-
-        # 2. Symptom Matching
-        for term in search_terms:
-            term_clean = term.lower().replace('ခြင်း', '').replace('တယ်', '').replace('နေတယ်', '').strip()
-            if not term_clean: continue
-            
+            # 3. Symptom Matching
             for ds in disease_symptoms:
-                ds_clean = ds.lower().replace('ခြင်း', '').replace('တယ်', '').replace('နေတယ်', '').strip()
-                # 1. Exact symptom match
-                if term_clean == ds_clean:
-                    score += 15
-                # 2. Direct contains
-                elif term_clean in ds_clean or ds_clean in term_clean:
-                    score += 8
-                # 3. Fuzzy match for symptoms
-                elif len(term_clean) > 3:
-                    if fuzz.ratio(term_clean, ds_clean) > 85:
-                        score += 7
-            
+                ds_clean = ds.lower().replace('ခြင်း', '').replace('တယ်', '').replace('နေတယ်', '').replace('တာ', '').strip()
+                t_clean = term_clean.replace('ခြင်း', '').replace('တယ်', '').replace('နေတယ်', '').replace('တာ', '').strip()
+                
+                if t_clean and ds_clean:
+                    if t_clean == ds_clean:
+                        score += 30
+                    elif t_clean in ds_clean or ds_clean in t_clean:
+                        score += 18
+                    elif len(t_clean) >= 3 and len(ds_clean) >= 3:
+                        if fuzz.ratio(t_clean, ds_clean) > 70:
+                            score += 12
+        
         if score > max_score:
             max_score = score
             best_match = disease
             
-    if not best_match or max_score < 10: # Threshold to avoid random results
+    if not best_match or max_score < 8:
         if lang_code == "mm":
             return {
                 "disease": "ရောဂါအမည်မသိရပါ",
@@ -1327,19 +1722,31 @@ async def diagnose(input_data: SymptomInput, accept_language: str = Header("en")
                 "medications": []
             }
 
-    # Ensure result is in the user's preferred language using smart lookup
+    # Ensure result is in the user's preferred language
     final_result = best_match
-    equiv, equiv_score = _find_equivalent_in_dataset(best_match, dataset, min_score=0.30)
-    if equiv is not None:
-        final_result = equiv
-        print(f"DEBUG: Cross-language match found (score={equiv_score:.2f}): {best_match.get('name')} -> {equiv.get('name')}")
-            
+    if lang_code == "mm" and best_match not in d_mm:
+        equiv, equiv_score = _find_equivalent_in_dataset(best_match, d_mm, min_score=0.20)
+        if equiv is not None:
+            final_result = equiv
+    elif lang_code != "mm" and best_match not in d_en:
+        equiv, equiv_score = _find_equivalent_in_dataset(best_match, d_en, min_score=0.20)
+        if equiv is not None:
+            final_result = equiv
+
+    prevention_list = final_result.get("prevention") or final_result.get("precautions") or []
+    if isinstance(prevention_list, str):
+        prevention_list = [prevention_list]
+
+    meds_list = final_result.get("medications") or []
+    if isinstance(meds_list, str):
+        meds_list = [meds_list]
+
     return {
-        "disease": final_result["name"],
-        "description": final_result["description"],
-        "prevention": final_result.get("prevention", final_result.get("precautions", [])),
-        "recommendation": final_result["recommendation"],
-        "medications": final_result.get("medications", [])
+        "disease": str(final_result.get("name", "Unknown Condition")),
+        "description": str(final_result.get("description", "")),
+        "prevention": prevention_list,
+        "recommendation": str(final_result.get("recommendation", "")),
+        "medications": meds_list
     }
 
 @app.get("/medicines")
@@ -1391,11 +1798,21 @@ async def get_tips(accept_language: str = Header("en")):
 async def clinical_decision_support(payload: ClinicalDecisionRequest, accept_language: str = Header("en")):
     lang_code = accept_language.split(',')[0].split('-')[0].lower()
     symptoms = [s for s in payload.symptoms if s and s.strip()]
-    normalized = [s.lower().strip() for s in translate_incoming_symptoms(symptoms)]
-    red_flags_en = sorted({s for s in normalized if s in RED_FLAG_SYMPTOMS})
-    candidates = match_disease_candidates(symptoms, lang_code=lang_code)
 
     answered_questions = {k: v for k, v in payload.answers.items() if v and v.strip()}
+    
+    # If no symptoms were explicitly selected, extract any symptoms mentioned in follow-up answers
+    if not symptoms and answered_questions:
+        extracted = []
+        for ans in answered_questions.values():
+            if ans and isinstance(ans, str):
+                extracted.extend(translate_incoming_symptoms([ans]))
+        symptoms = list(dict.fromkeys([e for e in extracted if e]))
+
+    normalized = [s.lower().strip() for s in translate_incoming_symptoms(symptoms)]
+    red_flags_en = sorted({s for s in normalized if s in RED_FLAG_SYMPTOMS})
+    candidates = match_disease_candidates(symptoms, limit=5, lang_code=lang_code)
+
     next_questions = [
         question for question in CLINICAL_FOLLOW_UPS if question not in answered_questions
     ][:2]
@@ -1418,6 +1835,16 @@ async def clinical_decision_support(payload: ClinicalDecisionRequest, accept_lan
     else:
         red_flags = red_flags_en
 
+    plan_data = generate_clinical_action_plan(
+        symptoms=symptoms,
+        answers=answered_questions,
+        user_profile=payload.user_profile or {},
+        candidates=candidates,
+        red_flags=red_flags,
+        triage=triage,
+        lang_code=lang_code,
+    )
+
     return {
         "triage": triage,
         "risk_score": risk_score,
@@ -1425,6 +1852,11 @@ async def clinical_decision_support(payload: ClinicalDecisionRequest, accept_lan
         "candidate_conditions": candidates,
         "next_questions": next_questions,
         "recommendation": recommendation,
+        "clinical_narrative": plan_data.get("clinical_narrative", ""),
+        "action_plan": plan_data.get("action_plan", []),
+        "recommended_medications": plan_data.get("recommended_medications", []),
+        "things_to_avoid": plan_data.get("things_to_avoid", []),
+        "emergency_warnings": plan_data.get("emergency_warnings", []),
         "clinical_summary": {
             "symptoms": symptoms,
             "answers": answered_questions,
@@ -1434,7 +1866,10 @@ async def clinical_decision_support(payload: ClinicalDecisionRequest, accept_lan
     }
 
 @app.post("/predictive-analytics")
-async def predictive_analytics(payload: PredictiveAnalyticsRequest):
+async def predictive_analytics(payload: PredictiveAnalyticsRequest, accept_language: str = Header("en")):
+    lang_code = accept_language.split(',')[0].split('-')[0].lower()
+    is_mm = (lang_code == "mm")
+
     bp_logs = payload.bp_logs or []
     latest_bp = bp_logs[0] if bp_logs else None
     latest_sys = latest_bp.systolic if latest_bp else None
@@ -1447,54 +1882,54 @@ async def predictive_analytics(payload: PredictiveAnalyticsRequest):
     if latest_sys and latest_dia:
         if latest_sys >= 140 or latest_dia >= 90:
             risk_score += 35
-            risk_factors.append("Latest blood pressure is in a high range.")
-            forecast_parts.append("Monitor blood pressure closely and consider a doctor check-up if symptoms occur.")
+            risk_factors.append("နောက်ဆုံးတိုင်းထားသော သွေးပေါင်ချိန်သည် ပုံမှန်ထက် မြင့်မားနေပါသည်။" if is_mm else "Latest blood pressure is in a high range.")
+            forecast_parts.append("သွေးပေါင်ချိန်ကို အနီးကပ် စောင့်ကြည့်ပြီး မူးဝေခြင်း သို့မဟုတ် ခေါင်းကိုက်ခြင်း လက္ခဏာများ ရှိပါက ဆရာဝန်နှင့် ပြသပါ။" if is_mm else "Monitor blood pressure closely and consider a doctor check-up if symptoms occur.")
         elif latest_sys >= 130 or latest_dia >= 85:
             risk_score += 18
-            risk_factors.append("Latest blood pressure is elevated.")
-            forecast_parts.append("Continue logging blood pressure and reduce salt intake.")
+            risk_factors.append("နောက်ဆုံးတိုင်းထားသော သွေးပေါင်ချိန်သည် အနည်းငယ် မြင့်တက်နေပါသည်။" if is_mm else "Latest blood pressure is elevated.")
+            forecast_parts.append("သွေးပေါင်ချိန် မှတ်တမ်းများကို ပုံမှန်ဆက်လက် တိုင်းတာပြီး အငန်နှင့် ဆား လျှော့စားပါ။" if is_mm else "Continue logging blood pressure and reduce salt intake.")
         else:
-            forecast_parts.append("Blood pressure is currently in a healthy range - keep up the good habits!")
+            forecast_parts.append("သွေးပေါင်ချိန်သည် ကျန်းမာသော ပုံမှန်အဆင့်တွင် ရှိနေပါသည် - ဒီအတိုင်း ဆက်လက်ထိန်းသိမ်းပါ။" if is_mm else "Blood pressure is currently in a healthy range - keep up the good habits!")
     else:
-        forecast_parts.append("Log blood pressure readings to get personalized predictions.")
+        forecast_parts.append("တိကျသော ခန့်မှန်းချက် ရရှိရန် သွေးပေါင်ချိန် မှတ်တမ်းများကို နေ့စဉ် မှတ်သားပေးပါ။" if is_mm else "Log blood pressure readings to get personalized predictions.")
 
     bmi = payload.bmi
     if bmi and bmi >= 30:
         risk_score += 22
-        risk_factors.append("BMI is in an obesity range.")
-        forecast_parts.append("Focus on balanced nutrition and light daily activity.")
+        risk_factors.append("BMI ကိုယ်အလေးချိန်သည် အဝလွန်သည့် အဆင့်တွင် ရှိနေပါသည်။" if is_mm else "BMI is in an obesity range.")
+        forecast_parts.append("အာဟာရမျှတသော အစားအစာများကို ဦးစားပေးစားပြီး နေ့စဉ် လမ်းလျှောက်ခြင်းကဲ့သို့ ပေါ့ပါးသော လေ့ကျင့်ခန်းများ ပြုလုပ်ပါ။" if is_mm else "Focus on balanced nutrition and light daily activity.")
     elif bmi and bmi >= 25:
         risk_score += 12
-        risk_factors.append("BMI is above the normal range.")
-        forecast_parts.append("Small daily changes can help move toward a healthier BMI.")
+        risk_factors.append("BMI ကိုယ်အလေးချိန်သည် ပုံမှန်ထက် အနည်းငယ် များနေပါသည်။" if is_mm else "BMI is above the normal range.")
+        forecast_parts.append("အစားအသောက် အနည်းငယ် ထိန်းညှိခြင်းနှင့် လှုပ်ရှားမှု ပြုလုပ်ခြင်းဖြင့် ကျန်းမာသော ကိုယ်အလေးချိန်သို့ ရောက်ရှိနိုင်ပါသည်။" if is_mm else "Small daily changes can help move toward a healthier BMI.")
     elif bmi:
-        forecast_parts.append("BMI is in a healthy range - maintain your current routine!")
+        forecast_parts.append("BMI ကိုယ်အလေးချိန်သည် သင့်တင့်မျှတသော ကျန်းမာသည့် အဆင့်တွင် ရှိနေပါသည်။" if is_mm else "BMI is in a healthy range - maintain your current routine!")
     else:
-        forecast_parts.append("Save your height and weight to calculate BMI.")
+        forecast_parts.append("BMI တွက်ချက်နိုင်ရန် အရပ်နှင့် ကိုယ်အလေးချိန်ကို ထည့်သွင်းပေးပါ။" if is_mm else "Save your height and weight to calculate BMI.")
 
     water_intake = payload.water or 0
     if water_intake < 5:
         risk_score += 10
-        risk_factors.append("Water intake is below the daily target.")
-        forecast_parts.append("Aim for 6-8 glasses of water today - sip regularly!")
+        risk_factors.append("နေ့စဉ် ရေသောက်သုံးမှု ပမာဏသည် သတ်မှတ်ပန်းတိုင်ထက် နည်းပါးနေပါသည်။" if is_mm else "Water intake is below the daily target.")
+        forecast_parts.append("တစ်နေ့လျှင် ရေ ၆ မှ ၈ ဖန်ခွက် (သို့မဟုတ် ၂ လီတာခန့်) ပြည့်အောင် မကြာခဏ သောက်ပေးပါ။" if is_mm else "Aim for 6-8 glasses of water today - sip regularly!")
     elif water_intake >= 8:
-        forecast_parts.append("Great job hitting your water intake goal!")
+        forecast_parts.append("ရေသောက်သုံးမှု ပန်းတိုင်ပြည့်မီအောင် သောက်နိုင်သဖြင့် အလွန်ကောင်းမွန်ပါသည်။" if is_mm else "Great job hitting your water intake goal!")
     else:
-        forecast_parts.append("You're close to your water goal - just a few more glasses!")
+        forecast_parts.append("ရေသောက်သုံးမှု ပန်းတိုင်ပြည့်ရန် နီးကပ်နေပါပြီ - နောက်ထပ် အနည်းငယ် ပိုသောက်ပေးပါ။" if is_mm else "You're close to your water goal - just a few more glasses!")
 
     sys_values = [log.systolic for log in bp_logs if log.systolic]
     if len(sys_values) >= 3:
         trend = sys_values[0] - sys_values[-1]
         if trend > 5:
             risk_score += 12
-            risk_factors.append("Blood pressure trend is increasing.")
-            forecast_parts.append("Your blood pressure has been rising - monitor it closely.")
+            risk_factors.append("သွေးပေါင်ချိန် တဖြည်းဖြည်း မြင့်တက်လာသည့် အလားအလာ တွေ့ရှိရပါသည်။" if is_mm else "Blood pressure trend is increasing.")
+            forecast_parts.append("သွေးပေါင်ချိန် တဖြည်းဖြည်း မြင့်တက်လာနေသဖြင့် အနီးကပ် ဆက်လက်စောင့်ကြည့်ပေးပါ။" if is_mm else "Your blood pressure has been rising - monitor it closely.")
             bp_trend = "rising"
         elif trend < -5:
-            forecast_parts.append("Great news - your blood pressure trend is improving!")
+            forecast_parts.append("သွေးပေါင်ချိန် အခြေအနေသည် တဖြည်းဖြည်း တိုးတက်ကောင်းမွန်လာနေပါသည်။" if is_mm else "Great news - your blood pressure trend is improving!")
             bp_trend = "improving"
         else:
-            forecast_parts.append("Your blood pressure has been stable.")
+            forecast_parts.append("သွေးပေါင်ချိန်သည် တည်ငြိမ်ကောင်းမွန်စွာ ရှိနေပါသည်။" if is_mm else "Your blood pressure has been stable.")
             bp_trend = "stable"
     else:
         bp_trend = "not_enough_data"
@@ -1505,15 +1940,17 @@ async def predictive_analytics(payload: PredictiveAnalyticsRequest):
     elif risk_score >= 45:
         level = "moderate"
     else:
-        level = "stable"  # Changed to match frontend's "predictive_stable_risk_trend" key
+        level = "stable"
 
-    forecast = " ".join(forecast_parts) if forecast_parts else "Keep logging blood pressure, BMI, water, and mood daily to improve prediction quality."
+    default_fallback_forecast = "ကျန်းမာရေး ခန့်မှန်းချက် ပိုမိုတိကျစေရန် သွေးပေါင်ချိန်၊ BMI၊ ရေသောက်သုံးမှုနှင့် စိတ်ခံစားမှု မှတ်တမ်းများကို နေ့စဉ် ဆက်လက် မှတ်သားပေးပါ။" if is_mm else "Keep logging blood pressure, BMI, water, and mood daily to improve prediction quality."
+    forecast = " ".join(forecast_parts) if forecast_parts else default_fallback_forecast
+    default_risk_factor = ["ပေးထားသော အချက်အလက်များအရ ကြီးမားသော ကျန်းမာရေး အန္တရာယ် မတွေ့ရှိပါ။"] if is_mm else ["No major risk trend detected from supplied data."]
 
     return {
         "risk_score": risk_score,
         "risk_level": level,
         "bp_trend": bp_trend,
-        "risk_factors": risk_factors or ["No major risk trend detected from supplied data."],
+        "risk_factors": risk_factors or default_risk_factor,
         "forecast": forecast,
     }
 

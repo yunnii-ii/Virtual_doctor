@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   View,
   StyleSheet,
@@ -6,16 +6,17 @@ import {
   TouchableOpacity,
   Image,
   Alert,
+  TextInput as RNTextInput,
+  Platform,
 } from "react-native";
 import {
   Text,
-  TextInput,
   Button,
   Surface,
   Portal,
   Modal,
-  TextInput as PaperTextInput,
 } from "react-native-paper";
+import { X, Globe, Check, Server } from "lucide-react-native";
 import { login as loginApi, setBaseURL } from "../api";
 import { useAuth } from "../utils/AuthContext";
 import AsyncStorage from "../utils/asyncStorage";
@@ -29,7 +30,7 @@ const LoginScreen = ({ navigation }) => {
   const [urlVisible, setUrlVisible] = useState(false);
   const [newUrl, setNewUrl] = useState("");
 
-  React.useEffect(() => {
+  useEffect(() => {
     loadSavedUrl();
   }, []);
 
@@ -38,6 +39,8 @@ const LoginScreen = ({ navigation }) => {
     if (saved) {
       setBaseURL(saved);
       setNewUrl(saved);
+    } else {
+      setNewUrl("http://192.168.100.18:8001");
     }
   };
 
@@ -52,11 +55,14 @@ const LoginScreen = ({ navigation }) => {
   };
 
   const saveUrl = async () => {
-    if (newUrl) {
-      await AsyncStorage.setItem("api_base_url", newUrl);
-      setBaseURL(newUrl);
+    if (newUrl && newUrl.trim()) {
+      const trimmed = newUrl.trim();
+      await AsyncStorage.setItem("api_base_url", trimmed);
+      setBaseURL(trimmed);
       setUrlVisible(false);
-      Alert.alert("Success", "API URL updated successfully");
+      Alert.alert("Success", "API URL updated successfully to:\n" + trimmed);
+    } else {
+      Alert.alert("Error", "Please enter a valid URL");
     }
   };
 
@@ -67,12 +73,12 @@ const LoginScreen = ({ navigation }) => {
     }
     setLoading(true);
     try {
-      const userData = await loginApi(email, password);
+      const userData = await loginApi(email.trim(), password);
       await login(userData);
     } catch (error) {
       Alert.alert(
         "Login Failed",
-        error.response?.data?.detail || "Something went wrong",
+        error.response?.data?.detail || "Something went wrong. Please check your network or API URL.",
       );
     } finally {
       setLoading(false);
@@ -80,7 +86,7 @@ const LoginScreen = ({ navigation }) => {
   };
 
   return (
-    <ScrollView contentContainerStyle={styles.container}>
+    <ScrollView contentContainerStyle={styles.container} keyboardShouldPersistTaps="handled">
       <View style={styles.header}>
         <Surface style={styles.logoContainer} elevation={4}>
           <TouchableOpacity onPress={handleLogoTap} activeOpacity={0.8}>
@@ -100,35 +106,65 @@ const LoginScreen = ({ navigation }) => {
       </View>
 
       <View style={styles.form}>
-        <TextInput
-          label="Email"
-          value={email}
-          onChangeText={setEmail}
-          mode="outlined"
-          style={styles.input}
-          keyboardType="email-address"
-          autoCapitalize="none"
-        />
-        <TextInput
-          label="Password"
-          value={password}
-          onChangeText={setPassword}
-          mode="outlined"
-          style={styles.input}
-          secureTextEntry={true}
-        />
+        {/* Native IME safe Email Input */}
+        <Text style={styles.inputLabel}>Email Address</Text>
+        <View style={styles.inputWrapper}>
+          <RNTextInput
+            value={email}
+            onChangeText={setEmail}
+            placeholder="Enter your email"
+            placeholderTextColor="#94A3B8"
+            style={styles.nativeInput}
+            keyboardType="email-address"
+            autoCapitalize="none"
+            autoCorrect={false}
+            spellCheck={false}
+            textContentType="emailAddress"
+          />
+          {email.length > 0 && (
+            <TouchableOpacity onPress={() => setEmail("")} style={styles.clearBtn}>
+              <X size={16} color="#94A3B8" />
+            </TouchableOpacity>
+          )}
+        </View>
+
+        {/* Native IME safe Password Input */}
+        <Text style={styles.inputLabel}>Password</Text>
+        <View style={styles.inputWrapper}>
+          <RNTextInput
+            value={password}
+            onChangeText={setPassword}
+            placeholder="Enter your password"
+            placeholderTextColor="#94A3B8"
+            style={styles.nativeInput}
+            secureTextEntry={true}
+            autoCapitalize="none"
+            autoCorrect={false}
+            spellCheck={false}
+            textContentType="password"
+          />
+          {password.length > 0 && (
+            <TouchableOpacity onPress={() => setPassword("")} style={styles.clearBtn}>
+              <X size={16} color="#94A3B8" />
+            </TouchableOpacity>
+          )}
+        </View>
+
         <Button
           mode="contained"
+          buttonColor="#5568FF"
+          textColor="#FFFFFF"
           onPress={handleLogin}
           loading={loading}
           style={styles.button}
           contentStyle={styles.buttonContent}
+          labelStyle={styles.buttonLabel}
         >
           Login
         </Button>
 
         <View style={styles.footer}>
-          <Text variant="bodyMedium">Don't have an account? </Text>
+          <Text variant="bodyMedium" style={{ color: "#64748B" }}>Don't have an account? </Text>
           <TouchableOpacity onPress={() => navigation.navigate("Register")}>
             <Text variant="bodyMedium" style={styles.link}>
               Register
@@ -137,26 +173,89 @@ const LoginScreen = ({ navigation }) => {
         </View>
       </View>
 
+      {/* ── API Configuration Modal (Completely IME duplicate-proof) ── */}
       <Portal>
         <Modal
           visible={urlVisible}
           onDismiss={() => setUrlVisible(false)}
           contentContainerStyle={styles.urlModal}
         >
-          <Text variant="titleLarge" style={styles.modalTitle}>
-            API Configuration
+          <View style={styles.modalHeader}>
+            <Server size={22} color="#5568FF" />
+            <Text variant="titleLarge" style={styles.modalTitle}>
+              API Configuration
+            </Text>
+          </View>
+          <Text style={styles.modalSubtitle}>
+            Configure backend FastAPI server address:
           </Text>
-          <PaperTextInput
-            label="Base URL"
-            value={newUrl}
-            onChangeText={setNewUrl}
-            mode="outlined"
-            placeholder="http://192.168.x.x:8001"
-            style={styles.modalInput}
-          />
+
+          {/* Native TextInput without paper controlled conflicts */}
+          <View style={styles.urlInputBox}>
+            <RNTextInput
+              value={newUrl}
+              onChangeText={setNewUrl}
+              placeholder="http://192.168.100.18:8000"
+              placeholderTextColor="#94A3B8"
+              style={styles.urlNativeInput}
+              autoCapitalize="none"
+              autoCorrect={false}
+              spellCheck={false}
+              keyboardType="url"
+              textContentType="none"
+            />
+            {newUrl.length > 0 && (
+              <TouchableOpacity onPress={() => setNewUrl("")} style={styles.clearBtn}>
+                <X size={16} color="#94A3B8" />
+              </TouchableOpacity>
+            )}
+          </View>
+
+          {/* Quick preset chips */}
+          <Text style={styles.presetLabel}>Quick Presets:</Text>
+          <View style={styles.presetRow}>
+            {[
+              "http://192.168.100.18:8001",
+              "http://10.0.2.2:8001",
+              "http://127.0.0.1:8001",
+            ].map((preset) => (
+              <TouchableOpacity
+                key={preset}
+                style={[
+                  styles.presetChip,
+                  newUrl === preset && styles.presetChipActive,
+                ]}
+                onPress={() => setNewUrl(preset)}
+              >
+                <Text
+                  style={[
+                    styles.presetChipText,
+                    newUrl === preset && styles.presetChipTextActive,
+                  ]}
+                >
+                  {preset.replace("http://", "")}
+                </Text>
+              </TouchableOpacity>
+            ))}
+          </View>
+
           <View style={styles.modalButtons}>
-            <Button onPress={() => setUrlVisible(false)}>Cancel</Button>
-            <Button mode="contained" onPress={saveUrl} style={styles.saveBtn}>
+            <Button
+              mode="outlined"
+              textColor="#64748B"
+              style={styles.cancelBtn}
+              onPress={() => setUrlVisible(false)}
+            >
+              Cancel
+            </Button>
+            <Button
+              mode="contained"
+              buttonColor="#5568FF"
+              textColor="#FFFFFF"
+              onPress={saveUrl}
+              style={styles.saveBtn}
+              labelStyle={{ fontWeight: "bold" }}
+            >
               Save
             </Button>
           </View>
@@ -169,75 +268,171 @@ const LoginScreen = ({ navigation }) => {
 const styles = StyleSheet.create({
   container: {
     flexGrow: 1,
-    backgroundColor: "#FFF",
+    backgroundColor: "#FFFFFF",
     padding: 24,
     justifyContent: "center",
   },
   header: {
     alignItems: "center",
-    marginBottom: 40,
+    marginBottom: 32,
   },
   logoContainer: {
-    padding: 10,
-    borderRadius: 30,
-    backgroundColor: "#FFF",
-    marginBottom: 20,
+    padding: 12,
+    borderRadius: 28,
+    backgroundColor: "#FFFFFF",
+    marginBottom: 16,
     overflow: "hidden",
   },
   logo: {
-    width: 100,
-    height: 100,
+    width: 90,
+    height: 90,
   },
   title: {
     fontWeight: "bold",
-    color: "#5A5F73",
+    color: "#1E293B",
   },
   subtitle: {
-    color: "#8A8FA3",
-    marginTop: 8,
+    color: "#64748B",
+    marginTop: 4,
+    fontSize: 14,
   },
   form: {
     width: "100%",
   },
-  input: {
-    marginBottom: 16,
+  inputLabel: {
+    fontSize: 13,
+    fontWeight: "600",
+    color: "#475569",
+    marginBottom: 6,
+    marginTop: 10,
+  },
+  inputWrapper: {
+    flexDirection: "row",
+    alignItems: "center",
+    backgroundColor: "#F8FAFC",
+    borderWidth: 1.5,
+    borderColor: "#E2E8F0",
+    borderRadius: 12,
+    paddingHorizontal: 12,
+    marginBottom: 8,
+  },
+  nativeInput: {
+    flex: 1,
+    paddingVertical: 12,
+    fontSize: 15,
+    color: "#0F172A",
+  },
+  clearBtn: {
+    padding: 6,
   },
   button: {
-    marginTop: 8,
+    marginTop: 18,
     borderRadius: 12,
-    backgroundColor: "#5568FF",
+    elevation: 3,
   },
   buttonContent: {
-    paddingVertical: 8,
+    paddingVertical: 6,
+  },
+  buttonLabel: {
+    fontSize: 16,
+    fontWeight: "bold",
   },
   footer: {
     flexDirection: "row",
     justifyContent: "center",
+    alignItems: "center",
     marginTop: 24,
   },
   link: {
     color: "#5568FF",
     fontWeight: "bold",
   },
+
+  // Modal
   urlModal: {
-    backgroundColor: "white",
+    backgroundColor: "#FFFFFF",
     padding: 24,
     margin: 20,
-    borderRadius: 16,
+    borderRadius: 20,
+    elevation: 8,
+  },
+  modalHeader: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 8,
+    marginBottom: 6,
   },
   modalTitle: {
-    marginBottom: 20,
     fontWeight: "bold",
+    color: "#1E293B",
   },
-  modalInput: {
+  modalSubtitle: {
+    fontSize: 13,
+    color: "#64748B",
+    marginBottom: 16,
+  },
+  urlInputBox: {
+    flexDirection: "row",
+    alignItems: "center",
+    backgroundColor: "#F8FAFC",
+    borderWidth: 1.5,
+    borderColor: "#5568FF",
+    borderRadius: 12,
+    paddingHorizontal: 12,
+    marginBottom: 14,
+  },
+  urlNativeInput: {
+    flex: 1,
+    paddingVertical: 12,
+    fontSize: 14,
+    color: "#0F172A",
+  },
+  presetLabel: {
+    fontSize: 12,
+    fontWeight: "600",
+    color: "#64748B",
+    marginBottom: 6,
+  },
+  presetRow: {
+    flexDirection: "row",
+    flexWrap: "wrap",
+    gap: 6,
     marginBottom: 20,
+  },
+  presetChip: {
+    paddingHorizontal: 10,
+    paddingVertical: 6,
+    borderRadius: 8,
+    backgroundColor: "#F1F5F9",
+    borderWidth: 1,
+    borderColor: "#E2E8F0",
+  },
+  presetChipActive: {
+    backgroundColor: "#EEF2FF",
+    borderColor: "#5568FF",
+  },
+  presetChipText: {
+    fontSize: 11,
+    color: "#475569",
+    fontWeight: "500",
+  },
+  presetChipTextActive: {
+    color: "#5568FF",
+    fontWeight: "bold",
   },
   modalButtons: {
     flexDirection: "row",
     justifyContent: "flex-end",
+    alignItems: "center",
+    gap: 12,
+  },
+  cancelBtn: {
+    borderColor: "#CBD5E1",
+    borderRadius: 10,
   },
   saveBtn: {
-    marginLeft: 12,
+    borderRadius: 10,
+    elevation: 2,
   },
 });
 

@@ -16,8 +16,8 @@
     "precautions": "ဤဆေးသောက်နေစဉ် အရက်သောက်ခြင်းကို ရှောင်ကြဉ်ပါ။ အသည်းရောဂါရှိပါက ဆရာဝန်နှင့် တိုင်ပင်ပါ။"
   },
   {
-    "name": "အမောက်ဆိုဆလင် (Amoxicillin)",
-    "description": "အမောက်ဆိုဆလင်သည် ဘက်တီးရီးယားများကို တိုက်ဖျက်ပေးသော ပင်နီဆီလင် ပဋိဇီဝဆေး ဖြစ်ပါသည်။",
+    "name": "အမောက်ဆလင် (Amoxicillin)",
+    "description": "အမောက်ဆလင်သည် ဘက်တီးရီးယားများကို တိုက်ဖျက်ပေးသော ပင်နီဆီလင် ပဋိဇီဝဆေး ဖြစ်ပါသည်။",
     "uses": [
       "ဘက်တီးရီးယားပိုးဝင်ခြင်း (နားပိုးဝင်ခြင်း၊ အဆုတ်ရောင်ခြင်း၊ အရေပြားပိုးဝင်ခြင်း) တို့ကို ကုသရန်။",
       "အစာအိမ်အနာများကို ကုသရန် အခြားဆေးများနှင့် တွဲဖက်အသုံးပြုခြင်း။"
@@ -2155,5 +2155,1943 @@
       "စနစ်တကျ အသုံးပြုပါက ဘေးထွက်ဆိုးကျိုး မရှိပါ။"
     ],
     "precautions": "ရေသန့် သို့မဟုတ် ကျိုချက်ထားသော ရေအေးဖြင့်သာ ဖျော်စပ်ပါ။"
+  },
+  {
+    "name": "ဆီမီသီကိုန်း (Air-X / Disflatyl / လေထိုးလေပွပျောက်ဆေး)",
+    "description": "Air-X (Simethicone) သည် အစာအိမ်နှင့် အူလမ်းကြောင်းအတွင်းရှိ လေပူဖောင်းများကို ကွဲစေပြီး လေပွခြင်း၊ လေထိုးလေအောင့်ခြင်းကို သက်သာစေသော လေဆေးပြား ဖြစ်ပါသည်။",
+    "uses": [
+      "အစာအိမ်နှင့် အူအတွင်း လေပွခြင်း၊ ဗိုက်ကယ်ခြင်း၊ လေထိုးလေအောင့်ခြင်း သက်သာစေရန်။",
+      "အစာစားပြီးနောက် ရင်ပြည့်ရင်ကယ်ဖြစ်ခြင်းနှင့် လေတက်ခြင်း သက်သာစေရန်။"
+    ],
+    "dosage": "အစာစားပြီးချိန်နှင့် ညအိပ်ရာဝင်ချိန်တွင် ၁ ပြား မှ ၂ ပြားကို သေချာစွာ ဝါးစားနိုင်ပါသည်။",
+    "side_effects": [
+      "ဝမ်းအနည်းငယ် ပျော့ခြင်း (ရှားပါး)",
+      "ပျို့ချင်ခြင်း (ရှားပါး)"
+    ],
+    "precautions": "ဆေးပြားကို မျိုမချဘဲ သေချာစွာ ဝါးစားရပါမည်။ ဘေးထွက်ဆိုးကျိုး အလွန်နည်းပါးသော ဆေးဖြစ်ပါသည်။"
+  },
+  {
+    "name": "ဘရွန်ဟက်ဆင်း (Bisolvon / ချွဲပျော်ဆေး)",
+    "description": "Bisolvon (Bromhexine) သည် လေပြွန်နှင့် အဆုတ်အတွင်းရှိ သလိပ်နှင့် ချွဲများကို ပျော်ကျကျဲစေပြီး ချောင်းဆိုး၍ အလွယ်တကူ သလိပ်ထွက်စေသော ချွဲပျော်ဆေး ဖြစ်ပါသည်။",
+    "uses": [
+      "ချွဲသလိပ်များသော ချောင်းဆိုးခြင်း သက်သာစေရန်။",
+      "လေပြွန်ရောင်ခြင်း၊ အအေးမိခြင်းကြောင့် ချွဲကြပ်ခြင်းများ သက်သာစေရန်။"
+    ],
+    "dosage": "တစ်ခါသောက် ၁ ပြား မှ ၂ ပြား (၈-၁၆ မီလီဂရမ်) ကို တစ်နေ့ ၃ ကြိမ် အစာစားပြီး သောက်ပါ။",
+    "side_effects": [
+      "ပျို့ချင်ခြင်း",
+      "အစာမကြေခြင်း",
+      "ချွေးထွက်ခြင်း"
+    ],
+    "precautions": "ချွဲသလိပ်များ လွယ်ကူစွာ ပျော်ဆင်းစေရန် ရေနွေးနွေး များများ သောက်ပေးပါ။"
+  },
+  {
+    "name": "ဒက်စ်ထရိုမီသော်ဖန် (ချောင်းခြောက်ဆိုးပျောက်ဆေး)",
+    "description": "Dextromethorphan သည် ဦးနှောက်ရှိ ချောင်းဆိုးစေသော ဗဟိုအာရုံကြောကို ထိန်းညှိပေးပြီး သလိပ်မပါသော ချောင်းခြောက်ဆိုးခြင်းကို သက်သာစေသော ဆေးဖြစ်ပါသည်။",
+    "uses": [
+      "သလိပ်မပါဘဲ လည်ချောင်းယားယံ၍ ချောင်းခြောက်ဆိုးခြင်း သက်သာစေရန်။",
+      "ညဘက်တွင် အိပ်မပျော်အောင် ချောင်းဆိုးသော ဝေဒနာ သက်သာစေရန်။"
+    ],
+    "dosage": "လိုအပ်ပါက ၆ နာရီမှ ၈ နာရီခြား တစ်ခါ ၁ ပြား (၁၅-၃၀ မီလီဂရမ်) သောက်နိုင်ပါသည်။",
+    "side_effects": [
+      "အိပ်ငိုက်ခြင်း",
+      "ခေါင်းမူးခြင်း",
+      "ပျို့ချင်ခြင်း"
+    ],
+    "precautions": "ချွဲသလိပ်ပါသော ချောင်းဆိုးခြင်းအတွက် မသောက်သင့်ပါ။ ဆေးသောက်ပြီးပါက ကားမောင်းခြင်း ရှောင်ကြဉ်ပါ။"
+  },
+  {
+    "name": "ကရီမီလ်-အက်စ် (Kremil-S / အစာအိမ်အက်ဆစ်နှင့် လေကျဆေး)",
+    "description": "Kremil-S သည် အစာအိမ်အတွင်းရှိ အက်ဆစ်ဓာတ်လွန်ကဲမှုကို လျင်မြန်စွာ ဓာတ်ပြယ်စေပြီး လေထိုးလေအောင့်နှင့် ရင်ပူခြင်းကို သက်သာစေသော အစာအိမ်ဝါးစားဆေးပြား ဖြစ်ပါသည်။",
+    "uses": [
+      "ရင်ပူခြင်း၊ အစာမကြေခြင်းနှင့် အစာအိမ် အက်ဆစ်ပြန်တက်ခြင်း သက်သာစေရန်။",
+      "လေထိုးလေအောင့်ခြင်း၊ ဗိုက်ကယ်ခြင်းနှင့် အစာအိမ်နာ ဝေဒနာ သက်သာစေရန်။"
+    ],
+    "dosage": "အစာစားပြီး ၁ နာရီအကြာ သို့မဟုတ် ညအိပ်ရာဝင်ချိန်တွင် ၁ ပြား မှ ၂ ပြားကို သေချာစွာ ဝါးစားပါ။",
+    "side_effects": [
+      "ဝမ်းချုပ်ခြင်း သို့မဟုတ် ဝမ်းပျော့ခြင်း",
+      "ခံတွင်း ထုံးအရသာ ကျန်ခဲ့ခြင်း"
+    ],
+    "precautions": "ဆေးကို သေချာစွာ ဝါးစားရပါမည်။ အခြားသောက်နေသော ဆေးများနှင့် အနည်းဆုံး ၂ နာရီခြားပြီးမှ သောက်ပါ။"
+  },
+  {
+    "name": "ဇင့်ဆာလဖိတ် (Zinc Sulfate / သွပ်ဓာတ် အားဆေး)",
+    "description": "Zinc Sulfate သည် ခန္ဓာကိုယ် ခုခံအားစနစ် ကောင်းမွန်စေရန်နှင့် ဝမ်းပျက်ဝမ်းလျှော ဖြစ်ပွားချိန်တွင် အူလမ်းကြောင်း အမြန်ဆုံး ပြန်လည်ကောင်းမွန်စေရန် အသုံးပြုသော သတ္တုဓာတ်အားဆေး ဖြစ်ပါသည်။",
+    "uses": [
+      "ဝမ်းပျက်ဝမ်းလျှော ဖြစ်ပွားချိန်တွင် ဓာတ်ဆားရည်နှင့် တွဲဖက်၍ အူလမ်းကြောင်း ပြန်လည်ကောင်းမွန်စေရန်။",
+      "ခန္ဓာကိုယ် ခုခံအား မြှင့်တင်ရန်နှင့် အနာကျက် မြန်ဆန်စေရန်။"
+    ],
+    "dosage": "ဝမ်းပျက်ဝမ်းလျှောအတွက် တစ်နေ့လျှင် ၁ ပြား (၂၀ မီလီဂရမ်) ကို ၁၀ ရက်မှ ၁၄ ရက်အထိ နေ့စဉ် သောက်သုံးပါ။",
+    "side_effects": [
+      "အစာမစားမီ သောက်ပါက ပျို့ချင်ခြင်း",
+      "သတ္တုအရသာ ခံစားရခြင်း"
+    ],
+    "precautions": "ဗိုက်မအောင့်စေရန် အစာစားပြီးမှ သောက်ပါ။"
+  },
+  {
+    "name": "ပိုဗီဒုန်း အိုင်အိုဒင်း (Betadine / အနာပိုးသတ်ဆေးရည်)",
+    "description": "Betadine (Povidone Iodine) သည် ထိခိုက်ရှနာ၊ ပွန်းပဲ့ဒဏ်ရာများတွင် ဘက်တီးရီးယား၊ မှိုနှင့် ဗိုင်းရပ်စ်ပိုးများ မဝင်ရောက်စေရန် သုတ်လိမ်းရသော အနာပိုးသတ်ဆေးရည် ဖြစ်ပါသည်။",
+    "uses": [
+      "ဓားရှနာ၊ ပွန်းပဲ့ဒဏ်ရာ၊ အပူလောင်ဒဏ်ရာ အသေးစားများ ပိုးမဝင်စေရန် သန့်စင်လိမ်းကျံရန်။",
+      "အနာဖေးများ ပိုးသတ်ဆေးကြောရန်။"
+    ],
+    "dosage": "အနာကို သန့်စင်ပြီးနောက် တစ်နေ့ ၁ ကြိမ် မှ ၃ ကြိမ် သုတ်လိမ်းပေးပါ။",
+    "side_effects": [
+      "အရေပြား အနည်းငယ် နီရဲယားယံခြင်း (ရှားပါး)",
+      "အဝါရောင် အစွန်းအထင်းကျန်ခြင်း"
+    ],
+    "precautions": "အပြင်ပိုင်း အရေပြား လိမ်းရန်အတွက်သာ ဖြစ်ပြီး မသောက်ရပါ။ အိုင်အိုဒင်း ဓာတ်မတည့်သူများ မသုံးသင့်ပါ။"
+  },
+  {
+    "name": "ကလိုထရီမာဇော (Canesten / မှိုသတ်လိမ်းဆေး)",
+    "description": "Canesten (Clotrimazole) သည် အရေပြားပေါ်ရှိ ပွေး၊ ညှင်း၊ ဝဲ၊ ပေါင်ခြံယားနာနှင့် မှိုပိုးကူးစက်မှုများကို ထိရောက်စွာ သေစေနိုင်သော မှိုသတ်လိမ်းဆေးခရင်မ် ဖြစ်ပါသည်။",
+    "uses": [
+      "ပွေး၊ ညှင်း၊ ခြေသည်းလက်သည်း မှိုစွဲခြင်းနှင့် ပေါင်ခြံမှိုစွဲ ယားနာများ ကုသရန်။",
+      "အရေပြား မှိုပိုးကြောင့် ယားယံနီရဲခြင်းများ သက်သာစေရန်။"
+    ],
+    "dosage": "ထိခိုက်ထားသော အရေပြားကို သန့်စင်ခြောက်သွေ့အောင် ပြုလုပ်ပြီး တစ်နေ့ ၂ မှ ၃ ကြိမ် ပါးပါးလိမ်းပေးပါ။ (၂-၄ ပတ်ခန့် ဆက်တိုက်လိမ်းရန် လိုအပ်သည်)",
+    "side_effects": [
+      "လိမ်းသည့်နေရာ အနည်းငယ် ပူစပ်စပ်ဖြစ်ခြင်း",
+      "အရေပြား နီရဲခြင်း"
+    ],
+    "precautions": "ရောဂါလက္ခဏာ ပျောက်သွားသော်လည်း မှိုပိုးအမြစ်ပြတ်စေရန် ၁ ပတ်ခန့် ဆက်လက်လိမ်းပေးသင့်ပါသည်။"
+  },
+  {
+    "name": "ကယ်လာမင်း လိုးရှင်း (Calamine Lotion / ယားယံအေးဆေးရည်)",
+    "description": "Calamine Lotion သည် အင်ပြင်ထွက်ခြင်း၊ နေလောင်ခြင်း၊ ပိုးကောင်ကိုက်ခြင်းနှင့် ယားယံသော အဖုအပိမ့်များကို အေးမြသက်သာစေသော လိမ်းဆေးရည် ဖြစ်ပါသည်။",
+    "uses": [
+      "အင်ပြင်၊ ချွေးထွက်လွန်အဖု၊ ပိုးကောင်ကိုက်ခံရခြင်းနှင့် နေလောင်ဒဏ်ရာများ ယားယံသက်သာစေရန်။",
+      "ရေကျောက်ပေါက်စဉ် အဖုများ ယားယံခြင်း သက်သာစေရန်။"
+    ],
+    "dosage": "ပုလင်းကို သေချာစွာ လှုပ်ခါပြီး ဂွမ်းစဖြင့် ယားယံသောနေရာကို လိုအပ်သလို သုတ်လိမ်းပေးပါ။",
+    "side_effects": [
+      "အရေပြား အနည်းငယ် ခြောက်သွေ့ခြင်း"
+    ],
+    "precautions": "အပြင်ပိုင်း လိမ်းရန်အတွက်သာ ဖြစ်ပါသည်။ သွေးထွက်နေသော အနာအစိမ်းများပေါ် မလိမ်းရပါ။"
+  },
+  {
+    "name": "တယ်လ်မီဆာတန် (Telmisartan / Micardis / သွေးတိုးကျဆေး)",
+    "description": "Telmisartan သည် သွေးကြောများကို ကျယ်စေပြီး သွေးပေါင်ချိန်ကို တည်ငြိမ်စွာ ထိန်းညှိပေးကာ နှလုံးနှင့် ကျောက်ကပ်ကို ကာကွယ်ပေးသော သွေးတိုးကျဆေး ဖြစ်ပါသည်။",
+    "uses": [
+      "သွေးတိုးရောဂါကို ရေရှည် ထိန်းညှိကုသရန်။",
+      "နှလုံးသွေးကြောကျဉ်းခြင်းနှင့် လေဖြတ်နိုင်ခြေ လျှော့ချရန်။"
+    ],
+    "dosage": "ဆရာဝန် ညွှန်ကြားချက်အတိုင်း တစ်နေ့လျှင် ၁ ကြိမ် (၄၀-၈၀ မီလီဂရမ်) နံနက်တိုင်း ပုံမှန်သောက်ပါ။",
+    "side_effects": [
+      "မူးဝေခြင်း",
+      "နုံးခွေခြင်း"
+    ],
+    "precautions": "ကိုယ်ဝန်ဆောင်မိခင်များ လုံးဝမသောက်ရပါ။ နေ့စဉ် သတ်မှတ်ချိန်အတိုင်း ပုံမှန်သောက်ပြီး သွေးပေါင်ချိန် ပုံမှန်တိုင်းတာပါ။"
+  },
+  {
+    "name": "လီဗိုသိုင်းရွိုက်ဆင် (Eltroxin / သိုင်းရွိုက်ဟော်မုန်း အစားထိုးဆေး)",
+    "description": "Eltroxin (Levothyroxine) သည် သိုင်းရွိုက်ဂလင်းမှ ဟော်မုန်းထုတ်လုပ်မှု နည်းပါးသောသူများအတွက် ခန္ဓာကိုယ် ဇီဝကမ္မဖြစ်စဉ်ကို ထိန်းညှိပေးသော သိုင်းရွိုက်ဟော်မုန်း အစားထိုးဆေး ဖြစ်ပါသည်။",
+    "uses": [
+      "သိုင်းရွိုက်ဟော်မုန်း နည်းပါးခြင်း (Hypothyroidism) ကို ကုသရန်။",
+      "လည်ပင်းကြီးရောဂါနှင့် သိုင်းရွိုက်ခွဲစိတ်ပြီးနောက် ဟော်မုန်းအစားထိုးရန်။"
+    ],
+    "dosage": "မနက်အိပ်ရာထတွင် မနက်စာမစားမီ မိနစ် ၃၀ မှ ၁ နာရီအလို ဗိုက်ထဲအစာမရှိချိန်တွင် ရေဖြင့် တစ်နေ့ ၁ ပြား သောက်ပါ။",
+    "side_effects": [
+      "ဆေးပမာဏများပါက ရင်တုန်ခြင်း၊ အပူမခံနိုင်ခြင်း",
+      "ကိုယ်အလေးချိန်ကျခြင်း"
+    ],
+    "precautions": "မနက်စာမစားမီ ဗိုက်ဗလာချိန်တွင်သာ သောက်ရပါမည်။ ကယ်လ်ဆီယမ်/သံဓာတ်အားဆေးများနှင့် အနည်းဆုံး ၄ နာရီခြား သောက်ပါ။"
+  },
+  {
+    "name": "မွန်တီလူကတ်စ် (Singulair / ပန်းနာရင်ကျပ်နှင့် ဓာတ်မတည့် လေပြွန်ကျဉ်းဆေး)",
+    "description": "Singulair (Montelukast) သည် လေပြွန်များ ရောင်ရမ်းကျဉ်းမြောင်းခြင်းကို ကာကွယ်ပေးပြီး ပန်းနာရင်ကျပ်နှင့် နှာခေါင်းဓာတ်မတည့် ဝေဒနာများကို ထိန်းညှိပေးသော ဆေးပြား ဖြစ်ပါသည်။",
+    "uses": [
+      "ပန်းနာရင်ကျပ် ရောဂါကို ရေရှည်ကာကွယ်ထိန်းချုပ်ရန်။",
+      "ရာသီအလိုက် နှာစေး၊ နှာချေ၊ လေပြွန်ကျဉ်းသည့် ဓာတ်မတည့်လက္ခဏာများ သက်သာစေရန်။"
+    ],
+    "dosage": "လူကြီးများအတွက် တစ်နေ့လျှင် ၁ ပြား (၁၀ မီလီဂရမ်) ကို ညဘက်တွင် သောက်သုံးပါ။",
+    "side_effects": [
+      "ခေါင်းကိုက်ခြင်း",
+      "ဗိုက်အောင့်ခြင်း",
+      "အိပ်မက်ထူးထူးဆန်းဆန်း မက်ခြင်း (ရှားပါး)"
+    ],
+    "precautions": "ရုတ်တရက် ရင်ကျပ်လာသည့် အရေးပေါ်အခြေအနေအတွက် အသုံးမပြုရပါ။ ရေရှည်ကြိုတင်ကာကွယ်ရန်အတွက်သာ ဖြစ်ပါသည်။"
+  },
+  {
+    "name": "Salbutamol (Ventolin)",
+    "description": "Salbutamol (Ventolin) သည် ဆေးဘက်ဆိုင်ရာ ကုသမှုအတွက် အသုံးပြုသော ဆေးဝါး ဖြစ်ပါသည်။",
+    "uses": [
+      "Treatment or prevention of bronchospasm in people with reversible obstructive airway disease.",
+      "Prevention of exercise-induced bronchospasm."
+    ],
+    "dosage": "1 to 2 puffs every 4 to 6 hours as needed.",
+    "side_effects": [
+      "Tremor",
+      "Nervousness",
+      "Headache",
+      "Tachycardia"
+    ],
+    "precautions": "Seek medical help if your usual dose does not provide relief."
+  },
+  {
+    "name": "Furosemide (Lasix)",
+    "description": "Furosemide (Lasix) သည် ဆေးဘက်ဆိုင်ရာ ကုသမှုအတွက် အသုံးပြုသော ဆေးဝါး ဖြစ်ပါသည်။",
+    "uses": [
+      "Edema",
+      "Hypertension"
+    ],
+    "dosage": "20mg to 80mg per day.",
+    "side_effects": [
+      "Frequent urination",
+      "Dizziness",
+      "Headache",
+      "Muscle cramps"
+    ],
+    "precautions": "May cause potassium loss; may require potassium supplements."
+  },
+  {
+    "name": "Clopidogrel (Plavix)",
+    "description": "Clopidogrel (Plavix) သည် ဆေးဘက်ဆိုင်ရာ ကုသမှုအတွက် အသုံးပြုသော ဆေးဝါး ဖြစ်ပါသည်။",
+    "uses": [
+      "Prevention of heart attack and stroke in people with heart disease",
+      "Recent stroke",
+      "Peripheral vascular disease"
+    ],
+    "dosage": "75mg once daily.",
+    "side_effects": [
+      "Bleeding more easily",
+      "Bruising",
+      "Stomach pain",
+      "Diarrhea"
+    ],
+    "precautions": "Inform your doctor or dentist before any surgery."
+  },
+  {
+    "name": "Oral Rehydration Salts (ORS)",
+    "description": "Oral Rehydration Salts (ORS) သည် ဆေးဘက်ဆိုင်ရာ ကုသမှုအတွက် အသုံးပြုသော ဆေးဝါး ဖြစ်ပါသည်။",
+    "uses": [
+      "Prevention and treatment of dehydration caused by diarrhea, vomiting, or excessive sweating."
+    ],
+    "dosage": "Dissolve one sachet in 250ml or 1 liter of clean water (as specified on the packet) and drink as needed.",
+    "side_effects": [
+      "Nausea",
+      "Vomiting (if taken too quickly)"
+    ],
+    "precautions": "Use clean, boiled water to dissolve the salts. Discard unused solution after 24 hours."
+  },
+  {
+    "name": "Domperidone (Motilium)",
+    "description": "Domperidone (Motilium) သည် ဆေးဘက်ဆိုင်ရာ ကုသမှုအတွက် အသုံးပြုသော ဆေးဝါး ဖြစ်ပါသည်။",
+    "uses": [
+      "Relief of nausea and vomiting.",
+      "Relief of stomach discomfort, bloating, and belching."
+    ],
+    "dosage": "Adults: 10mg up to 3 times a day, usually before meals.",
+    "side_effects": [
+      "Dry mouth",
+      "Drowsiness",
+      "Headache"
+    ],
+    "precautions": "Not recommended for people with heart conditions. Consult a doctor before use."
+  },
+  {
+    "name": "Loperamide (Imodium)",
+    "description": "Loperamide (Imodium) သည် ဆေးဘက်ဆိုင်ရာ ကုသမှုအတွက် အသုံးပြုသော ဆေးဝါး ဖြစ်ပါသည်။",
+    "uses": [
+      "Symptomatic relief of acute diarrhea.",
+      "Management of chronic diarrhea in inflammatory bowel disease."
+    ],
+    "dosage": "Initial dose 4mg, followed by 2mg after each loose stool, not to exceed 16mg in 24 hours.",
+    "side_effects": [
+      "Constipation",
+      "Dizziness",
+      "Stomach cramps",
+      "Nausea"
+    ],
+    "precautions": "Do not use if you have bloody stools or fever. Maintain hydration with ORS."
+  },
+  {
+    "name": "Diclofenac (Voltaren)",
+    "description": "Diclofenac (Voltaren) သည် ဆေးဘက်ဆိုင်ရာ ကုသမှုအတွက် အသုံးပြုသော ဆေးဝါး ဖြစ်ပါသည်။",
+    "uses": [
+      "Relief of pain and inflammation in arthritis, gout, and acute musculoskeletal disorders.",
+      "Post-operative pain relief."
+    ],
+    "dosage": "Adults: 50mg to 150mg daily in divided doses, or as prescribed.",
+    "side_effects": [
+      "Stomach pain",
+      "Heartburn",
+      "Nausea",
+      "Dizziness"
+    ],
+    "precautions": "Take with food. Not recommended for people with stomach ulcers or heart disease."
+  },
+  {
+    "name": "Chlorpheniramine (Burmeton)",
+    "description": "Chlorpheniramine (Burmeton) သည် ဆေးဘက်ဆိုင်ရာ ကုသမှုအတွက် အသုံးပြုသော ဆေးဝါး ဖြစ်ပါသည်။",
+    "uses": [
+      "Relief of sneezing, itchy and watery eyes, and runny nose caused by hay fever or common cold.",
+      "Relief of itchy skin rashes and hives."
+    ],
+    "dosage": "Adults: 4mg every 4 to 6 hours.",
+    "side_effects": [
+      "Drowsiness",
+      "Dry mouth",
+      "Blurred vision",
+      "Dizziness"
+    ],
+    "precautions": "Highly sedating; avoid driving or operating machinery. Avoid alcohol."
+  },
+  {
+    "name": "Metronidazole (Flagyl)",
+    "description": "Metronidazole (Flagyl) သည် ဆေးဘက်ဆိုင်ရာ ကုသမှုအတွက် အသုံးပြုသော ဆေးဝါး ဖြစ်ပါသည်။",
+    "uses": [
+      "Treatment of infections of the digestive system, skin, and joints.",
+      "Treatment of dental infections and infected leg ulcers."
+    ],
+    "dosage": "Adults: 200mg to 400mg three times a day for 3 to 10 days.",
+    "side_effects": [
+      "Metallic taste in mouth",
+      "Nausea",
+      "Headache",
+      "Loss of appetite"
+    ],
+    "precautions": "Do not drink alcohol during treatment and for 48 hours after finishing the course."
+  },
+  {
+    "name": "Mefenamic Acid (Ponstan)",
+    "description": "Mefenamic Acid (Ponstan) သည် ဆေးဘက်ဆိုင်ရာ ကုသမှုအတွက် အသုံးပြုသော ဆေးဝါး ဖြစ်ပါသည်။",
+    "uses": [
+      "Relief of period pain and heavy bleeding.",
+      "Relief of toothache, muscle pain, and joint pain."
+    ],
+    "dosage": "Adults: 500mg three times a day after meals.",
+    "side_effects": [
+      "Stomach pain",
+      "Diarrhea",
+      "Nausea",
+      "Heartburn"
+    ],
+    "precautions": "Take with food. Not suitable for people with stomach ulcers or asthma."
+  },
+  {
+    "name": "Cefixime (Zifi)",
+    "description": "Cefixime (Zifi) သည် ဆေးဘက်ဆိုင်ရာ ကုသမှုအတွက် အသုံးပြုသော ဆေးဝါး ဖြစ်ပါသည်။",
+    "uses": [
+      "Treatment of urinary tract infections, ear infections, and throat infections.",
+      "Treatment of bronchitis and gonorrhea."
+    ],
+    "dosage": "Adults: 200mg to 400mg daily, as a single dose or divided into two doses.",
+    "side_effects": [
+      "Diarrhea",
+      "Stomach upset",
+      "Nausea",
+      "Gas"
+    ],
+    "precautions": "Inform your doctor if you are allergic to penicillin or other cephalosporins."
+  },
+  {
+    "name": "Loratadine (Claritin)",
+    "description": "Loratadine (Claritin) သည် ဆေးဘက်ဆိုင်ရာ ကုသမှုအတွက် အသုံးပြုသော ဆေးဝါး ဖြစ်ပါသည်။",
+    "uses": [
+      "Relief of sneezing, runny nose, and itchy eyes caused by hay fever.",
+      "Treatment of hives and itchy skin rashes."
+    ],
+    "dosage": "Adults: 10mg once daily.",
+    "side_effects": [
+      "Headache",
+      "Feeling tired",
+      "Dry mouth"
+    ],
+    "precautions": "Generally non-drowsy, but use caution if performing tasks requiring alertness."
+  },
+  {
+    "name": "Salbutamol Inhaler (Ventolin)",
+    "description": "Salbutamol Inhaler (Ventolin) သည် ဆေးဘက်ဆိုင်ရာ ကုသမှုအတွက် အသုံးပြုသော ဆေးဝါး ဖြစ်ပါသည်။",
+    "uses": [
+      "Relief of symptoms of asthma and COPD.",
+      "Prevention of exercise-induced bronchospasm."
+    ],
+    "dosage": "1 or 2 puffs as needed, up to 4 times a day.",
+    "side_effects": [
+      "Trembling",
+      "Rapid heartbeat",
+      "Headache",
+      "Muscle cramps"
+    ],
+    "precautions": "If your usual dose does not provide relief, seek emergency medical help immediately."
+  },
+  {
+    "name": "Vitamin B-complex (Neurobion)",
+    "description": "Vitamin B-complex (Neurobion) သည် ဆေးဘက်ဆိုင်ရာ ကုသမှုအတွက် အသုံးပြုသော ဆေးဝါး ဖြစ်ပါသည်။",
+    "uses": [
+      "Prevention and treatment of vitamin B deficiencies.",
+      "Support for nerve health and treatment of neuritis."
+    ],
+    "dosage": "One tablet daily or as directed by a doctor.",
+    "side_effects": [
+      "Nausea",
+      "Vomiting",
+      "Diarrhea",
+      "Abdominal pain"
+    ],
+    "precautions": "Do not exceed the recommended dose. Consult a doctor for prolonged use."
+  },
+  {
+    "name": "Ferrous Sulfate (Sangobion)",
+    "description": "Ferrous Sulfate (Sangobion) သည် ဆေးဘက်ဆိုင်ရာ ကုသမှုအတွက် အသုံးပြုသော ဆေးဝါး ဖြစ်ပါသည်။",
+    "uses": [
+      "Treatment and prevention of iron-deficiency anemia.",
+      "Supplementation during pregnancy and breastfeeding."
+    ],
+    "dosage": "One capsule daily after meals.",
+    "side_effects": [
+      "Black stools (harmless)",
+      "Constipation",
+      "Stomach upset",
+      "Nausea"
+    ],
+    "precautions": "Best taken on an empty stomach, but can be taken with food if it causes stomach upset."
+  },
+  {
+    "name": "Azithromycin (Zithromax)",
+    "description": "Azithromycin (Zithromax) သည် ဆေးဘက်ဆိုင်ရာ ကုသမှုအတွက် အသုံးပြုသော ဆေးဝါး ဖြစ်ပါသည်။",
+    "uses": [
+      "Treatment of respiratory infections, skin infections, and ear infections.",
+      "Treatment of some sexually transmitted diseases."
+    ],
+    "dosage": "Adults: 500mg once daily for 3 days, or as directed by a doctor.",
+    "side_effects": [
+      "Diarrhea",
+      "Nausea",
+      "Abdominal pain",
+      "Vomiting"
+    ],
+    "precautions": "Do not take antacids containing aluminum or magnesium at the same time."
+  },
+  {
+    "name": "Albendazole (Zentel)",
+    "description": "Albendazole (Zentel) သည် ဆေးဘက်ဆိုင်ရာ ကုသမှုအတွက် အသုံးပြုသော ဆေးဝါး ဖြစ်ပါသည်။",
+    "uses": [
+      "Treatment of tapeworm, roundworm, and hookworm infections.",
+      "Treatment of pinworm infections."
+    ],
+    "dosage": "Adults: Usually 400mg as a single dose. Some infections may require a longer course.",
+    "side_effects": [
+      "Headache",
+      "Nausea",
+      "Vomiting",
+      "Stomach pain"
+    ],
+    "precautions": "Avoid use during pregnancy. Consult a doctor before giving to children."
+  },
+  {
+    "name": "Glibenclamide (Daonil)",
+    "description": "Glibenclamide (Daonil) သည် ဆေးဘက်ဆိုင်ရာ ကုသမှုအတွက် အသုံးပြုသော ဆေးဝါး ဖြစ်ပါသည်။",
+    "uses": [
+      "Control of blood sugar levels in type 2 diabetes."
+    ],
+    "dosage": "Adults: 2.5mg to 15mg daily, usually taken with breakfast.",
+    "side_effects": [
+      "Low blood sugar (hypoglycemia)",
+      "Nausea",
+      "Heartburn",
+      "Weight gain"
+    ],
+    "precautions": "Monitor blood sugar regularly. Carry a source of sugar in case of hypoglycemia."
+  },
+  {
+    "name": "Sitagliptin (Januvia)",
+    "description": "Sitagliptin (Januvia) သည် ဆေးဘက်ဆိုင်ရာ ကုသမှုအတွက် အသုံးပြုသော ဆေးဝါး ဖြစ်ပါသည်။",
+    "uses": [
+      "Improving blood sugar control in adults with type 2 diabetes."
+    ],
+    "dosage": "Adults: 100mg once daily, with or without food.",
+    "side_effects": [
+      "Upper respiratory tract infection",
+      "Stuffy or runny nose",
+      "Headache"
+    ],
+    "precautions": "Consult a doctor if you have a history of pancreatitis or kidney problems."
+  },
+  {
+    "name": "Fluconazole (Diflucan)",
+    "description": "Fluconazole (Diflucan) သည် ဆေးဘက်ဆိုင်ရာ ကုသမှုအတွက် အသုံးပြုသော ဆေးဝါး ဖြစ်ပါသည်။",
+    "uses": [
+      "Treatment of vaginal, oral, and esophageal yeast infections.",
+      "Treatment of fungal meningitis."
+    ],
+    "dosage": "Adults: 150mg as a single dose for vaginal yeast infections. Other doses vary by infection.",
+    "side_effects": [
+      "Headache",
+      "Nausea",
+      "Stomach pain",
+      "Dizziness"
+    ],
+    "precautions": "Inform your doctor if you have liver disease or heart rhythm disorders."
+  },
+  {
+    "name": "Carbocisteine (Solmux)",
+    "description": "Carbocisteine (Solmux) သည် ဆေးဘက်ဆိုင်ရာ ကုသမှုအတွက် အသုံးပြုသော ဆေးဝါး ဖြစ်ပါသည်။",
+    "uses": [
+      "Relief of cough associated with excessive mucus.",
+      "Treatment of respiratory tract disorders like bronchitis and asthma."
+    ],
+    "dosage": "Adults: 750mg three times a day initially, then reduced as symptoms improve.",
+    "side_effects": [
+      "Nausea",
+      "Diarrhea",
+      "Stomach upset",
+      "Skin rash"
+    ],
+    "precautions": "Avoid use if you have a history of stomach ulcers. Consult a doctor if cough persists."
+  },
+  {
+    "name": "Bromhexine (Bisolvon)",
+    "description": "Bromhexine (Bisolvon) သည် ဆေးဘက်ဆိုင်ရာ ကုသမှုအတွက် အသုံးပြုသော ဆေးဝါး ဖြစ်ပါသည်။",
+    "uses": [
+      "Thinning and loosening phlegm in the airways.",
+      "Relief of chest congestion."
+    ],
+    "dosage": "Adults: 8mg to 16mg three times a day.",
+    "side_effects": [
+      "Nausea",
+      "Vomiting",
+      "Diarrhea",
+      "Dizziness"
+    ],
+    "precautions": "Consult a doctor if you have stomach ulcers or liver/kidney problems."
+  },
+  {
+    "name": "Betamethasone (Skin Cream)",
+    "description": "Betamethasone (Skin Cream) သည် ဆေးဘက်ဆိုင်ရာ ကုသမှုအတွက် အသုံးပြုသော ဆေးဝါး ဖြစ်ပါသည်။",
+    "uses": [
+      "Treatment of eczema, psoriasis, and dermatitis.",
+      "Relief of itchy and inflamed skin rashes."
+    ],
+    "dosage": "Apply a small amount thinly to the affected area 1 or 2 times daily.",
+    "side_effects": [
+      "Skin thinning",
+      "Burning or stinging sensation",
+      "Stretch marks (long-term use)"
+    ],
+    "precautions": "Do not use on the face, groin, or underarms unless directed by a doctor. Avoid long-term use."
+  },
+  {
+    "name": "Clotrimazole (Canesten)",
+    "description": "Clotrimazole (Canesten) သည် ဆေးဘက်ဆိုင်ရာ ကုသမှုအတွက် အသုံးပြုသော ဆေးဝါး ဖြစ်ပါသည်။",
+    "uses": [
+      "Treatment of athlete's foot, ringworm, and jock itch.",
+      "Treatment of vaginal yeast infections (thrush)."
+    ],
+    "dosage": "Apply to the affected area 2 to 3 times daily for 2 to 4 weeks.",
+    "side_effects": [
+      "Skin irritation",
+      "Redness",
+      "Peeling",
+      "Blistering"
+    ],
+    "precautions": "Continue treatment for 1-2 weeks after symptoms disappear to prevent recurrence."
+  },
+  {
+    "name": "Povidone-iodine (Betadine)",
+    "description": "Povidone-iodine (Betadine) သည် ဆေးဘက်ဆိုင်ရာ ကုသမှုအတွက် အသုံးပြုသော ဆေးဝါး ဖြစ်ပါသည်။",
+    "uses": [
+      "Disinfection of minor cuts, scrapes, and burns.",
+      "Pre-operative skin preparation."
+    ],
+    "dosage": "Apply to the cleaned affected area as needed.",
+    "side_effects": [
+      "Skin irritation",
+      "Allergic reactions (rare)",
+      "Staining of skin/clothing"
+    ],
+    "precautions": "Do not use over large areas of the body. Consult a doctor if the wound is deep or severe."
+  },
+  {
+    "name": "Rosuvastatin (Crestor)",
+    "description": "Rosuvastatin (Crestor) သည် ဆေးဘက်ဆိုင်ရာ ကုသမှုအတွက် အသုံးပြုသော ဆေးဝါး ဖြစ်ပါသည်။",
+    "uses": [
+      "Lowering LDL (bad) cholesterol and increasing HDL (good) cholesterol.",
+      "Slowing the build-up of plaque in blood vessels."
+    ],
+    "dosage": "5mg to 20mg once daily.",
+    "side_effects": [
+      "Headache",
+      "Muscle pain",
+      "Abdominal pain",
+      "Weakness",
+      "Nausea"
+    ],
+    "precautions": "Consult a doctor if you have liver disease or persistent muscle weakness."
+  },
+  {
+    "name": "Bisoprolol (Concor)",
+    "description": "Bisoprolol (Concor) သည် ဆေးဘက်ဆိုင်ရာ ကုသမှုအတွက် အသုံးပြုသော ဆေးဝါး ဖြစ်ပါသည်။",
+    "uses": [
+      "Treatment of hypertension.",
+      "Management of chronic heart failure."
+    ],
+    "dosage": "1.25mg to 10mg once daily.",
+    "side_effects": [
+      "Dizziness",
+      "Fatigue",
+      "Cold extremities",
+      "Slow heart rate"
+    ],
+    "precautions": "Do not stop taking abruptly. May mask symptoms of low blood sugar in diabetics."
+  },
+  {
+    "name": "Telmisartan (Micardis)",
+    "description": "Telmisartan (Micardis) သည် ဆေးဘက်ဆိုင်ရာ ကုသမှုအတွက် အသုံးပြုသော ဆေးဝါး ဖြစ်ပါသည်။",
+    "uses": [
+      "Treatment of hypertension.",
+      "Reduction of cardiovascular risk in patients unable to take ACE inhibitors."
+    ],
+    "dosage": "40mg to 80mg once daily.",
+    "side_effects": [
+      "Back pain",
+      "Sinus pain",
+      "Diarrhea",
+      "Dizziness"
+    ],
+    "precautions": "Do not use during pregnancy. Monitor kidney function and potassium levels."
+  },
+  {
+    "name": "Spironolactone (Aldactone)",
+    "description": "Spironolactone (Aldactone) သည် ဆေးဘက်ဆိုင်ရာ ကုသမှုအတွက် အသုံးပြုသော ဆေးဝါး ဖြစ်ပါသည်။",
+    "uses": [
+      "Treatment of edema in heart failure or liver cirrhosis.",
+      "Treatment of high blood pressure.",
+      "Treatment of primary hyperaldosteronism."
+    ],
+    "dosage": "25mg to 100mg daily.",
+    "side_effects": [
+      "High potassium levels",
+      "Nausea",
+      "Breast tenderness or enlargement",
+      "Dizziness"
+    ],
+    "precautions": "Avoid potassium supplements and salt substitutes containing potassium."
+  },
+  {
+    "name": "Montelukast (Singulair)",
+    "description": "Montelukast (Singulair) သည် ဆေးဘက်ဆိုင်ရာ ကုသမှုအတွက် အသုံးပြုသော ဆေးဝါး ဖြစ်ပါသည်။",
+    "uses": [
+      "Maintenance treatment of asthma.",
+      "Relief of symptoms of seasonal and year-round allergies."
+    ],
+    "dosage": "10mg once daily in the evening.",
+    "side_effects": [
+      "Headache",
+      "Stomach pain",
+      "Cough",
+      "Dizziness"
+    ],
+    "precautions": "Not for the treatment of acute asthma attacks. Report any mood or behavior changes."
+  },
+  {
+    "name": "Lansoprazole (Prevacid)",
+    "description": "Lansoprazole (Prevacid) သည် ဆေးဘက်ဆိုင်ရာ ကုသမှုအတွက် အသုံးပြုသော ဆေးဝါး ဖြစ်ပါသည်။",
+    "uses": [
+      "Treatment of stomach and intestinal ulcers.",
+      "Treatment of GERD and erosive esophagitis."
+    ],
+    "dosage": "15mg to 30mg once daily before a meal.",
+    "side_effects": [
+      "Diarrhea",
+      "Abdominal pain",
+      "Nausea",
+      "Constipation",
+      "Headache"
+    ],
+    "precautions": "Consult a doctor if symptoms do not improve after 2 weeks of use."
+  },
+  {
+    "name": "Hyoscine Butylbromide (Buscopan)",
+    "description": "Hyoscine Butylbromide (Buscopan) သည် ဆေးဘက်ဆိုင်ရာ ကုသမှုအတွက် အသုံးပြုသော ဆေးဝါး ဖြစ်ပါသည်။",
+    "uses": [
+      "Relief of stomach cramps, period pains, and symptoms of irritable bowel syndrome (IBS)."
+    ],
+    "dosage": "10mg to 20mg three to four times daily.",
+    "side_effects": [
+      "Dry mouth",
+      "Blurred vision",
+      "Rapid heartbeat",
+      "Constipation"
+    ],
+    "precautions": "Consult a doctor if you have glaucoma or an enlarged prostate."
+  },
+  {
+    "name": "Ondansetron (Zofran)",
+    "description": "Ondansetron (Zofran) သည် ဆေးဘက်ဆိုင်ရာ ကုသမှုအတွက် အသုံးပြုသော ဆေးဝါး ဖြစ်ပါသည်။",
+    "uses": [
+      "Prevention of nausea and vomiting."
+    ],
+    "dosage": "4mg to 8mg every 8 to 12 hours as needed.",
+    "side_effects": [
+      "Headache",
+      "Constipation",
+      "Dizziness",
+      "Fatigue"
+    ],
+    "precautions": "Consult a doctor if you have a history of heart rhythm problems (QT prolongation)."
+  },
+  {
+    "name": "Levothyroxine (Thyroxin)",
+    "description": "Levothyroxine (Thyroxin) သည် ဆေးဘက်ဆိုင်ရာ ကုသမှုအတွက် အသုံးပြုသော ဆေးဝါး ဖြစ်ပါသည်။",
+    "uses": [
+      "Replacement therapy for hypothyroidism.",
+      "Treatment of goiter."
+    ],
+    "dosage": "As prescribed by a doctor, usually taken on an empty stomach 30-60 minutes before breakfast.",
+    "side_effects": [
+      "Weight loss",
+      "Increased appetite",
+      "Nervousness",
+      "Heat intolerance",
+      "Palpitations"
+    ],
+    "precautions": "Requires regular blood tests to monitor thyroid levels. Do not switch brands without consulting your doctor."
+  },
+  {
+    "name": "Glimepiride (Amaryl)",
+    "description": "Glimepiride (Amaryl) သည် ဆေးဘက်ဆိုင်ရာ ကုသမှုအတွက် အသုံးပြုသော ဆေးဝါး ဖြစ်ပါသည်။",
+    "uses": [
+      "Lowering blood sugar levels in type 2 diabetes."
+    ],
+    "dosage": "1mg to 4mg once daily with breakfast.",
+    "side_effects": [
+      "Low blood sugar (hypoglycemia)",
+      "Nausea",
+      "Dizziness",
+      "Headache"
+    ],
+    "precautions": "Monitor blood sugar regularly. Carry a sugar source for emergencies."
+  },
+  {
+    "name": "Pioglitazone (Actos)",
+    "description": "Pioglitazone (Actos) သည် ဆေးဘက်ဆိုင်ရာ ကုသမှုအတွက် အသုံးပြုသော ဆေးဝါး ဖြစ်ပါသည်။",
+    "uses": [
+      "Improving insulin sensitivity in type 2 diabetes."
+    ],
+    "dosage": "15mg to 45mg once daily.",
+    "side_effects": [
+      "Weight gain",
+      "Edema (swelling)",
+      "Upper respiratory tract infection",
+      "Headache"
+    ],
+    "precautions": "Not recommended for people with heart failure or bladder cancer history."
+  },
+  {
+    "name": "Cephalexin (Keflex)",
+    "description": "Cephalexin (Keflex) သည် ဆေးဘက်ဆိုင်ရာ ကုသမှုအတွက် အသုံးပြုသော ဆေးဝါး ဖြစ်ပါသည်။",
+    "uses": [
+      "Treatment of respiratory, skin, bone, and urinary tract infections."
+    ],
+    "dosage": "250mg to 500mg every 6 hours.",
+    "side_effects": [
+      "Diarrhea",
+      "Nausea",
+      "Vomiting",
+      "Stomach upset"
+    ],
+    "precautions": "Inform your doctor if you are allergic to penicillin."
+  },
+  {
+    "name": "Clarithromycin (Klacid)",
+    "description": "Clarithromycin (Klacid) သည် ဆေးဘက်ဆိုင်ရာ ကုသမှုအတွက် အသုံးပြုသော ဆေးဝါး ဖြစ်ပါသည်။",
+    "uses": [
+      "Treatment of respiratory tract infections, skin infections, and stomach ulcers (with other drugs)."
+    ],
+    "dosage": "250mg to 500mg every 12 hours.",
+    "side_effects": [
+      "Metallic taste",
+      "Nausea",
+      "Diarrhea",
+      "Vomiting",
+      "Headache"
+    ],
+    "precautions": "Consult a doctor if you have heart rhythm disorders or liver/kidney disease."
+  },
+  {
+    "name": "Acyclovir (Zovirax)",
+    "description": "Acyclovir (Zovirax) သည် ဆေးဘက်ဆိုင်ရာ ကုသမှုအတွက် အသုံးပြုသော ဆေးဝါး ဖြစ်ပါသည်။",
+    "uses": [
+      "Treatment of cold sores, shingles, and chickenpox.",
+      "Management of genital herpes."
+    ],
+    "dosage": "200mg to 800mg multiple times daily depending on the infection.",
+    "side_effects": [
+      "Nausea",
+      "Diarrhea",
+      "Headache",
+      "Dizziness"
+    ],
+    "precautions": "Start treatment as soon as possible after the first symptoms appear. Drink plenty of water."
+  },
+  {
+    "name": "Ketoconazole (Nizoral)",
+    "description": "Ketoconazole (Nizoral) သည် ဆေးဘက်ဆိုင်ရာ ကုသမှုအတွက် အသုံးပြုသော ဆေးဝါး ဖြစ်ပါသည်။",
+    "uses": [
+      "Treatment of athlete's foot, ringworm, and seborrheic dermatitis (dandruff)."
+    ],
+    "dosage": "Apply cream 1-2 times daily. Use shampoo 2 times a week.",
+    "side_effects": [
+      "Skin irritation",
+      "Itching",
+      "Burning sensation"
+    ],
+    "precautions": "Avoid contact with eyes. Consult a doctor for oral use due to risk of liver damage."
+  },
+  {
+    "name": "Gabapentin (Neurontin)",
+    "description": "Gabapentin (Neurontin) သည် ဆေးဘက်ဆိုင်ရာ ကုသမှုအတွက် အသုံးပြုသော ဆေးဝါး ဖြစ်ပါသည်။",
+    "uses": [
+      "Relief of nerve pain (neuropathic pain).",
+      "Management of partial seizures."
+    ],
+    "dosage": "As prescribed (dosage is usually increased gradually).",
+    "side_effects": [
+      "Dizziness",
+      "Drowsiness",
+      "Swelling of legs/feet",
+      "Fatigue"
+    ],
+    "precautions": "Do not stop suddenly. May cause mood or behavior changes."
+  },
+  {
+    "name": "Pregabalin (Lyrica)",
+    "description": "Pregabalin (Lyrica) သည် ဆေးဘက်ဆိုင်ရာ ကုသမှုအတွက် အသုံးပြုသော ဆေးဝါး ဖြစ်ပါသည်။",
+    "uses": [
+      "Relief of nerve pain from diabetes or shingles.",
+      "Treatment of fibromyalgia and generalized anxiety disorder."
+    ],
+    "dosage": "75mg to 150mg twice daily.",
+    "side_effects": [
+      "Dizziness",
+      "Drowsiness",
+      "Dry mouth",
+      "Weight gain",
+      "Blurred vision"
+    ],
+    "precautions": "May be habit-forming. Do not stop suddenly. Avoid alcohol."
+  },
+  {
+    "name": "Escitalopram (Lexapro)",
+    "description": "Escitalopram (Lexapro) သည် ဆေးဘက်ဆိုင်ရာ ကုသမှုအတွက် အသုံးပြုသော ဆေးဝါး ဖြစ်ပါသည်။",
+    "uses": [
+      "Treatment of major depressive disorder.",
+      "Treatment of generalized anxiety disorder."
+    ],
+    "dosage": "10mg to 20mg once daily.",
+    "side_effects": [
+      "Nausea",
+      "Sleep problems",
+      "Sexual dysfunction",
+      "Fatigue",
+      "Sweating"
+    ],
+    "precautions": "Do not stop suddenly. May take several weeks to see full effect."
+  },
+  {
+    "name": "Naproxen (Synflex)",
+    "description": "Naproxen (Synflex) သည် ဆေးဘက်ဆိုင်ရာ ကုသမှုအတွက် အသုံးပြုသော ဆေးဝါး ဖြစ်ပါသည်။",
+    "uses": [
+      "Relief of pain from arthritis, gout, menstrual cramps, and minor injuries."
+    ],
+    "dosage": "250mg to 500mg twice daily.",
+    "side_effects": [
+      "Stomach upset",
+      "Heartburn",
+      "Dizziness",
+      "Headache",
+      "Nausea"
+    ],
+    "precautions": "Take with food or milk. Avoid if you have stomach ulcers or heart disease."
+  },
+  {
+    "name": "Celecoxib (Celebrex)",
+    "description": "Celecoxib (Celebrex) သည် ဆေးဘက်ဆိုင်ရာ ကုသမှုအတွက် အသုံးပြုသော ဆေးဝါး ဖြစ်ပါသည်။",
+    "uses": [
+      "Relief of pain and inflammation in arthritis and acute pain."
+    ],
+    "dosage": "100mg to 200mg once or twice daily.",
+    "side_effects": [
+      "Stomach pain",
+      "Gas",
+      "Dizziness",
+      "Swelling of legs/feet"
+    ],
+    "precautions": "Consult a doctor if you have heart disease or a history of stomach ulcers."
+  },
+  {
+    "name": "Allopurinol (Zyloric)",
+    "description": "Allopurinol (Zyloric) သည် ဆေးဘက်ဆိုင်ရာ ကုသမှုအတွက် အသုံးပြုသော ဆေးဝါး ဖြစ်ပါသည်။",
+    "uses": [
+      "Prevention of gout attacks.",
+      "Prevention of kidney stones."
+    ],
+    "dosage": "100mg to 300mg once daily after a meal.",
+    "side_effects": [
+      "Skin rash (can be serious)",
+      "Stomach upset",
+      "Drowsiness"
+    ],
+    "precautions": "Drink plenty of fluids. Stop immediately and see a doctor if a rash develops."
+  },
+  {
+    "name": "Fexofenadine (Telfast)",
+    "description": "Fexofenadine (Telfast) သည် ဆေးဘက်ဆိုင်ရာ ကုသမှုအတွက် အသုံးပြုသော ဆေးဝါး ဖြစ်ပါသည်။",
+    "uses": [
+      "Relief of hay fever symptoms (sneezing, runny nose, itchy eyes).",
+      "Treatment of itchy skin rashes and hives."
+    ],
+    "dosage": "60mg twice daily or 120mg-180mg once daily.",
+    "side_effects": [
+      "Headache",
+      "Dizziness",
+      "Nausea",
+      "Dry mouth"
+    ],
+    "precautions": "Avoid taking with fruit juices (apple, orange, or grapefruit)."
+  },
+  {
+    "name": "Betahistine (Serc)",
+    "description": "Betahistine (Serc) သည် ဆေးဘက်ဆိုင်ရာ ကုသမှုအတွက် အသုံးပြုသော ဆေးဝါး ဖြစ်ပါသည်။",
+    "uses": [
+      "Relief of vertigo (dizziness).",
+      "Treatment of tinnitus (ringing in the ears) and hearing loss associated with Meniere's."
+    ],
+    "dosage": "8mg to 16mg three times daily.",
+    "side_effects": [
+      "Nausea",
+      "Indigestion",
+      "Headache"
+    ],
+    "precautions": "Take with food to reduce stomach upset. Consult a doctor if you have asthma or stomach ulcers."
+  },
+  {
+    "name": "Hyoscine Hydrobromide (Travelmin)",
+    "description": "Hyoscine Hydrobromide (Travelmin) သည် ဆေးဘက်ဆိုင်ရာ ကုသမှုအတွက် အသုံးပြုသော ဆေးဝါး ဖြစ်ပါသည်။",
+    "uses": [
+      "Prevention of nausea and vomiting caused by motion sickness."
+    ],
+    "dosage": "0.3mg to 0.6mg 30-60 minutes before travel.",
+    "side_effects": [
+      "Drowsiness",
+      "Dry mouth",
+      "Blurred vision",
+      "Dizziness"
+    ],
+    "precautions": "May cause significant drowsiness. Avoid alcohol and driving."
+  },
+  {
+    "name": "Simethicone (Air-X)",
+    "description": "Simethicone (Air-X) သည် ဆေးဘက်ဆိုင်ရာ ကုသမှုအတွက် အသုံးပြုသော ဆေးဝါး ဖြစ်ပါသည်။",
+    "uses": [
+      "Relief of gas, bloating, and discomfort in the stomach and intestines."
+    ],
+    "dosage": "40mg to 125mg after meals and at bedtime.",
+    "side_effects": [
+      "Rarely causes side effects."
+    ],
+    "precautions": "Chew tablets thoroughly before swallowing."
+  },
+  {
+    "name": "Lactulose (Duphalac)",
+    "description": "Lactulose (Duphalac) သည် ဆေးဘက်ဆိုင်ရာ ကုသမှုအတွက် အသုံးပြုသော ဆေးဝါး ဖြစ်ပါသည်။",
+    "uses": [
+      "Treatment of chronic constipation.",
+      "Management of portal-systemic encephalopathy."
+    ],
+    "dosage": "15ml to 30ml daily, adjusted based on response.",
+    "side_effects": [
+      "Gas (flatulence)",
+      "Stomach cramps",
+      "Nausea",
+      "Diarrhea (if dose is too high)"
+    ],
+    "precautions": "May take 24-48 hours to work. Consult a doctor if you have diabetes."
+  },
+  {
+    "name": "Senna (Senokot)",
+    "description": "Senna (Senokot) သည် ဆေးဘက်ဆိုင်ရာ ကုသမှုအတွက် အသုံးပြုသော ဆေးဝါး ဖြစ်ပါသည်။",
+    "uses": [
+      "Relief of occasional constipation."
+    ],
+    "dosage": "1-2 tablets at bedtime.",
+    "side_effects": [
+      "Stomach cramps",
+      "Diarrhea",
+      "Discoloration of urine (harmless)"
+    ],
+    "precautions": "Do not use for more than 7 days without medical advice. Avoid if you have severe abdominal pain."
+  },
+  {
+    "name": "Bisacodyl (Dulcolax)",
+    "description": "Bisacodyl (Dulcolax) သည် ဆေးဘက်ဆိုင်ရာ ကုသမှုအတွက် အသုံးပြုသော ဆေးဝါး ဖြစ်ပါသည်။",
+    "uses": [
+      "Relief of constipation.",
+      "Bowel preparation for medical procedures."
+    ],
+    "dosage": "5mg to 10mg once daily, usually at bedtime.",
+    "side_effects": [
+      "Stomach cramps",
+      "Nausea",
+      "Diarrhea",
+      "Burning sensation (if using suppositories)"
+    ],
+    "precautions": "Do not take within 1 hour of antacids or milk. Do not use daily for more than 5 days."
+  },
+  {
+    "name": "Vitamin C (Ascorbic Acid)",
+    "description": "Vitamin C (Ascorbic Acid) သည် ဆေးဘက်ဆိုင်ရာ ကုသမှုအတွက် အသုံးပြုသော ဆေးဝါး ဖြစ်ပါသည်။",
+    "uses": [
+      "Prevention and treatment of vitamin C deficiency.",
+      "Support for immune health and skin repair."
+    ],
+    "dosage": "100mg to 1000mg daily.",
+    "side_effects": [
+      "Stomach upset or diarrhea (at high doses)."
+    ],
+    "precautions": "High doses may increase the risk of kidney stones in some people."
+  },
+  {
+    "name": "Vitamin D3 (Cholecalciferol)",
+    "description": "Vitamin D3 (Cholecalciferol) သည် ဆေးဘက်ဆိုင်ရာ ကုသမှုအတွက် အသုံးပြုသော ဆေးဝါး ဖြစ်ပါသည်။",
+    "uses": [
+      "Prevention and treatment of vitamin D deficiency.",
+      "Support for bone and immune health."
+    ],
+    "dosage": "400IU to 2000IU daily, or as prescribed.",
+    "side_effects": [
+      "Rarely causes side effects at normal doses."
+    ],
+    "precautions": "High doses should be taken under medical supervision."
+  },
+  {
+    "name": "Mebeverine (Colofac)",
+    "description": "Mebeverine (Colofac) သည် ဆေးဘက်ဆိုင်ရာ ကုသမှုအတွက် အသုံးပြုသော ဆေးဝါး ဖြစ်ပါသည်။",
+    "uses": [
+      "Relief of stomach pain and cramps associated with IBS."
+    ],
+    "dosage": "135mg three times a day, 20 minutes before meals.",
+    "side_effects": [
+      "Skin rash",
+      "Itching",
+      "Rarely causes significant side effects."
+    ],
+    "precautions": "Consult a doctor if symptoms change or worsen."
+  },
+  {
+    "name": "Oseltamivir (Tamiflu)",
+    "description": "Oseltamivir (Tamiflu) သည် ဆေးဘက်ဆိုင်ရာ ကုသမှုအတွက် အသုံးပြုသော ဆေးဝါး ဖြစ်ပါသည်။",
+    "uses": [
+      "Treatment of flu symptoms if started within 48 hours of onset.",
+      "Prevention of flu in people exposed to the virus."
+    ],
+    "dosage": "75mg twice daily for 5 days for treatment.",
+    "side_effects": [
+      "Nausea",
+      "Vomiting",
+      "Headache"
+    ],
+    "precautions": "Not a substitute for the flu vaccine. Complete the full course."
+  },
+  {
+    "name": "Metoclopramide (Maxolon)",
+    "description": "Metoclopramide (Maxolon) သည် ဆေးဘက်ဆိုင်ရာ ကုသမှုအတွက် အသုံးပြုသော ဆေးဝါး ဖြစ်ပါသည်။",
+    "uses": [
+      "Relief of nausea and vomiting.",
+      "Treatment of GERD and slow stomach emptying (gastroparesis)."
+    ],
+    "dosage": "10mg three times a day, 30 minutes before meals.",
+    "side_effects": [
+      "Drowsiness",
+      "Restlessness",
+      "Fatigue",
+      "Involuntary muscle movements (rare but serious)"
+    ],
+    "precautions": "Do not use for more than 5 days. Avoid alcohol."
+  },
+  {
+    "name": "Hydroxyzine (Atarax)",
+    "description": "Hydroxyzine (Atarax) သည် ဆေးဘက်ဆိုင်ရာ ကုသမှုအတွက် အသုံးပြုသော ဆေးဝါး ဖြစ်ပါသည်။",
+    "uses": [
+      "Relief of itching caused by allergies.",
+      "Treatment of short-term anxiety and tension.",
+      "Sedation before surgery."
+    ],
+    "dosage": "25mg to 50mg three to four times daily.",
+    "side_effects": [
+      "Drowsiness",
+      "Dry mouth",
+      "Dizziness",
+      "Blurred vision"
+    ],
+    "precautions": "Highly sedating; avoid driving. Consult a doctor if you have heart rhythm issues."
+  },
+  {
+    "name": "Miconazole (Daktarin)",
+    "description": "Miconazole (Daktarin) သည် ဆေးဘက်ဆိုင်ရာ ကုသမှုအတွက် အသုံးပြုသော ဆေးဝါး ဖြစ်ပါသည်။",
+    "uses": [
+      "Treatment of athlete's foot, ringworm, and oral thrush.",
+      "Treatment of vaginal yeast infections."
+    ],
+    "dosage": "Apply cream twice daily. Use oral gel after meals.",
+    "side_effects": [
+      "Skin irritation",
+      "Nausea or vomiting (with oral gel)"
+    ],
+    "precautions": "Avoid contact with eyes. Inform your doctor if you are taking blood thinners like warfarin."
+  },
+  {
+    "name": "Silver Sulfadiazine (Flammazine)",
+    "description": "Silver Sulfadiazine (Flammazine) သည် ဆေးဘက်ဆိုင်ရာ ကုသမှုအတွက် အသုံးပြုသော ဆေးဝါး ဖြစ်ပါသည်။",
+    "uses": [
+      "Prevention and treatment of infection in second- and third-degree burns."
+    ],
+    "dosage": "Apply to the cleaned burn area 1-2 times daily.",
+    "side_effects": [
+      "Skin discoloration",
+      "Burning or itching sensation",
+      "Rash"
+    ],
+    "precautions": "Do not use during late pregnancy or on premature infants. Consult a doctor if a rash develops."
+  },
+  {
+    "name": "Mupirocin (Bactroban)",
+    "description": "Mupirocin (Bactroban) သည် ဆေးဘက်ဆိုင်ရာ ကုသမှုအတွက် အသုံးပြုသော ဆေးဝါး ဖြစ်ပါသည်။",
+    "uses": [
+      "Treatment of bacterial skin infections (impetigo, folliculitis).",
+      "Elimination of MRSA from the nose."
+    ],
+    "dosage": "Apply a small amount to the affected area 3 times daily for up to 10 days.",
+    "side_effects": [
+      "Burning",
+      "Stinging",
+      "Itching",
+      "Dryness"
+    ],
+    "precautions": "Avoid contact with eyes. Consult a doctor if no improvement in 3-5 days."
+  },
+  {
+    "name": "Permethrin (Scaboma)",
+    "description": "Permethrin (Scaboma) သည် ဆေးဘက်ဆိုင်ရာ ကုသမှုအတွက် အသုံးပြုသော ဆေးဝါး ဖြစ်ပါသည်။",
+    "uses": [
+      "Treatment of scabies (skin mites).",
+      "Treatment of head lice."
+    ],
+    "dosage": "Apply cream/lotion thoroughly from neck to toes and wash off after 8-14 hours.",
+    "side_effects": [
+      "Itching",
+      "Redness",
+      "Stinging"
+    ],
+    "precautions": "All family members may need treatment. Wash all clothing and bedding in hot water."
+  },
+  {
+    "name": "Terbinafine (Lamisil)",
+    "description": "Terbinafine (Lamisil) သည် ဆေးဘက်ဆိုင်ရာ ကုသမှုအတွက် အသုံးပြုသော ဆေးဝါး ဖြစ်ပါသည်။",
+    "uses": [
+      "Treatment of athlete's foot, jock itch, and ringworm.",
+      "Treatment of fungal nail infections."
+    ],
+    "dosage": "Apply cream 1-2 times daily. Oral tablets as prescribed.",
+    "side_effects": [
+      "Skin irritation",
+      "Taste changes (with oral tablets)",
+      "Stomach upset"
+    ],
+    "precautions": "Oral use requires liver function monitoring. Continue topical treatment for recommended duration."
+  },
+  {
+    "name": "Sunkist (Vitamin C)",
+    "description": "Sunkist (Vitamin C) သည် ဆေးဘက်ဆိုင်ရာ ကုသမှုအတွက် အသုံးပြုသော ဆေးဝါး ဖြစ်ပါသည်။",
+    "uses": [
+      "Boosting the immune system.",
+      "Prevention of Vitamin C deficiency."
+    ],
+    "dosage": "One tablet daily.",
+    "side_effects": [
+      "Stomach upset (at high doses)."
+    ],
+    "precautions": "Do not exceed the recommended dose."
+  },
+  {
+    "name": "Traditional Medicine No. 1 (Digestive)",
+    "description": "Traditional Medicine No. 1 (Digestive) သည် ဆေးဘက်ဆိုင်ရာ ကုသမှုအတွက် အသုံးပြုသော ဆေးဝါး ဖြစ်ပါသည်။",
+    "uses": [
+      "Relief of indigestion, stomach bloating, and loss of appetite."
+    ],
+    "dosage": "1-2 tablets or 1/2 teaspoon of powder after meals.",
+    "side_effects": [
+      "Mild stomach upset (rare)."
+    ],
+    "precautions": "Consult a traditional medicine practitioner for prolonged use."
+  },
+  {
+    "name": "Traditional Medicine No. 2 (Anti-flatulence)",
+    "description": "Traditional Medicine No. 2 (Anti-flatulence) သည် ဆေးဘက်ဆိုင်ရာ ကုသမှုအတွက် အသုံးပြုသော ဆေးဝါး ဖြစ်ပါသည်။",
+    "uses": [
+      "Relief of flatulence, dizziness, and body aches attributed to 'wind' in traditional medicine."
+    ],
+    "dosage": "As directed on the package, usually twice daily.",
+    "side_effects": [
+      "None reported at normal doses."
+    ],
+    "precautions": "Keep in a cool, dry place."
+  },
+  {
+    "name": "Traditional Medicine No. 16 (Heat Relief)",
+    "description": "Traditional Medicine No. 16 (Heat Relief) သည် ဆေးဘက်ဆိုင်ရာ ကုသမှုအတွက် အသုံးပြုသော ဆေးဝါး ဖြစ်ပါသည်။",
+    "uses": [
+      "Relief of symptoms attributed to 'excessive heat' such as sore throat, mouth ulcers, and constipation."
+    ],
+    "dosage": "One tablet or small amount of powder twice daily.",
+    "side_effects": [
+      "Mild diarrhea (rare)."
+    ],
+    "precautions": "Consult a practitioner if symptoms persist."
+  },
+  {
+    "name": "Methycobal (Mecobalamin)",
+    "description": "Methycobal (Mecobalamin) သည် ဆေးဘက်ဆိုင်ရာ ကုသမှုအတွက် အသုံးပြုသော ဆေးဝါး ဖြစ်ပါသည်။",
+    "uses": [
+      "Treatment of peripheral neuropathies (nerve damage).",
+      "Treatment of megaloblastic anemia due to vitamin B12 deficiency."
+    ],
+    "dosage": "500mcg three times a day, or as prescribed by a doctor.",
+    "side_effects": [
+      "Loss of appetite",
+      "Nausea",
+      "Diarrhea",
+      "Skin rash (rare)"
+    ],
+    "precautions": "Consult a doctor if you are pregnant or breastfeeding. Long-term use requires monitoring."
+  },
+  {
+    "name": "Warfarin (Panwarfin)",
+    "description": "Warfarin (Panwarfin) သည် ဆေးဘက်ဆိုင်ရာ ကုသမှုအတွက် အသုံးပြုသော ဆေးဝါး ဖြစ်ပါသည်။",
+    "uses": [
+      "Prevention of blood clots in the legs, lungs, and heart.",
+      "Reducing the risk of stroke and heart attack."
+    ],
+    "dosage": "As prescribed (requires regular blood tests to monitor INR).",
+    "side_effects": [
+      "Bleeding more easily",
+      "Bruising",
+      "Nosebleeds",
+      "Heavy periods"
+    ],
+    "precautions": "Avoid activities that may cause injury. Maintain a consistent intake of vitamin K-rich foods (green leafy vegetables). Consult a doctor before taking other medicines."
+  },
+  {
+    "name": "Insulin (Human Insulin)",
+    "description": "Insulin (Human Insulin) သည် ဆေးဘက်ဆိုင်ရာ ကုသမှုအတွက် အသုံးပြုသော ဆေးဝါး ဖြစ်ပါသည်။",
+    "uses": [
+      "Treatment of type 1 and type 2 diabetes mellitus."
+    ],
+    "dosage": "As prescribed (injected subcutaneously).",
+    "side_effects": [
+      "Low blood sugar (hypoglycemia)",
+      "Weight gain",
+      "Swelling or itching at the injection site"
+    ],
+    "precautions": "Monitor blood sugar regularly. Learn the signs of hypoglycemia and how to treat it."
+  },
+  {
+    "name": "Valsartan (Diovan)",
+    "description": "Valsartan (Diovan) သည် ဆေးဘက်ဆိုင်ရာ ကုသမှုအတွက် အသုံးပြုသော ဆေးဝါး ဖြစ်ပါသည်။",
+    "uses": [
+      "Treatment of hypertension.",
+      "Treatment of heart failure.",
+      "Improving survival after a heart attack."
+    ],
+    "dosage": "40mg to 320mg once daily.",
+    "side_effects": [
+      "Dizziness",
+      "Headache",
+      "Fatigue",
+      "Cough (less common than with ACE inhibitors)"
+    ],
+    "precautions": "Do not use during pregnancy. Monitor kidney function and potassium levels."
+  },
+  {
+    "name": "Metoprolol (Betaloc)",
+    "description": "Metoprolol (Betaloc) သည် ဆေးဘက်ဆိုင်ရာ ကုသမှုအတွက် အသုံးပြုသော ဆေးဝါး ဖြစ်ပါသည်။",
+    "uses": [
+      "Treatment of hypertension.",
+      "Prevention of angina (chest pain).",
+      "Improving survival after a heart attack."
+    ],
+    "dosage": "25mg to 200mg once or twice daily.",
+    "side_effects": [
+      "Slow heart rate",
+      "Dizziness",
+      "Fatigue",
+      "Depression"
+    ],
+    "precautions": "Do not stop taking abruptly. Consult a doctor if you have asthma."
+  },
+  {
+    "name": "Diazepam (Valium)",
+    "description": "Diazepam (Valium) သည် ဆေးဘက်ဆိုင်ရာ ကုသမှုအတွက် အသုံးပြုသော ဆေးဝါး ဖြစ်ပါသည်။",
+    "uses": [
+      "Short-term relief of anxiety.",
+      "Relief of muscle spasms.",
+      "Management of seizures and alcohol withdrawal."
+    ],
+    "dosage": "2mg to 10mg two to four times daily (as prescribed).",
+    "side_effects": [
+      "Drowsiness",
+      "Fatigue",
+      "Muscle weakness",
+      "Dizziness"
+    ],
+    "precautions": "High potential for addiction and dependence. Avoid alcohol. Do not drive while taking this medicine."
+  },
+  {
+    "name": "Alprazolam (Xanax)",
+    "description": "Alprazolam (Xanax) သည် ဆေးဘက်ဆိုင်ရာ ကုသမှုအတွက် အသုံးပြုသော ဆေးဝါး ဖြစ်ပါသည်။",
+    "uses": [
+      "Short-term management of anxiety disorders.",
+      "Treatment of panic disorder."
+    ],
+    "dosage": "0.25mg to 0.5mg three times daily (as prescribed).",
+    "side_effects": [
+      "Drowsiness",
+      "Lightheadedness",
+      "Dry mouth",
+      "Weight changes"
+    ],
+    "precautions": "May be habit-forming. Do not stop suddenly. Avoid alcohol."
+  },
+  {
+    "name": "Digoxin (Lanoxin)",
+    "description": "Digoxin (Lanoxin) သည် ဆေးဘက်ဆိုင်ရာ ကုသမှုအတွက် အသုံးပြုသော ဆေးဝါး ဖြစ်ပါသည်။",
+    "uses": [
+      "Management of heart failure.",
+      "Control of heart rate in atrial fibrillation."
+    ],
+    "dosage": "0.125mg to 0.25mg once daily (as prescribed).",
+    "side_effects": [
+      "Nausea",
+      "Vomiting",
+      "Dizziness",
+      "Vision changes (yellow/green tint)"
+    ],
+    "precautions": "Requires regular monitoring of blood levels and heart rate. Report signs of toxicity (nausea, vision changes) to a doctor."
+  },
+  {
+    "name": "Isosorbide Dinitrate (Isordil)",
+    "description": "Isosorbide Dinitrate (Isordil) သည် ဆေးဘက်ဆိုင်ရာ ကုသမှုအတွက် အသုံးပြုသော ဆေးဝါး ဖြစ်ပါသည်။",
+    "uses": [
+      "Prevention of angina attacks.",
+      "Treatment of chronic heart failure (with other drugs)."
+    ],
+    "dosage": "5mg to 40mg two to three times daily.",
+    "side_effects": [
+      "Headache (common)",
+      "Dizziness",
+      "Flushing",
+      "Low blood pressure"
+    ],
+    "precautions": "Do not use with medications for erectile dysfunction (e.g., sildenafil). Sit or lie down if feeling dizzy."
+  },
+  {
+    "name": "Hydrocortisone (Skin Cream)",
+    "description": "Hydrocortisone (Skin Cream) သည် ဆေးဘက်ဆိုင်ရာ ကုသမှုအတွက် အသုံးပြုသော ဆေးဝါး ဖြစ်ပါသည်။",
+    "uses": [
+      "Relief of itching and inflammation from insect bites, eczema, and rashes."
+    ],
+    "dosage": "Apply thinly to the affected area 2 to 4 times daily.",
+    "side_effects": [
+      "Skin thinning (with long-term use)",
+      "Burning or stinging sensation"
+    ],
+    "precautions": "Avoid use on the face or broken skin unless directed by a doctor."
+  },
+  {
+    "name": "Moxifloxacin (Vigamox)",
+    "description": "Moxifloxacin (Vigamox) သည် ဆေးဘက်ဆိုင်ရာ ကုသမှုအတွက် အသုံးပြုသော ဆေးဝါး ဖြစ်ပါသည်။",
+    "uses": [
+      "Treatment of bacterial conjunctivitis (pink eye).",
+      "Treatment of respiratory infections (oral form)."
+    ],
+    "dosage": "One drop in the affected eye 3 times a day.",
+    "side_effects": [
+      "Eye irritation",
+      "Dry eyes",
+      "Blurry vision"
+    ],
+    "precautions": "Do not wear contact lenses while you have signs of a bacterial eye infection."
+  },
+  {
+    "name": "Tamsulosin (Harnal)",
+    "description": "Tamsulosin (Harnal) သည် ဆေးဘက်ဆိုင်ရာ ကုသမှုအတွက် အသုံးပြုသော ဆေးဝါး ဖြစ်ပါသည်။",
+    "uses": [
+      "Improving urination in men with benign prostatic hyperplasia."
+    ],
+    "dosage": "0.4mg once daily, 30 minutes after the same meal each day.",
+    "side_effects": [
+      "Dizziness",
+      "Runny nose",
+      "Abnormal ejaculation"
+    ],
+    "precautions": "May cause a drop in blood pressure when standing up. Consult a doctor before cataract surgery."
+  },
+  {
+    "name": "Finasteride (Proscar)",
+    "description": "Finasteride (Proscar) သည် ဆေးဘက်ဆိုင်ရာ ကုသမှုအတွက် အသုံးပြုသော ဆေးဝါး ဖြစ်ပါသည်။",
+    "uses": [
+      "Treatment of symptoms of BPH.",
+      "Treatment of male pattern baldness (at lower doses)."
+    ],
+    "dosage": "1mg to 5mg once daily.",
+    "side_effects": [
+      "Decreased libido",
+      "Erectile dysfunction",
+      "Breast tenderness"
+    ],
+    "precautions": "Pregnant women should not handle crushed tablets as it can affect a male fetus."
+  },
+  {
+    "name": "Sildenafil (Viagra)",
+    "description": "Sildenafil (Viagra) သည် ဆေးဘက်ဆိုင်ရာ ကုသမှုအတွက် အသုံးပြုသော ဆေးဝါး ဖြစ်ပါသည်။",
+    "uses": [
+      "Treatment of erectile dysfunction.",
+      "Improving exercise capacity in pulmonary hypertension."
+    ],
+    "dosage": "25mg to 100mg as needed, about 1 hour before sexual activity.",
+    "side_effects": [
+      "Headache",
+      "Flushing",
+      "Indigestion",
+      "Vision changes"
+    ],
+    "precautions": "Do not use with nitrates for chest pain. Seek emergency help if an erection lasts more than 4 hours."
+  },
+  {
+    "name": "Levofloxacin (Cravit)",
+    "description": "Levofloxacin (Cravit) သည် ဆေးဘက်ဆိုင်ရာ ကုသမှုအတွက် အသုံးပြုသော ဆေးဝါး ဖြစ်ပါသည်။",
+    "uses": [
+      "Treatment of pneumonia, sinus infections, and urinary tract infections.",
+      "Treatment of skin infections and chronic bronchitis."
+    ],
+    "dosage": "250mg to 750mg once daily for 7 to 14 days.",
+    "side_effects": [
+      "Nausea",
+      "Diarrhea",
+      "Headache",
+      "Tendonitis (rare)"
+    ],
+    "precautions": "Drink plenty of fluids. Avoid excessive sun exposure. Not recommended for children or pregnant women."
+  },
+  {
+    "name": "Gliclazide (Diamicron)",
+    "description": "Gliclazide (Diamicron) သည် ဆေးဘက်ဆိုင်ရာ ကုသမှုအတွက် အသုံးပြုသော ဆေးဝါး ဖြစ်ပါသည်။",
+    "uses": [
+      "Control of blood sugar levels in type 2 diabetes mellitus."
+    ],
+    "dosage": "30mg to 120mg once daily with breakfast.",
+    "side_effects": [
+      "Hypoglycemia (low blood sugar)",
+      "Nausea",
+      "Stomach upset"
+    ],
+    "precautions": "Monitor blood sugar regularly. Carry a sugar source in case of hypoglycemia."
+  },
+  {
+    "name": "Carvedilol (Dilatrend)",
+    "description": "Carvedilol (Dilatrend) သည် ဆေးဘက်ဆိုင်ရာ ကုသမှုအတွက် အသုံးပြုသော ဆေးဝါး ဖြစ်ပါသည်။",
+    "uses": [
+      "Management of congestive heart failure.",
+      "Treatment of hypertension."
+    ],
+    "dosage": "3.125mg to 25mg twice daily.",
+    "side_effects": [
+      "Dizziness",
+      "Fatigue",
+      "Low blood pressure",
+      "Weight gain"
+    ],
+    "precautions": "Do not stop suddenly. Take with food to reduce the risk of low blood pressure."
+  },
+  {
+    "name": "Hydrochlorothiazide (HCTZ)",
+    "description": "Hydrochlorothiazide (HCTZ) သည် ဆေးဘက်ဆိုင်ရာ ကုသမှုအတွက် အသုံးပြုသော ဆေးဝါး ဖြစ်ပါသည်။",
+    "uses": [
+      "Treatment of hypertension.",
+      "Treatment of edema caused by heart failure or kidney disease."
+    ],
+    "dosage": "12.5mg to 50mg once daily.",
+    "side_effects": [
+      "Dizziness",
+      "Lightheadedness",
+      "Frequent urination",
+      "Muscle cramps"
+    ],
+    "precautions": "May cause potassium loss. Use sunscreen as it may increase sun sensitivity."
+  },
+  {
+    "name": "Candesartan (Blopress)",
+    "description": "Candesartan (Blopress) သည် ဆေးဘက်ဆိုင်ရာ ကုသမှုအတွက် အသုံးပြုသော ဆေးဝါး ဖြစ်ပါသည်။",
+    "uses": [
+      "Treatment of hypertension.",
+      "Management of heart failure with reduced ejection fraction."
+    ],
+    "dosage": "8mg to 32mg once daily.",
+    "side_effects": [
+      "Dizziness",
+      "Back pain",
+      "Respiratory infection"
+    ],
+    "precautions": "Do not use during pregnancy. Monitor kidney function regularly."
+  },
+  {
+    "name": "Sitagliptin + Metformin (Janumet)",
+    "description": "Sitagliptin + Metformin (Janumet) သည် ဆေးဘက်ဆိုင်ရာ ကုသမှုအတွက် အသုံးပြုသော ဆေးဝါး ဖြစ်ပါသည်။",
+    "uses": [
+      "Treatment of type 2 diabetes mellitus when single agent therapy is insufficient."
+    ],
+    "dosage": "One tablet twice daily with meals.",
+    "side_effects": [
+      "Nausea",
+      "Diarrhea",
+      "Upper respiratory tract infection"
+    ],
+    "precautions": "Risk of lactic acidosis (rare but serious). Monitor kidney function."
+  },
+  {
+    "name": "Cetirizine (Zyrtec)",
+    "description": "Cetirizine (Zyrtec) သည် ဆေးဘက်ဆိုင်ရာ ကုသမှုအတွက် အသုံးပြုသော ဆေးဝါး ဖြစ်ပါသည်။",
+    "uses": [
+      "Relief of hay fever and allergy symptoms.",
+      "Treatment of itching and swelling caused by hives."
+    ],
+    "dosage": "5mg to 10mg once daily.",
+    "side_effects": [
+      "Drowsiness",
+      "Dry mouth",
+      "Dizziness"
+    ],
+    "precautions": "May cause drowsiness. Avoid alcohol while taking this medicine."
+  },
+  {
+    "name": "Ranitidine (Zantac)",
+    "description": "Ranitidine (Zantac) သည် ဆေးဘက်ဆိုင်ရာ ကုသမှုအတွက် အသုံးပြုသော ဆေးဝါး ဖြစ်ပါသည်။",
+    "uses": [
+      "Treatment of heartburn, acid reflux, and stomach ulcers."
+    ],
+    "dosage": "150mg twice daily or 300mg at bedtime.",
+    "side_effects": [
+      "Headache",
+      "Constipation",
+      "Diarrhea"
+    ],
+    "precautions": "Consult a doctor if symptoms persist for more than 2 weeks."
+  },
+  {
+    "name": "Pantoprazole (Controloc)",
+    "description": "Pantoprazole (Controloc) သည် ဆေးဘက်ဆိုင်ရာ ကုသမှုအတွက် အသုံးပြုသော ဆေးဝါး ဖြစ်ပါသည်။",
+    "uses": [
+      "Treatment of GERD and erosive esophagitis.",
+      "Prevention of stomach ulcers."
+    ],
+    "dosage": "20mg to 40mg once daily before breakfast.",
+    "side_effects": [
+      "Headache",
+      "Diarrhea",
+      "Stomach pain",
+      "Gas"
+    ],
+    "precautions": "Long-term use may affect vitamin B12 absorption and bone density."
+  },
+  {
+    "name": "Hyoscine (Buscopan)",
+    "description": "Hyoscine (Buscopan) သည် ဆေးဘက်ဆိုင်ရာ ကုသမှုအတွက် အသုံးပြုသော ဆေးဝါး ဖြစ်ပါသည်။",
+    "uses": [
+      "Relief of abdominal cramps and spasms.",
+      "Treatment of irritable bowel syndrome (IBS) symptoms."
+    ],
+    "dosage": "10mg to 20mg three to four times daily.",
+    "side_effects": [
+      "Dry mouth",
+      "Blurred vision",
+      "Constipation"
+    ],
+    "precautions": "Consult a doctor if you have glaucoma or an enlarged prostate."
+  },
+  {
+    "name": "Dicycloverine (Bentyl)",
+    "description": "Dicycloverine (Bentyl) သည် ဆေးဘက်ဆိုင်ရာ ကုသမှုအတွက် အသုံးပြုသော ဆေးဝါး ဖြစ်ပါသည်။",
+    "uses": [
+      "Relief of stomach and intestinal spasms."
+    ],
+    "dosage": "10mg to 20mg four times daily.",
+    "side_effects": [
+      "Dizziness",
+      "Dry mouth",
+      "Blurred vision",
+      "Nausea"
+    ],
+    "precautions": "May cause drowsiness. Avoid use in infants under 6 months."
+  },
+  {
+    "name": "Calcium + Vitamin D3",
+    "description": "Calcium + Vitamin D3 သည် ဆေးဘက်ဆိုင်ရာ ကုသမှုအတွက် အသုံးပြုသော ဆေးဝါး ဖြစ်ပါသည်။",
+    "uses": [
+      "Prevention and treatment of osteoporosis.",
+      "Calcium and Vitamin D deficiency."
+    ],
+    "dosage": "One tablet daily or as prescribed.",
+    "side_effects": [
+      "Constipation",
+      "Stomach upset"
+    ],
+    "precautions": "Consult a doctor if you have kidney stones."
+  },
+  {
+    "name": "Cetzy (Cetirizine)",
+    "description": "Cetzy (Cetirizine) သည် ဆေးဘက်ဆိုင်ရာ ကုသမှုအတွက် အသုံးပြုသော ဆေးဝါး ဖြစ်ပါသည်။",
+    "uses": [
+      "Relief of sneezing, runny nose, and watery eyes.",
+      "Treatment of itchy skin rashes and hives."
+    ],
+    "dosage": "One 10mg tablet once daily.",
+    "side_effects": [
+      "Drowsiness",
+      "Dry mouth",
+      "Fatigue"
+    ],
+    "precautions": "May cause drowsiness; avoid driving or operating machinery until you know how it affects you."
+  },
+  {
+    "name": "V.Rohto (Vitamin Eye Drops)",
+    "description": "V.Rohto (Vitamin Eye Drops) သည် ဆေးဘက်ဆိုင်ရာ ကုသမှုအတွက် အသုံးပြုသော ဆေးဝါး ဖြစ်ပါသည်။",
+    "uses": [
+      "Relief of eye strain and tiredness.",
+      "Reduction of eye redness and irritation caused by dust or sweat."
+    ],
+    "dosage": "Instill 2 to 3 drops, 5 to 6 times daily.",
+    "side_effects": [
+      "Stinging sensation (temporary)",
+      "Blurred vision (temporary)"
+    ],
+    "precautions": "Do not use while wearing soft contact lenses. If irritation persists, consult a doctor."
+  },
+  {
+    "name": "Tears Naturale (Artificial Tears)",
+    "description": "Tears Naturale (Artificial Tears) သည် ဆေးဘက်ဆိုင်ရာ ကုသမှုအတွက် အသုံးပြုသော ဆေးဝါး ဖြစ်ပါသည်။",
+    "uses": [
+      "Relief of burning and irritation due to dryness of the eye.",
+      "Protection against further irritation."
+    ],
+    "dosage": "Instill 1 or 2 drops in the affected eye(s) as needed.",
+    "side_effects": [
+      "Minor eye irritation",
+      "Temporary blurred vision"
+    ],
+    "precautions": "Discard the container 30 days after opening. If you experience eye pain or vision changes, stop use."
+  },
+  {
+    "name": "Gentamicin (Antibiotic Eye Drops)",
+    "description": "Gentamicin (Antibiotic Eye Drops) သည် ဆေးဘက်ဆိုင်ရာ ကုသမှုအတွက် အသုံးပြုသော ဆေးဝါး ဖြစ်ပါသည်။",
+    "uses": [
+      "Treatment of conjunctivitis (pink eye).",
+      "Treatment of other superficial bacterial eye infections."
+    ],
+    "dosage": "Instill 1 to 2 drops every 4 hours into the affected eye.",
+    "side_effects": [
+      "Burning or stinging",
+      "Redness",
+      "Itching"
+    ],
+    "precautions": "Use for the full prescribed duration even if symptoms improve. Do not touch the dropper tip to any surface."
+  },
+  {
+    "name": "Amoxicillin (Amoxil)",
+    "description": "Amoxicillin (Amoxil) သည် ဆေးဘက်ဆိုင်ရာ ကုသမှုအတွက် အသုံးပြုသော ဆေးဝါး ဖြစ်ပါသည်။",
+    "uses": [
+      "Treatment of infections of the ear, nose, throat, urinary tract, and skin."
+    ],
+    "dosage": "Usually 250mg to 500mg every 8 hours or 500mg to 875mg every 12 hours.",
+    "side_effects": [
+      "Nausea",
+      "Vomiting",
+      "Diarrhea",
+      "Rash"
+    ],
+    "precautions": "Do not use if you are allergic to penicillin. Complete the full course."
+  },
+  {
+    "name": "Omeprazole (Prilosec / Losec)",
+    "description": "Omeprazole (Prilosec / Losec) သည် ဆေးဘက်ဆိုင်ရာ ကုသမှုအတွက် အသုံးပြုသော ဆေးဝါး ဖြစ်ပါသည်။",
+    "uses": [
+      "Treatment of gastroesophageal reflux disease (GERD)",
+      "Stomach ulcers",
+      "Heartburn"
+    ],
+    "dosage": "Usually 20mg once daily before a meal.",
+    "side_effects": [
+      "Headache",
+      "Abdominal pain",
+      "Nausea",
+      "Diarrhea"
+    ],
+    "precautions": "Take 30-60 minutes before breakfast for best results."
+  },
+  {
+    "name": "Gaviscon (Antacid)",
+    "description": "Gaviscon (Antacid) သည် ဆေးဘက်ဆိုင်ရာ ကုသမှုအတွက် အသုံးပြုသော ဆေးဝါး ဖြစ်ပါသည်။",
+    "uses": [
+      "Relief of heartburn",
+      "Acid reflux",
+      "Indigestion after meals"
+    ],
+    "dosage": "10-20ml of liquid or 2-4 tablets after meals and at bedtime.",
+    "side_effects": [
+      "Constipation",
+      "Diarrhea (rare)"
+    ],
+    "precautions": "If symptoms persist for more than 7 days, consult a doctor."
+  },
+  {
+    "name": "Neurobion (Vitamin B1+B6+B12)",
+    "description": "Neurobion (Vitamin B1+B6+B12) သည် ဆေးဘက်ဆိုင်ရာ ကုသမှုအတွက် အသုံးပြုသော ဆေးဝါး ဖြစ်ပါသည်။",
+    "uses": [
+      "Treatment of vitamin B deficiency",
+      "Relief of nerve pain, numbness, and tingling."
+    ],
+    "dosage": "One tablet 1-3 times daily.",
+    "side_effects": [
+      "Nausea",
+      "Diarrhea",
+      "Abdominal pain (rare)"
+    ],
+    "precautions": "Consult a doctor if you are pregnant or breastfeeding."
+  },
+  {
+    "name": "Decolgen (Cold & Flu)",
+    "description": "Decolgen (Cold & Flu) သည် ဆေးဘက်ဆိုင်ရာ ကုသမှုအတွက် အသုံးပြုသော ဆေးဝါး ဖြစ်ပါသည်။",
+    "uses": [
+      "Relief of nasal congestion",
+      "Runny nose",
+      "Headache",
+      "Fever"
+    ],
+    "dosage": "One tablet every 4 to 6 hours.",
+    "side_effects": [
+      "Drowsiness",
+      "Dry mouth",
+      "Dizziness"
+    ],
+    "precautions": "May cause drowsiness. Do not drive or operate machinery."
+  },
+  {
+    "name": "Amlodipine (Norvasc)",
+    "description": "Amlodipine (Norvasc) သည် ဆေးဘက်ဆိုင်ရာ ကုသမှုအတွက် အသုံးပြုသော ဆေးဝါး ဖြစ်ပါသည်။",
+    "uses": [
+      "Treatment of high blood pressure (hypertension)",
+      "Prevention of chest pain (angina)."
+    ],
+    "dosage": "Usually 5mg once daily, can be increased to 10mg.",
+    "side_effects": [
+      "Swelling of ankles",
+      "Headache",
+      "Dizziness",
+      "Fatigue"
+    ],
+    "precautions": "Check blood pressure regularly. Do not stop suddenly."
+  },
+  {
+    "name": "Atorvastatin (Lipitor)",
+    "description": "Atorvastatin (Lipitor) သည် ဆေးဘက်ဆိုင်ရာ ကုသမှုအတွက် အသုံးပြုသော ဆေးဝါး ဖြစ်ပါသည်။",
+    "uses": [
+      "Prevention of cardiovascular disease",
+      "Lowering high cholesterol and triglycerides."
+    ],
+    "dosage": "10mg to 80mg once daily.",
+    "side_effects": [
+      "Joint pain",
+      "Diarrhea",
+      "Muscle pain (rare)"
+    ],
+    "precautions": "Avoid large amounts of grapefruit juice. Take at the same time each day."
+  },
+  {
+    "name": "Burmeton (Chlorpheniramine)",
+    "description": "Burmeton (Chlorpheniramine) သည် ဆေးဘက်ဆိုင်ရာ ကုသမှုအတွက် အသုံးပြုသော ဆေးဝါး ဖြစ်ပါသည်။",
+    "uses": [
+      "Relief of runny nose",
+      "Sneezing",
+      "Itchy eyes",
+      "Allergic skin reactions."
+    ],
+    "dosage": "4mg every 4 to 6 hours.",
+    "side_effects": [
+      "Strong drowsiness",
+      "Dry mouth",
+      "Blurred vision"
+    ],
+    "precautions": "Causes significant drowsiness. Avoid alcohol."
+  },
+  {
+    "name": "Simethicone (Air-X / Disflatyl)",
+    "description": "Simethicone (Air-X / Disflatyl) သည် ဆေးဘက်ဆိုင်ရာ ကုသမှုအတွက် အသုံးပြုသော ဆေးဝါး ဖြစ်ပါသည်။",
+    "uses": [
+      "Relief of painful pressure caused by excess gas in the stomach and intestines.",
+      "Reduction of bloating, fullness, and belching."
+    ],
+    "dosage": "40mg to 125mg chewed thoroughly after meals and at bedtime (Max 500mg daily).",
+    "side_effects": [
+      "Mild loose stools (rare)",
+      "Nausea (rare)"
+    ],
+    "precautions": "Chew tablets thoroughly before swallowing. Safe for most adults and children."
+  },
+  {
+    "name": "Bromhexine (Bisolvon / Mucolytic)",
+    "description": "Bromhexine (Bisolvon / Mucolytic) သည် ဆေးဘက်ဆိုင်ရာ ကုသမှုအတွက် အသုံးပြုသော ဆေးဝါး ဖြစ်ပါသည်။",
+    "uses": [
+      "Relief of productive cough with thick mucus/phlegm.",
+      "Treatment of respiratory conditions associated with excessive mucus (bronchitis, cold)."
+    ],
+    "dosage": "8mg to 16mg (1 to 2 tablets) 3 times daily after food.",
+    "side_effects": [
+      "Nausea",
+      "Mild indigestion",
+      "Sweating",
+      "Allergic skin rash (rare)"
+    ],
+    "precautions": "Drink plenty of warm water while taking this medicine to help dissolve phlegm effectively."
+  },
+  {
+    "name": "Dextromethorphan (Cough Suppressant)",
+    "description": "Dextromethorphan (Cough Suppressant) သည် ဆေးဘက်ဆိုင်ရာ ကုသမှုအတွက် အသုံးပြုသော ဆေးဝါး ဖြစ်ပါသည်။",
+    "uses": [
+      "Temporary relief of dry, tickly, non-productive cough without phlegm.",
+      "Relief of nighttime cough disturbing sleep."
+    ],
+    "dosage": "15mg to 30mg every 6 to 8 hours as needed (Max 120mg in 24 hours).",
+    "side_effects": [
+      "Drowsiness",
+      "Dizziness",
+      "Stomach upset",
+      "Nausea"
+    ],
+    "precautions": "Do not use for productive cough with thick phlegm. Do not combine with MAO inhibitor antidepressants."
+  },
+  {
+    "name": "Kremil-S (Antacid & Antiflatulent)",
+    "description": "Kremil-S (Antacid & Antiflatulent) သည် ဆေးဘက်ဆိုင်ရာ ကုသမှုအတွက် အသုံးပြုသော ဆေးဝါး ဖြစ်ပါသည်။",
+    "uses": [
+      "Fast relief of heartburn, acid indigestion, and sour stomach.",
+      "Relief of gas pain, bloating, and stomach ulcer discomfort."
+    ],
+    "dosage": "1 to 2 tablets chewed 1 hour after meals and at bedtime.",
+    "side_effects": [
+      "Constipation or loose stools",
+      "Chalky taste in mouth"
+    ],
+    "precautions": "Chew tablets thoroughly before swallowing. Separate from other medications by at least 2 hours."
+  },
+  {
+    "name": "Zinc Sulfate (Zinc Supplement)",
+    "description": "Zinc Sulfate (Zinc Supplement) သည် ဆေးဘက်ဆိုင်ရာ ကုသမှုအတွက် အသုံးပြုသော ဆေးဝါး ဖြစ်ပါသည်။",
+    "uses": [
+      "Management of acute diarrhea in children and adults (alongside ORS).",
+      "Immune system support and faster wound recovery."
+    ],
+    "dosage": "20mg daily for 10 to 14 days during/after diarrhea episodes.",
+    "side_effects": [
+      "Nausea or metallic taste (if taken on an empty stomach)",
+      "Mild abdominal cramping"
+    ],
+    "precautions": "Take after meals to minimize stomach upset."
+  },
+  {
+    "name": "Povidone Iodine (Betadine Antiseptic)",
+    "description": "Povidone Iodine (Betadine Antiseptic) သည် ဆေးဘက်ဆိုင်ရာ ကုသမှုအတွက် အသုံးပြုသော ဆေးဝါး ဖြစ်ပါသည်။",
+    "uses": [
+      "Antiseptic cleansing of minor cuts, scrapes, burns, and wounds.",
+      "Skin disinfection before and after minor surgical procedures."
+    ],
+    "dosage": "Apply a small amount to the affected clean area 1 to 3 times daily.",
+    "side_effects": [
+      "Mild skin irritation or staining",
+      "Redness or itching at application site"
+    ],
+    "precautions": "For external topical use only. Do not swallow. Avoid in patients allergic to iodine."
+  },
+  {
+    "name": "Clotrimazole (Canesten Anti-fungal Cream)",
+    "description": "Clotrimazole (Canesten Anti-fungal Cream) သည် ဆေးဘက်ဆိုင်ရာ ကုသမှုအတွက် အသုံးပြုသော ဆေးဝါး ဖြစ်ပါသည်။",
+    "uses": [
+      "Treatment of ringworm (Tinea corporis), athlete's foot (Tinea pedis), and jock itch (Tinea cruris).",
+      "Treatment of fungal skin infections, tinea versicolor (nyin), and cutaneous candidiasis."
+    ],
+    "dosage": "Apply thinly to clean and dry affected skin 2 to 3 times daily for 2 to 4 weeks.",
+    "side_effects": [
+      "Mild burning or stinging at application site",
+      "Redness or peeling of skin"
+    ],
+    "precautions": "Continue applying for 1 to 2 weeks after symptoms disappear to prevent fungal recurrence."
+  },
+  {
+    "name": "Calamine Lotion (Soothing Anti-itch Lotion)",
+    "description": "Calamine Lotion (Soothing Anti-itch Lotion) သည် ဆေးဘက်ဆိုင်ရာ ကုသမှုအတွက် အသုံးပြုသော ဆေးဝါး ဖြစ်ပါသည်။",
+    "uses": [
+      "Relief of itching and discomfort from insect bites, sunburn, hives, and prickly heat.",
+      "Drying oozing blisters of chickenpox, poison ivy, or contact dermatitis."
+    ],
+    "dosage": "Shake well and apply to affected skin with cotton wool as needed.",
+    "side_effects": [
+      "Mild skin dryness"
+    ],
+    "precautions": "For external use only. Shake bottle well before use. Do not apply on open bleeding wounds."
+  },
+  {
+    "name": "Telmisartan (Micardis / Antihypertensive)",
+    "description": "Telmisartan (Micardis / Antihypertensive) သည် ဆေးဘက်ဆိုင်ရာ ကုသမှုအတွက် အသုံးပြုသော ဆေးဝါး ဖြစ်ပါသည်။",
+    "uses": [
+      "Treatment of essential hypertension (high blood pressure).",
+      "Reduction of cardiovascular risk (stroke, heart attack) in high-risk patients."
+    ],
+    "dosage": "40mg to 80mg once daily in the morning, with or without food.",
+    "side_effects": [
+      "Dizziness or lightheadedness",
+      "Fatigue",
+      "Sinus congestion"
+    ],
+    "precautions": "Take daily at the same time. Contraindicated during pregnancy. Monitor blood pressure regularly."
+  },
+  {
+    "name": "Levothyroxine (Eltroxin / Thyroid Hormone)",
+    "description": "Levothyroxine (Eltroxin / Thyroid Hormone) သည် ဆေးဘက်ဆိုင်ရာ ကုသမှုအတွက် အသုံးပြုသော ဆေးဝါး ဖြစ်ပါသည်။",
+    "uses": [
+      "Treatment of hypothyroidism (underactive thyroid gland).",
+      "Goiter management and thyroid hormone replacement therapy."
+    ],
+    "dosage": "25mcg to 100mcg once daily taken on an empty stomach 30 to 60 minutes before breakfast.",
+    "side_effects": [
+      "Palpitations or rapid heart rate (if dose is too high)",
+      "Weight loss",
+      "Heat sensitivity"
+    ],
+    "precautions": "Must be taken with water on an empty stomach first thing in the morning. Do not take with calcium or iron supplements."
+  },
+  {
+    "name": "Montelukast (Singulair / Leukotriene Inhibitor)",
+    "description": "Montelukast (Singulair / Leukotriene Inhibitor) သည် ဆေးဘက်ဆိုင်ရာ ကုသမှုအတွက် အသုံးပြုသော ဆေးဝါး ဖြစ်ပါသည်။",
+    "uses": [
+      "Prevention and chronic treatment of asthma in adults and children.",
+      "Relief of symptoms of allergic rhinitis (seasonal and perennial allergies)."
+    ],
+    "dosage": "10mg once daily in the evening for adults (5mg for children 6-14 years).",
+    "side_effects": [
+      "Headache",
+      "Abdominal pain",
+      "Sleep disturbances or vivid dreams (rare)"
+    ],
+    "precautions": "Not for the relief of acute sudden asthma attacks (use a rescue inhaler for acute attacks)."
   }
 ]
