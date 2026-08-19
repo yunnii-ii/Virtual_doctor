@@ -218,7 +218,7 @@ const MedicineInfoScreen = () => {
         />
         <VoiceInput
           onTranscriptionComplete={handleVoiceTranscription}
-          placeholderText="Press mic to say medicine name"
+          placeholderText={t("voice_input_medicine")}
         />
         <View style={styles.orContainer}>
           <Divider style={styles.orDivider} />
@@ -390,7 +390,7 @@ const styles = StyleSheet.create({
   cameraButton: {
     borderRadius: 12,
     marginTop: 8,
-    backgroundColor: '#5994E3',
+    backgroundColor: '#5568FF',
     elevation: 2,
   },
   cameraButtonLabel: {
